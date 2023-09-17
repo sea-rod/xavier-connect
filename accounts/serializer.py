@@ -1,20 +1,22 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
+from django.contrib.auth.models import Group
 from .validators import password_mismatch, password_validationAPI
 from rest_framework.exceptions import ValidationError
 
 
 class CustomUserSerlizer(serializers.ModelSerializer):
-    password2 = serializers.CharField()
+    password2 = serializers.CharField(write_only=True, required=True)
 
     class Meta:
         model = get_user_model()
-        fields = ("id", "username", "email", "password", "password2", "year", "stream")
+        fields = ("id", "username", "email", "password", "password2")
         extra_kwargs = {"password": {"write_only": True}}
 
     def validate(self, attrs):
         password2 = attrs.pop("password2")
         password = attrs.get("password")
+        attrs["group"] = Group.objects.get_or_create(name="student")[0]
         user = get_user_model()(**attrs)
 
         password_mismatch(password, password2)
@@ -25,7 +27,7 @@ class CustomUserSerlizer(serializers.ModelSerializer):
 class CustomUserUpdateSerializer(serializers.ModelSerializer):
     class Meta:
         model = get_user_model()
-        fields = ("id", "username", "email", "year", "stream")
+        fields = ("id", "username", "email")
 
 
 class PasswordChangeSerializer(serializers.Serializer):
