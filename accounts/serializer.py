@@ -23,6 +23,10 @@ class CustomUserSerlizer(serializers.ModelSerializer):
         password_validationAPI(password, user)
         return super().validate(attrs)
 
+    def create(self, validated_data):
+        user = get_user_model().objects.create_user(**validated_data)
+        return user
+
 
 class CustomUserUpdateSerializer(serializers.ModelSerializer):
     class Meta:
