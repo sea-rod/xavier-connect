@@ -6,15 +6,15 @@ from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 from .permissions import IsUser
 from .serializer import (
-    CustomUserSerlizer,
+    CustomUserSerializer,
     CustomUserUpdateSerializer,
     PasswordChangeSerializer,
 )
 
 
 class SignUpAPI(generics.CreateAPIView):
-    queryset = get_user_model().objects.none()
-    serializer_class = CustomUserSerlizer
+    # queryset = get_user_model().objects.none()
+    serializer_class = CustomUserSerializer
 
 
 class UpdateUserAPI(generics.RetrieveUpdateAPIView):
