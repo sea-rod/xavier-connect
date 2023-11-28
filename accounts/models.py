@@ -16,7 +16,7 @@ class Stream(models.Model):
     stream_name = models.CharField(max_length=225, unique=True)
 
     def __str__(self):
-        return self.stream_name
+        return f"{self.stream_name} {self.pk}"
 
 
 class ClassStream(models.Model):
