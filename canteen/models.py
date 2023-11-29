@@ -4,7 +4,7 @@ from django.db import models
 class Menu(models.Model):
     item_name = models.CharField(max_length=255)
     price = models.FloatField()
-    image = models.ImageField(default="media/default.png")
+    image = models.ImageField(default="media/default.png", upload_to="media")
     avail_quantity = models.IntegerField(default=0)
     status = models.BooleanField(default=False)
 

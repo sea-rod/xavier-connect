@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import Group
-from rest_framework.fields import empty
 from .validators import password_mismatch, password_validationAPI
 from rest_framework.exceptions import ValidationError
 from .models import ClassStream, Stream, Class
@@ -13,7 +12,7 @@ class ClassStreamSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ClassStream
-        fields = ("class_name", "stream_name")
+        fields = ("id", "class_name", "stream_name")
 
 
 class CustomUserSerializer(serializers.ModelSerializer):
@@ -111,13 +110,20 @@ class PasswordChangeSerializer(serializers.Serializer):
 class ClassSerializer(serializers.ModelSerializer):
     class Meta:
         model = Class
-        fields = ("class_name",)
+        fields = (
+            "id",
+            "class_name",
+        )
 
 
-class StreamSerializer(serializers.Serializer):
+class StreamSerializer(serializers.ModelSerializer):
     id = serializers.PrimaryKeyRelatedField(read_only=True)
     stream_name = serializers.CharField(required=True)
     class_name = ClassSerializer(many=True, required=False)
+
+    class Meta:
+        model = Stream
+        fields = ("id", "stream_name", "class_name")
 
     def run_validation(self, data=...):
         stream_name_value = data.get("stream_name", None)

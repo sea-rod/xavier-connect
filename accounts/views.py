@@ -13,6 +13,7 @@ from .serializer import (
     PasswordChangeSerializer,
     StreamSerializer,
     ClassSerializer,
+    ClassStreamSerializer,
 )
 
 
@@ -46,7 +47,7 @@ class ChangePasswordAPI(generics.GenericAPIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-class ListClassStreamAPI(generics.ListAPIView):
+class ListCreateStreamAPI(generics.ListAPIView):
     serializer_class = StreamSerializer
     queryset = Stream.objects.all()
 
@@ -85,4 +86,15 @@ class ClassListCreateAPI(generics.ListCreateAPIView):
 
 class ClassUpdateDeleteAPI(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ClassSerializer
+    permission_classes = (IsAdminUser,)
+
+
+class ClassStreamListAPI(generics.ListAPIView):
+    serializer_class = ClassStreamSerializer
+    queryset = ClassStream.objects.all()
+
+
+class ClassStreamDestroyAPI(generics.DestroyAPIView):
+    serializer_class = ClassStreamSerializer
+    queryset = ClassStream.objects.all()
     permission_classes = (IsAdminUser,)

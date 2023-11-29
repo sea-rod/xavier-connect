@@ -3,5 +3,5 @@ from .views import ListCreateMenu, RetrieveUpdateDestroyMenu
 
 urlpatterns = [
     path("menu/", ListCreateMenu.as_view()),
-    path("menu/<int:pk>/edit/", RetrieveUpdateDestroyMenu.as_view()),
+    path("<int:pk>/menu/", RetrieveUpdateDestroyMenu.as_view()),
 ]
