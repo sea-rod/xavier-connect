@@ -1,9 +1,3 @@
-__pycache__
-db.sqlite3
-.vscode
-media
-
-### react
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies

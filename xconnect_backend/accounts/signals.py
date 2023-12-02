@@ -1,8 +1,11 @@
 from django.core.mail import EmailMultiAlternatives
 from django.dispatch import receiver
+from django.db.models.signals import post_save
 from django.template.loader import render_to_string
 from django.urls import reverse
 from django_rest_passwordreset.signals import reset_password_token_created
+from django.contrib.auth import get_user_model
+from canteen.models import Cart
 
 
 @receiver(reset_password_token_created)
@@ -48,3 +51,8 @@ def password_reset_token_created(
     )
     msg.attach_alternative(email_html_message, "text/html")
     msg.send()
+
+
+@receiver(post_save,sender=get_user_model())
+def create_user_cart(sender,instance,**kwargs):
+    Cart.objects.create(user=instance)
