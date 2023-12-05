@@ -55,4 +55,4 @@ def password_reset_token_created(
 
 @receiver(post_save,sender=get_user_model())
 def create_user_cart(sender,instance,**kwargs):
-    Cart.objects.create(user=instance)
+    Cart.objects.create(user_id=instance)
