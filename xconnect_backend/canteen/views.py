@@ -1,6 +1,8 @@
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.parsers import MultiPartParser, FormParser
+from rest_framework.response import Response
+from rest_framework import status
 from .models import Menu,Cart
 from .permissions import IsCanteenStaff,IsUser
 from .serializer import MenuSerializer,ItemSerializer,CartSerializer
@@ -27,7 +29,13 @@ class CreateItem(generics.CreateAPIView):
         cart_id = Cart.objects.get(user_id=self.request.user.id)
         serializer.save(cart_id=cart_id)
     
-class ListCart(generics.RetrieveAPIView):
+class ListCart(generics.ListAPIView):
     serializer_class = CartSerializer
     permission_classes = (IsAuthenticated,IsUser)
     queryset = Cart.objects.all()
+
+    def get(self, request, *args, **kwargs):
+        cart = Cart.objects.get(user_id=request.user)
+        serializer = self.get_serializer(cart)
+
+        return Response(serializer.data,status=status.HTTP_200_OK)
