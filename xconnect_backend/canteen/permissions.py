@@ -11,3 +11,7 @@ class IsCanteenStaff(permissions.BasePermission):
 class IsUser(permissions.BasePermission):
     def has_object_permission(self, request, view, obj):
         return obj.user_id == request.user
+
+class IsCartUser(permissions.BasePermission):
+    def has_object_permission(self, request, view, obj):
+        return obj.cart_id.user_id == request.user

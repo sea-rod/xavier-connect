@@ -31,4 +31,5 @@ urlpatterns = [
     ),
     path("api/accounts/", include("accounts.urls")),
     path("api/canteen/", include("canteen.urls")),
+    path("api/events/", include("events.urls")),
 ]

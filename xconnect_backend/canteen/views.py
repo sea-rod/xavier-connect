@@ -3,8 +3,8 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.response import Response
 from rest_framework import status
-from .models import Menu,Cart
-from .permissions import IsCanteenStaff,IsUser
+from .models import Menu,Cart,Items
+from .permissions import IsCanteenStaff,IsUser,IsCartUser
 from .serializer import MenuSerializer,ItemSerializer,CartSerializer
 
 
@@ -28,7 +28,12 @@ class CreateItem(generics.CreateAPIView):
     def perform_create(self, serializer):
         cart_id = Cart.objects.get(user_id=self.request.user.id)
         serializer.save(cart_id=cart_id)
-    
+
+class UpdateIten(generics.UpdateAPIView):
+    serializer_class = ItemSerializer
+    permission_classes = (IsAuthenticated,IsCartUser) 
+    queryset = Items.objects.all()
+   
 class ListCart(generics.ListAPIView):
     serializer_class = CartSerializer
     permission_classes = (IsAuthenticated,IsUser)
