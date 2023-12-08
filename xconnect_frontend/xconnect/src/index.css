@@ -9,17 +9,3 @@ body {
   background: linear-gradient(to right, #4f016d, #b901a648);
   font-family: Rosarivo;
 }
-
-h1 {
-  text-align: center;
-  color: white;
-  font-weight: bold;
-  font-family: Palatino-sans-serif;
-  font-size: 35px;
-}
-
-h2 {
-  text-align: center;
-  color: white;
-  font-size: 15px;
-}
