@@ -4,7 +4,7 @@ from django.contrib.auth import get_user_model
 class Menu(models.Model):
     item_name = models.CharField(max_length=255)
     price = models.FloatField()
-    image = models.ImageField(default="media/default.png", upload_to="media")
+    image = models.ImageField(default="media/default.png", upload_to="media/canteen")
     avail_quantity = models.IntegerField(default=0)
     status = models.BooleanField(default=False)
 
