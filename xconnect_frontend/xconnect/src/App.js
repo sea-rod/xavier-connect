@@ -1,9 +1,12 @@
 import './App.css';
+import LoginForm from './components/loginForm';
+import './bootstrap/';
 
 function App() {
   return (
-    <div>
-    </div>
+    <>
+    <LoginForm />
+    </>
   );
 }
 
