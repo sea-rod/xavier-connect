@@ -1,20 +1,19 @@
 import React from "react";
-import "../components/loginForm.css";
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import "./loginForm.css";
 
 export default function LoginForm() {
     return (
-        <div className="container">
+        <div className="custom-container mb-1">
             <div className="heading text-center">Sign In</div>
-            
-            <form action="" className="form">
-                <div className="form-group">
-                    <label htmlFor="email">E-mail</label>
-                    <input required="" className="form-control input" type="email" name="email" id="email" placeholder="E-mail" />
+
+            <form action="" className="form form-floating">
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control input" id="floatingInput" placeholder="" />
+                    <label for="floatingInput" className="text-black-50">Email Address</label>
                 </div>
-                <div className="form-group">
-                    <label htmlFor="password">Password</label>
-                    <input required="" className="form-control input" type="password" name="password" id="password" placeholder="Password" />
+                <div class="form-floating">
+                    <input type="password" class="form-control input" id="floatingPassword" placeholder="" />
+                    <label for="floatingPassword" className="text-black-50">Password</label>
                 </div>
                 <span className="forgot-password"><a href="#">Forgot Password?</a></span>
                 <input className="btn btn-primary btn-block login-button" type="submit" value="Sign In" />
