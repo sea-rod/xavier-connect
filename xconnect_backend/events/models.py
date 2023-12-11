@@ -10,4 +10,5 @@ class SubEvent(models.Model):
     event_id = models.ForeignKey(Event,on_delete=models.CASCADE,related_name="sub_event")
     name = models.CharField(max_length=255)
     no_of_participants = models.IntegerField()
-
+    img = models.ImageField(default="media/default.png",upload_to="media/events")
+    desc = models.TextField()
