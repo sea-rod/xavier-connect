@@ -1,3 +1,4 @@
+/* Not sure what this css does (assuming it was for when the react app was first created)*/
 .iconStyle {
     color: #8207b3e5;
 }
@@ -9,5 +10,11 @@
 
 .textStyle {
     font-size: 14px;
+    font-weight: 500;
 }
-  
+
+/* CSS for XConnect on the Navbar */
+.navbar-xconnect {
+    font-weight: 600;
+    margin-left: 10px;
+}
