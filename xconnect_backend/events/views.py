@@ -20,11 +20,11 @@ class EventViewSet(viewsets.ModelViewSet):
 
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
+
         serializer = self.get_serializer(
             instance, context={"request": request, "include_sub_events": True}
         )
         return Response(serializer.data)
-
     def perform_create(self, serializer):
         serializer.save(user_id=self.request.user)
 

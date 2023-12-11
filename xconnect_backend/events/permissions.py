@@ -16,3 +16,5 @@ class IsTeacher(permissions.BasePermission):
         if isinstance(obj,Event):
             return request.user == obj.user_id
         return request.user == obj.event_id.user_id
+        return False
+
