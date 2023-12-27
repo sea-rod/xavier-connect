@@ -3,10 +3,10 @@ from .models import Event,SubEvent
 
 
 class SubEventSerializer(serializers.HyperlinkedModelSerializer):
-    url = serializers.HyperlinkedIdentityField(view_name="sub-event-detail")
+    url = serializers.HyperlinkedIdentityField(view_name="subevent-detail")
     class Meta:
         model = SubEvent
-        fields = ("id","url","no_of_participants")
+        fields = ("id","event_id","name","desc","no_of_participants","url")
 
 class EventSerializer(serializers.HyperlinkedModelSerializer):
     sub_event = SubEventSerializer(many=True, read_only=True)
