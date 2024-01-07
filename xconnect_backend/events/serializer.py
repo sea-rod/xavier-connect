@@ -3,16 +3,17 @@ from .models import Event,SubEvent
 
 
 class SubEventSerializer(serializers.HyperlinkedModelSerializer):
-    url = serializers.HyperlinkedIdentityField(view_name="sub-event-detail")
+    url = serializers.HyperlinkedIdentityField(view_name="subevent-detail")
+    event_id = serializers.PrimaryKeyRelatedField(queryset=Event.objects.none())
     class Meta:
         model = SubEvent
-        fields = ("id","url","no_of_participants")
+        fields = ("id","event_id","name","desc","no_of_participants","url")
 
 class EventSerializer(serializers.HyperlinkedModelSerializer):
     sub_event = SubEventSerializer(many=True, read_only=True)
     class Meta:
         model = Event
-        fields = ("id","name","url","sub_event")
+        fields = ("id","name","url","sub_event","brochure")
     def to_representation(self, instance):
         include_sub_events = self.context.get('include_sub_events', False)
 
