@@ -18,3 +18,8 @@
     font-weight: 600;
     margin-left: 10px;
 }
+
+.hover-fix:hover {
+    background-color: transparent;
+    text-decoration: underline;
+}
