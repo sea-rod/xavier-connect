@@ -1,13 +1,16 @@
 from django.views.generic import View, DetailView, FormView
 from django.views.generic.detail import SingleObjectMixin
 from django.forms.models import BaseModelForm
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse
 from django.urls import reverse_lazy
+from rest_framework.parsers import MultiPartParser,FormParser
 from rest_framework import mixins, viewsets
 from rest_framework.response import Response
 from uuid import uuid4
+from django.shortcuts import render
 from .forms import EventPartForm, CollegeRegisterForm
 from .serializer import EventSerializer, SubEventSerializer
+from .signals import college_saved
 from .models import Event, SubEvent, College, Participant
 from .permissions import IsTeacher
 
@@ -46,6 +49,7 @@ class SubEventDetailsAPI(
     serializer_class = SubEventSerializer
     queryset = SubEvent.objects.all()
     permission_classes = (IsTeacher,)
+    parser_classes = (MultiPartParser, FormParser)
 
 
 class RegisterGet(DetailView):
@@ -72,6 +76,7 @@ class RegisterPost(SingleObjectMixin, FormView):
         college_form.token = str(uuid4())
         college_form.event_id = self.object
         college_form.save()
+        college_saved.send(sender=self.__class__,instance=self,token=college_form)
         return super().form_valid(form)
 
     def get_success_url(self) -> str:
@@ -86,12 +91,6 @@ class Register(View):
     def post(self, request, *args, **kwargs):
         view = RegisterPost.as_view()
         return view(request, *args, **kwargs)
-
-
-# TODO check if the token is valid in the form submited
-from django.shortcuts import render, redirect
-from .models import Event
-from .forms import EventPartForm
 
 
 class RegisterSubEvent(View):
@@ -127,30 +126,9 @@ class RegisterSubEvent(View):
                 },
             )
         except College.DoesNotExist:
-            print("kk")
-            raise Http404("hello")
-        return HttpResponse("yooo")
+            return HttpResponse("yooo")
 
 
-def submit_form(request, token, event_id=1):
-    event = Event.objects.get(pk=event_id)
-
-    if request.method == "POST":
-        data = request.POST
-        form = EventPartForm(event, request.POST)
-        if form.is_valid():
-            sub_events = SubEvent.objects.filter(event_id=1)
-            for sub_event in sub_events:
-                for part_num in range(sub_event.no_of_participants):
-                    print(data.get(f"part_{sub_event.name}_{part_num + 1}"))
-            #     for part_num in range(event.no_of_parts):
-            #         data = form.cleaned_data[f"part_{part_num + 1}"]
-            #         Participation.objects.create(
-            #             event=event, part_number=part_num + 1, data=data
-            #         )
-            # Redirect to a success page or perform other actions
-            return redirect("success_page")
-    else:
-        form = EventPartForm(event)
-
-    return render(request, "register_participants.html", {"form": form, "event": event})
+class RegisterSuccessful(View):
+    def get(self,request,*args,**kwargs):
+        return render(request,"success.html")
