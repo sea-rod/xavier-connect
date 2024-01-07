@@ -1,13 +1,25 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* .bg-gradient-purple {
+  background: linear-gradient(to right, #4f016d, #b9019a07);
+} */
+
+.textstyle {
+  margin: 20px 0px 50px 0px;
+  text-align: center;
+  color: white;
+  font-size: 1.6em;
+  font-weight: 600;
+  text-decoration:none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  padding: 0; 
+  height: 100vh;
+  background: linear-gradient(275deg, rgb(107, 48, 255) 0%, rgb(206, 36, 228) 100%);
+}
+
+@media screen and (max-width: 430px) {
+.linkedin-fix {
+  margin-left: 40px;
+}
 }
