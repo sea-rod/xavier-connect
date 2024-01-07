@@ -1,10 +1,10 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 
-
 class Event(models.Model):
     user_id = models.ForeignKey(get_user_model(), on_delete=models.DO_NOTHING)
     name = models.CharField(max_length=255)
+   
 
     def __str__(self):
         return f"{self.name} {self.pk}"
@@ -18,6 +18,7 @@ class SubEvent(models.Model):
     no_of_participants = models.IntegerField()
     img = models.ImageField(default="media/default.png", upload_to="media/events")
     desc = models.TextField()
+    brochure = models.FileField(upload_to="docs")
 
     def __str__(self):
         return f"{self.name} {self.pk}"
