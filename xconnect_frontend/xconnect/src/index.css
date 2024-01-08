@@ -1,7 +1,3 @@
-/* .bg-gradient-purple {
-  background: linear-gradient(to right, #4f016d, #b9019a07);
-} */
-
 .textstyle {
   margin: 20px 0px 50px 0px;
   text-align: center;
@@ -16,6 +12,20 @@ body {
   padding: 0; 
   height: 100vh;
   background: linear-gradient(275deg, rgb(107, 48, 255) 0%, rgb(206, 36, 228) 100%);
+  background-size: 180% 180%;
+  animation: body-animation 5s ease infinite;
+}
+
+@keyframes body-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @media screen and (max-width: 430px) {
