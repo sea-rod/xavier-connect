@@ -3,7 +3,8 @@ from django.views.generic.detail import SingleObjectMixin
 from django.forms.models import BaseModelForm
 from django.http import HttpResponse
 from django.urls import reverse_lazy
-from rest_framework.parsers import MultiPartParser,FormParser
+from django.shortcuts import redirect
+from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework import mixins, viewsets
 from rest_framework.response import Response
 from uuid import uuid4
@@ -76,11 +77,11 @@ class RegisterPost(SingleObjectMixin, FormView):
         college_form.token = str(uuid4())
         college_form.event_id = self.object
         college_form.save()
-        college_saved.send(sender=self.__class__,instance=self,token=college_form)
+        college_saved.send(sender=self.__class__, instance=self, token=college_form)
         return super().form_valid(form)
 
     def get_success_url(self) -> str:
-        return reverse_lazy("register_participants", kwargs={"pk": self.object.pk})
+        return reverse_lazy("regis_success")
 
 
 class Register(View):
@@ -108,7 +109,9 @@ class RegisterSubEvent(View):
                             sub_event_id=sub_event, college=college, name=name
                         )
                         participant.save()
-            return HttpResponse("registered successfully")
+                college.token = None
+                college.save()
+            return redirect("regis_success")
 
         except Event.DoesNotExist:
             print("kk")
@@ -121,14 +124,12 @@ class RegisterSubEvent(View):
             return render(
                 request,
                 "register_participants.html",
-                {
-                    "form": form,
-                },
+                {"form": form, "event_name": college.event_id.name},
             )
         except College.DoesNotExist:
             return HttpResponse("yooo")
 
 
 class RegisterSuccessful(View):
-    def get(self,request,*args,**kwargs):
-        return render(request,"success.html")
+    def get(self, request, *args, **kwargs):
+        return render(request, "success.html")
