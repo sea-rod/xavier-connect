@@ -12,7 +12,7 @@ function App() {
         <Navbar />
         <h2 className="textstyle">Welcome to XConnect</h2>
         <Routes>
-        <Route path='/Home'element={<Home />}/>
+        <Route path='/'element={<Home />}/>
         <Route path='/Login' element={<LoginForm />} />
         </Routes>
         <Footer />
