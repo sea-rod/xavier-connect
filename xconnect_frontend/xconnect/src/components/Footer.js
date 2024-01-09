@@ -3,7 +3,7 @@ import './Footer.css'
 
 export default function Footer() {
   return (
-    <footer className="bg-light text-dark text-center py-1 fixed-bottom">
+    <footer className="bg-light text-dark text-center py-1 mt-3 fixed-bottom">
       <div className="d-flex justify-content-between align-items-center">
         <div className="ml-auto"></div>
         <div>
