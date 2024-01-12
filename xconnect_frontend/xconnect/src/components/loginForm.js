@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import axiosInstance from "../axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./loginForm.css";
 
 export default function LoginForm() {
@@ -38,7 +38,7 @@ export default function LoginForm() {
 
   return (
     <div className="custom-container mb-1">
-      <div className="heading text-center">Sign In</div>
+      <div className="heading text-center">Login</div>
 
       <form className="form form-floating">
         <div className="form-floating mb-3">
@@ -70,14 +70,14 @@ export default function LoginForm() {
           </label>
         </div>
         <span className="forgot-password">
-          <a href="#">Forgot Password?</a>
+          <Link to="/PasswordChange">Forgot Password?</Link>
         </span>
         <button
           className="btn btn-primary btn-block login-button"
           type="button"
           onClick={handleSubmit}
         >
-          Login In
+          Login
         </button>
       </form>
     </div>
