@@ -1,0 +1,77 @@
+.btnStyle {
+    font-size: 14px;
+    color: white;
+    background-color: #4f016d;
+    position: relative;
+}
+
+.btnStyle:hover {
+    background-color: #4f016d; 
+    color: white;
+}
+
+.card-container {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    width: 225px;
+    height: 220px;
+    padding: 4px;
+    font-size: 14.5px;
+    background: linear-gradient(275deg, rgb(107, 48, 255, 0.7) 0%, rgb(206, 36, 228, 0.7) 100%);
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Media Query for Tabs */
+@media only screen and (min-width: 500px) and (max-width: 768px){
+    .card-container {
+        position: absolute;
+        top: 44%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 8px;
+        width: 310px;
+        padding: 15px;
+        font-size: 15px;
+        background: linear-gradient(275deg, rgb(107, 48, 255, 0.7) 0%, rgb(206, 36, 228, 0.7) 100%);
+        color: white;
+        margin-bottom: 20px;
+    }
+
+    .btnStyle {
+        font-size: 14px;
+        color: white;
+        background-color: #4f016d;
+        width: 25%;
+        position: relative;
+    }
+}
+
+/* Media Query for Desktop */
+@media only screen and (min-width: 769px) {
+    .card-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-120%, -60%);
+        border-radius: 8px;
+        width: 310px;
+        padding: 15px;
+        font-size: 15px;
+        background: linear-gradient(275deg, rgb(107, 48, 255, 0.7) 0%, rgb(206, 36, 228, 0.7) 100%);
+        animation: body-animation 5s ease infinite;
+        color: white;
+    }
+
+    .btnStyle {
+        font-size: 14px;
+        color: white;
+        background-color: #4f016d;
+        width: 25%;
+        position: relative;
+    }
+}
+  

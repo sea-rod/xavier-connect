@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "django_rest_passwordreset",
     "accounts",
     "canteen",
+    "events",
 ]
 
 MIDDLEWARE = [
