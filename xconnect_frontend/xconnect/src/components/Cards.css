@@ -14,7 +14,7 @@
     position: absolute;
     top: 47%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -45%);
     border-radius: 8px;
     width: 225px;
     height: 220px;
@@ -31,7 +31,7 @@
         position: absolute;
         top: 44%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -35%);
         border-radius: 8px;
         width: 310px;
         padding: 15px;
@@ -53,15 +53,16 @@
 /* Media Query for Desktop */
 @media only screen and (min-width: 769px) {
     .card-container {
+        float: left;
         position: absolute;
         top: 50%;
-        left: 50%;
-        transform: translate(-120%, -60%);
+        left: 65%;
+        transform: translate(-110%, -50%);
         border-radius: 8px;
-        width: 310px;
-        padding: 15px;
+        width: 400px;
+        height: 270px;
+        padding: 40px;
         font-size: 15px;
-        background: linear-gradient(275deg, rgb(107, 48, 255, 0.7) 0%, rgb(206, 36, 228, 0.7) 100%);
         animation: body-animation 5s ease infinite;
         color: white;
     }

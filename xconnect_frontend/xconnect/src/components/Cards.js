@@ -13,8 +13,8 @@ export default function Cards({ event }) {
     return (
     <div style={{justifyContent: 'space-around' }}>
       {imageData.map((item) => (
-        <div key={item.id} style={{ position: 'relative', textAlign: 'center'}}>
-          <img src={item.imagePath} alt={`${item.id}`} style={{ maxWidth: '100%', width: '800px', height:'280px', marginBottom: '20px'}} /> 
+        <div key={item.id} style={{ position: 'relative', textAlign: 'center', height: '500px', padding: "30px", borderRadius: "10px"}}>
+          <img src={item.imagePath} alt={`${item.id}`} style={{ width: '100%', height: '100%  ', objectFit: 'cover', marginBottom: '20px',borderRadius:"10px"}} /> 
           <div className="row card-body text-center">
             <div className="col-sm-6 mb-6 mb-sm-4"> 
             <div className="card card-container">
