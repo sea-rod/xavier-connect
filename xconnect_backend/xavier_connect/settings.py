@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "accounts",
     "canteen",
     "events",
+    "library",
 ]
 
 MIDDLEWARE = [
