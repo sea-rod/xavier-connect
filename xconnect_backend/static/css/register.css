@@ -1,0 +1,27 @@
+h1 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.custom-font {
+    font-family: "Chakra Petch", sans-serif;
+    margin-top: 40px;
+}
+
+input {
+    outline: 1px solid #aa00ff;
+}
+
+.btn-color {
+    background-color: #aa00ff !important;
+    color: #ffffff !important;
+}
+
+.btn-color:hover {
+    background-color: #8a00cc !important;
+}
+
+.form-control:focus {
+    border-color: #aa00ff !important;
+    box-shadow: 0 0 0 0.25rem rgba(170, 0, 255, 0.25) !important;
+}
