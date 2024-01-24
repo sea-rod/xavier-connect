@@ -55,7 +55,7 @@ class SubEventDetailsAPI(
 
 class RegisterGet(DetailView):
     model = Event
-    template_name = "register_participants.html"
+    template_name = "college_regis.html"
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
@@ -66,7 +66,7 @@ class RegisterGet(DetailView):
 class RegisterPost(SingleObjectMixin, FormView):
     model = Event
     form_class = CollegeRegisterForm
-    template_name = "register_participants.html"
+    template_name = "college_regis.html"
 
     def post(self, request, *args, **kwargs) -> HttpResponse:
         self.object = self.get_object()

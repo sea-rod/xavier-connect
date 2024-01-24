@@ -8,7 +8,7 @@ class SubEventSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = SubEvent
-        fields = ("id", "event_id", "name", "desc", "no_of_participants", "url")
+        fields = ("id", "event_id", "name", "desc", "no_of_participants", "url","img")
 
 
 class EventSerializer(serializers.HyperlinkedModelSerializer):
