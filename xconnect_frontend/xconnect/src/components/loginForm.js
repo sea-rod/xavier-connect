@@ -11,7 +11,6 @@ export default function LoginForm() {
     password: "",
   });
   const [formData, updateForm] = useState(initialFormData);
-
   const handleChange = (e) => {
     updateForm({
       ...formData,
