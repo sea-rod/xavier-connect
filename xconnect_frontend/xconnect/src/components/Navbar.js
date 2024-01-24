@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import "./Navbar.css";
 
 export default function Navbar() {
-   const [auth, setAuth] = useState(null);
+  const [auth, setAuth] = useState(null);
   useEffect(() => {
     function handleTokenUpdate() {
       setAuth(localStorage.getItem("access_token") ? true : false);
@@ -19,7 +19,7 @@ export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg" data-bs-theme="dark">
       <div className="container-fluid">
-        <Link className="navbar-brand navbar-xconnect" to="/Home">
+        <Link className="navbar-brand navbar-xconnect" to="/">
           XConnect
         </Link>
         <button

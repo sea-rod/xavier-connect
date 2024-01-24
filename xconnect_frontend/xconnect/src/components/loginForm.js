@@ -37,10 +37,11 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="custom-container mb-1">
+    <div className="container pt-5 mt-5" style={{height: '95vh'}}>
+    <div className="custom-container mb-1 mt-5">
       <div className="heading text-center">Login</div>
 
-      <form className="form form-floating">
+      <form className="form form-floating ">
         <div className="form-floating mb-3">
           <input
             onChange={handleChange}
@@ -80,6 +81,7 @@ export default function LoginForm() {
           Login
         </button>
       </form>
+    </div>
     </div>
   );
 }
