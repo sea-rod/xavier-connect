@@ -42,7 +42,7 @@ export default function Navbar() {
             </Link>
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="/">
-                Academics
+                Time Table
               </a>
             </li>
             {auth ? (
