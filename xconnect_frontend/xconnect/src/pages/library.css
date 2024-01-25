@@ -23,11 +23,10 @@ body{
 }
 
 .fl-wrap {
-    display: block;
     bottom: -20px;
     float: left;
-    right: 54px;
-    width: 100%;
+    right: 71px;
+    width: 130%;
     position: relative;
 }
 
@@ -152,10 +151,7 @@ body{
     clear: both;
   }
 
-  .container{
-    display: none;
-  }
-  
+ 
   /* The expanding image container (positioning is needed to position the close button and the text) */
   .zoom_img {
     position: relative;
@@ -182,13 +178,12 @@ body{
     cursor: pointer;
   }
 
-
+/* Change This later */
   .books{
-    position: absolute;
-    left: 25%;
+    left: 22%;
     display: block;
-    width: 50%;
-    height: 950px;
+    width: 57%;
+    height: 100%;
     background-color: white;
     top: 590px;
 
@@ -206,8 +201,8 @@ body{
 
     .row{
         display: flex;
-        justify-content: center;
-    }
+        justify-content: center; 
+      }
 }
 
 .test {
