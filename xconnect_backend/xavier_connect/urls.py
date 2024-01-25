@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import urls
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from .view import download_file
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -34,4 +35,6 @@ urlpatterns = [
     path("api/events/", include("events.urls")),
     path("api/library/", include("library.urls")),
     path("api/timetable/", include("timetable.urls")),
+    path("docs/<str:file_path>/", download_file),
+
 ]
