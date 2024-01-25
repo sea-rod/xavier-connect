@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "canteen",
     "events",
     "library",
+    "TimeTable",
 ]
 
 MIDDLEWARE = [

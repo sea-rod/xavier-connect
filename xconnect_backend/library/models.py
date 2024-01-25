@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from datetime import timedelta
 from django.contrib.auth import get_user_model
 
 # Create your models here.
@@ -7,7 +8,7 @@ class Books(models.Model):
     id = models.AutoField(primary_key=True)
     book_name = models.CharField(max_length = 250)
     isbn = models.DecimalField(max_digits=13,decimal_places=0)    
-    category = models.models.TextField()
+    category = models.TextField()
     avaliable_copys = models.IntegerField(default=0)
 
     
@@ -16,21 +17,23 @@ class Books(models.Model):
 
 
 class Reservation(models.Model):
- 
+    ReservationId = models.AutoField(primary_key=True)
     user_id = models.OneToOneField(get_user_model(),on_delete=models.CASCADE)
     book_id = models.ForeignKey(Books,on_delete=models.CASCADE)
     reserve_date = models.DateTimeField(auto_now_add=True)
-    return_date = models.DateTimeField(auto_now_add=True)
+    return_date = models.DateTimeField()
     states = models.BooleanField(default = True)
 
     def save(self, *args, **kwargs):
-        # Add 60 days to the return_date form date of reserver_date
-        new_datetime = self.return_date + timezone.timedelta(days=60)
-        
-        # Set the new datetime to the field
-        self.return_date = new_datetime
+            # Increase the value of created_at by 30 days
+            self.reserve_date += timedelta(days=30)
+            super(Reservation, self).save(*args, **kwargs)
+   
 
-        super().save(*args, **kwargs)
+    def __str__(self):
+        return self.ReservationId
+        # return str(self.user_id)
+        
 
 
 class Fine(models.Model):
