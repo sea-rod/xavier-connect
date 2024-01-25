@@ -18,10 +18,10 @@ export default function Footer() {
 
                 <h4 className='d-block'>Quick links</h4>
             <div className="col-lg-6 col-12 pl-lg-5 justify-content-between d-flex">
-                <a href="">Home</a>
-                <a href="">Menu</a>
-                <a href="">About</a>
-                <a href="">Contacts</a>
+                <a href="/">Home</a>
+                <a href="/">Menu</a>
+                <a href="/">About</a>
+                <a href="/">Contacts</a>
             </div>
             </div>
 

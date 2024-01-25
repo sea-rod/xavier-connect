@@ -70,7 +70,7 @@ export default function LoginForm() {
           </label>
         </div>
         <span className="forgot-password">
-          <a href="#">Forgot Password?</a>
+          <a href="/">Forgot Password?</a>
         </span>
         <button
           className="btn btn-primary btn-block login-button"
