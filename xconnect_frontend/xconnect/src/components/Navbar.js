@@ -74,9 +74,13 @@ export default function Navbar() {
               </ul>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">
-                Academics
-              </a>
+            <Link
+                  className="nav-link active"
+                  aria-current="page"
+                  to="/Canteen"
+                >
+                  Canteen
+                </Link>
             </li>
             {auth ? (
               <li className="nav-item">
@@ -88,7 +92,7 @@ export default function Navbar() {
                   Logout
                 </Link>
               </li>
-            ) : (
+            ) :(
               <li className="nav-item">
                 <Link
                   className="nav-link active"

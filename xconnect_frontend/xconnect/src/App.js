@@ -4,16 +4,17 @@ import LoginForm from './components/loginForm';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
+import Canteen from './pages/Canteen';
 
 function App() {
   return (
     <>
       <Router>
         <Navbar />
-        <h2 className="textstyle">Welcome to XConnect</h2>
         <Routes>
         <Route path='/'element={<Home />}/>
         <Route path='/Login' element={<LoginForm />} />
+        <Route path='/Canteen' element={<Canteen />} />
         </Routes>
         <Footer />
       </Router>
