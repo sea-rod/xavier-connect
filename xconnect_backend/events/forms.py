@@ -19,7 +19,7 @@ class EventPartForm(forms.Form):
                     label=label,
                     widget=forms.TimeInput(
                         attrs={
-                            "class": "form-control mb-2",
+                            "class": "form-control",
                             "placeholder": f"participant {part_num+1}",
                         }
                     ),
@@ -30,7 +30,7 @@ class CollegeRegisterForm(forms.ModelForm):
     college_name = forms.CharField(
         widget=forms.TextInput(
             attrs={
-                "class": "form-control mb-2",
+                "class": "form-control",
                 "placeholder": "College Name",
             }
         )
@@ -39,7 +39,7 @@ class CollegeRegisterForm(forms.ModelForm):
     email = forms.EmailField(
         widget=forms.TextInput(
             attrs={
-                "class": "form-control mb-2",
+                "class": "form-control",
                 "placeholder": "Email",
             }
         )

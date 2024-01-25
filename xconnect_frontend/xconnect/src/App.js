@@ -1,4 +1,3 @@
-import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoginForm from './components/loginForm';
 import Navbar from './components/Navbar';
@@ -10,9 +9,8 @@ function App() {
     <>
       <Router>
         <Navbar />
-        <h2 className="textstyle">Welcome to XConnect</h2>
         <Routes>
-        <Route path='/Home'element={<Home />}/>
+        <Route path='/'element={<Home />}/>
         <Route path='/Login' element={<LoginForm />} />
         </Routes>
         <Footer />
