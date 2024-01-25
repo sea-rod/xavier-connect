@@ -3,6 +3,7 @@ import LoginForm from './components/loginForm';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
+import Events from "./pages/Events";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
         <Route path='/'element={<Home />}/>
         <Route path='/Login' element={<LoginForm />} />
+        <Route path='/Events' element={<Events />}/>
         </Routes>
         <Footer />
       </Router>

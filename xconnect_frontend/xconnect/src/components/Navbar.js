@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./Navbar.css";
+import "../pages/Events";
 
 export default function Navbar() {
   const [auth, setAuth] = useState(null);
@@ -36,43 +37,9 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0"></ul>
           <ul className="navbar-nav ml-auto">
-            <a className="nav-link active" aria-current="page" href="/">
-              About
-            </a>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle active"
-                href="/"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Quick Links
-              </a>
-              <ul className="dropdown-menu bg-transparent">
-                <li>
-                  <a className="dropdown-item hover-fix" href="/">
-                    Guidelines
-                  </a>
-                </li>
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-                <li>
-                  <a className="dropdown-item hover-fix" href="/">
-                    Bachelors
-                  </a>
-                </li>
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-                <li>
-                  <a className="dropdown-item hover-fix" href="/">
-                    Masters
-                  </a>
-                </li>
-              </ul>
-            </li>
+            <Link className="nav-link active" aria-current="page" to="/Events">
+              Events
+            </Link>
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="/">
                 Academics
