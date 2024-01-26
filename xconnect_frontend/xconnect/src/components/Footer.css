@@ -1,27 +1,8 @@
-.iconStyle {
-    color: #8207b3e5;
-}
-  
-.linkStyle {
-    color: black;
-    font-size: 14px;
-}
-
-.textStyle {
-    font-size: 14px;
-    font-weight: 500;
-}
-.green-container,
-div.about:nth-child(even) {
-    background-color: rgb(245, 255, 245);
-    padding: 50px;
-    height: 90%;
-    width: 100%;
-}
 .social-media a,
 .social-media {
-    color: rgb(156, 156, 156);
+    color: rgb(255, 255, 255);
     margin-bottom: 20px;
-    font-size: 30px;
+    font-size: 25px;
     margin: 10px;
 }
+
