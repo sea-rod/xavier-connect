@@ -1,0 +1,21 @@
+server {
+    listen 80;
+    server_name 0.0.0.0;
+
+    location /static {
+        root /var/www/html/xavier_connect/xconnect_backend/;
+    }
+    
+    location /media {
+        root /var/www/html/xavier_connect/xconnect_backend;
+        index index.html;
+    }
+
+    location /api {
+        proxy_pass http://localhost:8000;
+    }
+    location / {
+        proxy_pass http://localhost:3000;
+    }
+
+}
