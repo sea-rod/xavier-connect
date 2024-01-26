@@ -1,19 +1,19 @@
-import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoginForm from './components/loginForm';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
+import Events from "./pages/Events";
 
 function App() {
   return (
     <>
       <Router>
         <Navbar />
-        <h2 className="textstyle">Welcome to XConnect</h2>
         <Routes>
         <Route path='/'element={<Home />}/>
         <Route path='/Login' element={<LoginForm />} />
+        <Route path='/Events' element={<Events />}/>
         </Routes>
         <Footer />
       </Router>
