@@ -1,1 +1,1 @@
-hehe
+click here to register {{register_url}}
