@@ -1,27 +1,90 @@
 h1 {
     text-align: center;
     margin-top: 10px;
-}
-
-.custom-font {
-    font-family: "Chakra Petch", sans-serif;
+  }
+  
+  .register-font {
+    font-family: 'Audiowide', sans-serif;
     margin-top: 40px;
-}
-
-input {
+  }
+  
+  input {
     outline: 1px solid #aa00ff;
-}
-
-.btn-color {
+  }
+  
+  .btn {
     background-color: #aa00ff !important;
     color: #ffffff !important;
-}
-
-.btn-color:hover {
+  }
+  
+  .btn:hover {
     background-color: #8a00cc !important;
-}
-
-.form-control:focus {
+  }
+  
+  .form-control:focus {
     border-color: #aa00ff !important;
     box-shadow: 0 0 0 0.25rem rgba(170, 0, 255, 0.25) !important;
-}
+  }
+  
+  .form-label {
+    /* font-family: 'Rajdhani', sans-serif;  */
+    /* font-family: 'Orbitron', sans-serif; */
+    font-family: 'Oxanium', sans-serif;
+    /* font-family: 'Kelly Slab', sans-serif; */
+    /* font-family: 'Medula One', system-ui;
+    font-size: 2rem; */
+  }
+  
+  .form-control {
+    font-family: 'Oxanium', sans-serif;
+  }
+  
+  /* Underline */
+  .loader {
+    height: 1px;
+    width: 250px;
+    background: rgb(44, 44, 44);
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  
+  .loader .black_overlay {
+    background: linear-gradient(
+      87deg,
+      rgb(33, 37, 41) 0%,
+      rgba(0, 0, 0, 0.14) 30%,
+      rgba(0, 0, 0, 0.14) 70%,
+      rgb(33, 37, 41) 100%
+    );
+    position: absolute;
+    inset: 0px;
+  }
+  
+  .loader .light {
+    width: 70px;
+    height: 100%;
+    position: absolute;
+    left: 50%; 
+    top: 0px;
+    transform: translateX(-50%); 
+    background: linear-gradient(
+      87deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgb(174, 0, 255) 40%,
+      rgb(174, 0, 255) 60%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    animation: light 2s infinite ease-in-out;
+  }
+  
+  @keyframes light {
+    from {
+      left: -30%;
+    }
+    to {
+      left: 100%;
+    }
+  }
+  
+  
