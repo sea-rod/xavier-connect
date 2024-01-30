@@ -3,7 +3,6 @@ from django.views.generic.detail import SingleObjectMixin
 from django.forms.models import BaseModelForm
 from django.http import HttpResponse
 from django.urls import reverse_lazy
-from django.shortcuts import redirect
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework import mixins, viewsets
 from rest_framework.response import Response
@@ -81,7 +80,7 @@ class RegisterPost(SingleObjectMixin, FormView):
         return super().form_valid(form)
 
     def get_success_url(self) -> str:
-        return reverse_lazy("regis_success")
+        return reverse_lazy("regis_success", kwargs={"event": "event_regis"})
 
 
 class Register(View):
@@ -111,11 +110,10 @@ class RegisterSubEvent(View):
                         participant.save()
                 college.token = None
                 college.save()
-            return redirect("regis_success")
+            return render(request, "success_sub_event.html")
 
         except Event.DoesNotExist:
-            print("kk")
-            return HttpResponse("hello")
+            return render(request, "404_page.html")
 
     def get(self, request, token, *args, **kwargs):
         try:
@@ -127,9 +125,9 @@ class RegisterSubEvent(View):
                 {"form": form, "event_name": college.event_id.name},
             )
         except College.DoesNotExist:
-            return HttpResponse("yooo")
+            return render(request, "404_page.html")
 
 
 class RegisterSuccessful(View):
     def get(self, request, *args, **kwargs):
-        return render(request, "success.html")
+        return render(request, "success_college.html")
