@@ -8,13 +8,9 @@ export default function Library() {
         <div className="header">
           <h1>Welcome to Xavier's Library</h1>
         </div>
-        <div className="main-search-input-wrap">
-          <div className="main-search-input fl-wrap">
-            <div className="main-search-input-item">
-              <input type="text" value="" placeholder="Search Books" />
-            </div>
-            <button className="main-search-button">SEARCH BOOKS</button>
-          </div>
+        <div class="input-group">
+          <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+          <button type="button" class="btn rounded" data-mdb-ripple-init>search</button>
         </div>
       </header>
       <div className="bgimg">

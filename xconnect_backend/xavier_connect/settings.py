@@ -29,7 +29,7 @@ SECRET_KEY = env.str("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG")
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -85,23 +85,23 @@ AUTH_USER_MODEL = "accounts.CustomUser"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
-
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": env.str("DATABASE_NAME"),
-        "USER": env.str("DATABASE_USER"),
-        "PASSWORD": env.str("DATABASE_PASSWD"),
-        "HOST": env.str("DATABASE_HOST"),
-        "PORT": env.str("DATABASE_PORT"),
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.mysql",
+#         "NAME": env.str("DATABASE_NAME"),
+#         "USER": env.str("DATABASE_USER"),
+#         "PASSWORD": env.str("DATABASE_PASSWD"),
+#         "HOST": env.str("DATABASE_HOST"),
+#         "PORT": env.str("DATABASE_PORT"),
+#     }
+# }
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
