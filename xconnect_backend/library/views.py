@@ -3,6 +3,7 @@ from django.shortcuts import render
 from rest_framework import generics,permissions
 from .models import Books,Reservation
 from .serializer import BookSerializer,ReservationViewSerializer,ReservationSerializer
+from .permissions import is_libraryStaff
 
 #for html templet view
 # class BooksListView(ListView):
@@ -10,24 +11,25 @@ from .serializer import BookSerializer,ReservationViewSerializer,ReservationSeri
 #     template_name = "Books_list.html"
 
 class BooksListView(generics.ListCreateAPIView):
-    permission_classes =(permissions.AllowAny,)
+    permission_classes = [is_libraryStaff]
     queryset = Books.objects.all()
     serializer_class = BookSerializer
 
 class BookListView(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes =(permissions.AllowAny,)
     queryset = Books.objects.all()
     serializer_class = BookSerializer
 
-class  ReservationViewListView(generics.ListCreateAPIView):
-   
+class  ReservationListView(generics.ListCreateAPIView):
+    queryset = Reservation.objects.all()
+    def get_serializer_class(self):
+        if self.request.method == 'GET':
+            return ReservationViewSerializer
+        else:
+            return ReservationSerializer
+
+class  ReservationView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Reservation.objects.all()
     serializer_class = ReservationViewSerializer
-
-class  ReservationListView(generics.RetrieveUpdateDestroyAPIView):
-   
-    queryset = Reservation.objects.all()
-    serializer_class = ReservationSerializer
 
 
 

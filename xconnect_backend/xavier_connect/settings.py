@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     "canteen",
     "events",
     "library",
-    "TimeTable",
+   "TimeTable",
 ]
 
 MIDDLEWARE = [

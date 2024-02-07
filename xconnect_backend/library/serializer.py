@@ -14,4 +14,4 @@ class ReservationViewSerializer(serializers.ModelSerializer):
 class ReservationSerializer(serializers.ModelSerializer):
      class Meta:
       model = Reservation
-      fields = ("book_id")
+      fields = ("user","book")

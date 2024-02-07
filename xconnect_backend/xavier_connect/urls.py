@@ -36,7 +36,7 @@ urlpatterns = [
     path("api/canteen/", include("canteen.urls")),
     path("api/events/", include("events.urls")),
     path("api/library/", include("library.urls")),
-    path("api/timetable/", include("timetable.urls")),
+    path("api/timetable/", include("TimeTable.urls")),
     path("docs/<str:file_path>/", download_file),
 
 ]

@@ -18,33 +18,29 @@ class Books(models.Model):
 
 class Reservation(models.Model):
     ReservationId = models.AutoField(primary_key=True)
-    user_id = models.OneToOneField(get_user_model(),on_delete=models.CASCADE)
-    book_id = models.ForeignKey(Books,on_delete=models.CASCADE)
+    user_id = models.OneToOneField(get_user_model(),on_delete = models.CASCADE)
+    book_id = models.ForeignKey(Books,on_delete = models.CASCADE)
     reserve_date = models.DateTimeField(auto_now_add=True)
     return_date = models.DateTimeField()
     states = models.BooleanField(default = True)
 
     def save(self, *args, **kwargs):
-            # Increase the value of created_at by 30 days
-            self.reserve_date += timedelta(days=30)
-            super(Reservation, self).save(*args, **kwargs)
+        # Add 30 days to the current datetime
+        current_time = timezone.now()
+        self.return_date = current_time +timezone.timedelta(days=30)
+        super().save(*args, **kwargs)
    
 
     def __str__(self):
-        return self.ReservationId
-        # return str(self.user_id)
+        return str(self.ReservationId)
+   
         
 
 
 class Fine(models.Model):
-    status =  models.BooleanField()
-    book_status_id = models.BooleanField()
-    finePrice = models.FloatField()
+    status =  models.BooleanField(default = False)
+    resrevation_id = models.ForeignKey(Reservation,on_delete = models.CASCADE)
+    fine = models.FloatField(default = 30)
 
-
-
-    
-
-
-    
-  
+    def __str__(self):
+            return str(self.user_id)
