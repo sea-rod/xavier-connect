@@ -1,24 +1,15 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Library from "./pages/Library";
-import LoginForm from './components/loginForm';
+import { BrowserRouter as Router } from "react-router-dom";
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Events from "./pages/Events";
-import Home from './pages/Home';
+import AppRoutes from "./Router/RouteConfig";
 
 function App() {
   return (
     <>
       <Router>
-        <Navbar />
-        <Routes>
-        <Route path='/'element={<Home />}/>
-        <Route path='/Login' element={<LoginForm />} />
-        <Route path='/Events' element={<Events />}/>
-        <Route path='/Library' element={<Library />}/>
-
-        </Routes>
-        <Footer />
+          <Navbar />
+          <AppRoutes />
+          <Footer />
       </Router>
     </>
   );

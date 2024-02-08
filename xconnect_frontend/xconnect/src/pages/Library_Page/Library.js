@@ -17,8 +17,8 @@ export default function Library() {
         <img src={process.env.PUBLIC_URL + '/images/Library/library.jpg'} alt="Library" />
       </div>
       <div className="books">
-        <h3>USING THE LIBRARY</h3>
-        <p>Get started using the library with these guides</p>
+        <h3>TOP PICKS</h3>
+        <p>A source of endless knowledge</p>
         <br />
         <div className="row">
           <div className="column">
