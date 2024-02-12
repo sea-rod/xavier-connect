@@ -1,3 +1,26 @@
-.popular{
+body {
+    margin: 0;
+    padding: 0;
+  }
+ 
+#canteen .cart {
+    position: fixed;
+    z-index: 2;
+    top: 50px; /* Adjust the top position as needed */
+    right: 1px; /* Adjust the right position as needed */
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    transition: 0.3s ease;
+  }
+  
+  #canteen .cart img{
+    width: 5rem;
+      height: auto;
+      display: block;
+   }
+
+   #canteen .popular{
     background: rgb(255, 255, 255);
 }

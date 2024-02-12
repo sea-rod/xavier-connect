@@ -6,12 +6,12 @@ import canteenhero1 from '../Ascets/canteen-hero1.png'
 
 function Hero() {
   return (
-    <div className='hero'>
+    <div id="canteen" className='hero'>
       <div className="hero-left">
         <h2>TASTY FOOD</h2>
         <div>
             <div className="hero-hand-icon">
-                <p>fuuuruu</p>
+                <p>Superb</p>
                 <img src={hand_icon} alt="" />
             </div>
             <p>great food</p>
