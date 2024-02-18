@@ -11,7 +11,7 @@ from .serializer import MenuSerializer, ItemSerializer, CartSerializer
 class ListCreateMenu(generics.ListCreateAPIView):
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
-    permission_classes = (IsAuthenticated, IsCanteenStaff)
+    permission_classes = (IsCanteenStaff,)
     parser_classes = (MultiPartParser, FormParser)
 
 

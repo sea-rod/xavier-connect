@@ -45,6 +45,10 @@ export default function Navbar() {
                 Time Table
               </a>
             </li>
+            <Link className="nav-link active" aria-current="page" to="/Canteen">
+              Canteen
+            </Link>
+
             {auth ? (
               <li className="nav-item">
                 <Link
