@@ -1,7 +1,7 @@
 import React from 'react';
 import './Cartitem.css';
-import burger from '../Ascets/food/Frame 17.png'
-import trashbin from '../Ascets/trash-bin.png'
+import burger from '../../Ascets/food/Frame 17.png'
+import trashbin from '../../Ascets/trash-bin.png'
 import { Link } from 'react-router-dom';
 
 function 	Cartitem() {
