@@ -1,14 +1,8 @@
 from django.shortcuts import render
-# from django.views.generic import ListView
 from rest_framework import generics,permissions
 from .models import Books,Reservation
 from .serializer import BookSerializer,ReservationViewSerializer,ReservationSerializer
 from .permissions import is_libraryStaff
-
-#for html templet view
-# class BooksListView(ListView):
-#     model = Books
-#     template_name = "Books_list.html"
 
 class BooksListView(generics.ListCreateAPIView):
     permission_classes = [is_libraryStaff]

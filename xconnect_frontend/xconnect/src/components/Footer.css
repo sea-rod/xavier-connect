@@ -1,13 +1,8 @@
-.iconStyle {
-    color: #8207b3e5;
-}
-  
-.linkStyle {
-    color: black;
-    font-size: 14px;
+.social-media a,
+.social-media {
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+    font-size: 25px;
+    margin: 10px;
 }
 
-.textStyle {
-    font-size: 14px;
-    font-weight: 500;
-}
