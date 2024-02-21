@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./Navbar.css";
-import "../pages/Events_Page/Events";
+import "../../../modules/events/Events";
 
 export default function Navbar() {
   const [auth, setAuth] = useState(null);

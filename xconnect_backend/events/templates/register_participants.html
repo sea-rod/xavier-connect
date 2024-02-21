@@ -30,12 +30,8 @@
     ></script>
   </head>
 
-<body data-bs-theme="dark">  
-    <h1 class="register-font title">Registration</h1>
-    <div class="loader">
-      <div class="light"></div>
-      <div class="black_overlay"></div>
-    </div>
+<body data-bs-theme="dark">
+    <h1 class="custom-font title">Registration</h1>
     <form method="post">
         {% csrf_token %}
         {% for item in form %}

@@ -13,16 +13,17 @@ class EventPartForm(forms.Form):
         for sub_event in sub_events:
             for part_num in range(sub_event.no_of_participants):
                 field_name = f"part_{sub_event.name}_{part_num+1}"
-                label = f" {sub_event.name}" if part_num == 0 else ""
+                label = f"{sub_event.name}" if part_num == 0 else ""
 
                 self.fields[field_name] = forms.CharField(
                     label=label,
-                    widget=forms.TimeInput(
+                    widget=forms.TextInput(
                         attrs={
                             "class": "form-control",
                             "placeholder": f"participant {part_num+1}",
                         }
                     ),
+                    required=False,
                 )
 
 

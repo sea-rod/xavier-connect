@@ -1,8 +1,8 @@
 import React from 'react'
 import './Hero.css'
-import hand_icon from '../Ascets/hand_icon.png'
-import arrow from '../Ascets/arrow.png'
-import canteenhero1 from '../Ascets/canteen-hero1.png'
+import hand_icon from '../../Ascets/hand_icon.png'
+import arrow from '../../Ascets/arrow.png'
+import canteenhero1 from '../../Ascets/canteen-hero1.png'
 
 function Hero() {
   return (

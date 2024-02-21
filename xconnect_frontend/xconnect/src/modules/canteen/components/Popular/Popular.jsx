@@ -1,8 +1,7 @@
 import React from "react";
 import "./Popular.css";
-import data_product from "../Ascets/data";
 import Item from "../Item/Item";
-import axiosInstance from "../../axios";
+import axiosInstance from "../../../../services/axios";
 import { useEffect, useState } from "react";
 
 const Popular = () => {
