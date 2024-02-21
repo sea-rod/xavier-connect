@@ -31,7 +31,7 @@ class CreateItem(generics.CreateAPIView):
         serializer.save(cart_id=cart_id)
 
 
-class UpdateIten(generics.UpdateAPIView):
+class UpdateDeleteItem(generics.UpdateAPIView, generics.DestroyAPIView):
     serializer_class = ItemSerializer
     permission_classes = (IsAuthenticated, IsCartUser)
     queryset = Items.objects.all()

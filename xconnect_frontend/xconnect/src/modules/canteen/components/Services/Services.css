@@ -1,0 +1,28 @@
+#services{
+    background-color: #ffff;
+    background-image: url('../../Ascets/Vector.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 90vh;
+    height: auto;   
+}
+
+#services .p-4{
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+#services .p-4 h5{
+    color: #5E2BD7;
+    font-weight: 650;
+}
+
+ /* was trying to change the color but cant make it happpen */
+ #services .section-title.ff-secondary.text-center.text-primary.fw-normal h5{
+    color: red;
+}
+
+#services .mb-5{
+    color: aliceblue;
+    font-size: 3vw;
+}

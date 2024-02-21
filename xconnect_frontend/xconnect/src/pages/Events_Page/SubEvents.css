@@ -1,0 +1,84 @@
+.container-1 {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 5px;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+}
+
+.event-font {
+  font-family: "Audiowide", sans-serif;
+}
+
+.description-font {
+  font-family: "Oxanium", sans-serif;
+}
+
+/* Common styles for the button */
+/* Common styles for the button */
+.Btn {
+  transform: translateY(-50%);
+  margin-right: 10px;
+  width: 200px;
+  height: 50px;
+  border: none;
+  color: white;
+  font-size: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  background: linear-gradient(-45deg, #6bf8c2, #597fe6, #597fe6, #6bf8c2);
+  animation: gradient 5s ease infinite;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.247);
+  transition-duration: 0.1s;
+  font-family: "Audiowide", sans-serif;
+}
+.Btn a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+/* Button's gradient animation */
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+/* Effect on click */
+.Btn:hover {
+  background: linear-gradient(-45deg, #43ffb7, #2d62f2, #275ae7, #43fdb6);
+  transition-duration: 1s;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+    margin: 0 0 20px;
+  }
+
+  .container-1 {
+    justify-content: center;
+  }
+}
+
+.subevent-img {
+  max-height: 240px;
+}
