@@ -3,11 +3,10 @@ import HeroSection from "./components/HeroSection";
 import Cards from "./components/Cards"
 
 export default function Home() {
-
   return (
     <>
-    <HeroSection></HeroSection>
-    <Cards></Cards>
+      <HeroSection></HeroSection>
+      <Cards></Cards>
     </>
   );
 }
