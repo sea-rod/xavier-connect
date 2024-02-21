@@ -1,11 +1,12 @@
 import React from 'react';
 import "./Cards.css";
+import { Link } from 'react-router-dom';
 
 export default function Cards({ event }) {
 
   const imageData = [
-    { id: 1, imagePath: 'images/canteen1.jpg', cardTitle: 'Canteen', cardDescription: 'With supporting text below as a natural lead-in to additional content.' },
-    { id: 2, imagePath: 'images/library1.png', cardTitle: 'Library', cardDescription: 'With supporting text below as a natural lead-in to additional content.' },
+    { id: 1, imagePath: 'images/canteen1.jpg', cardTitle: 'Canteen', cardDescription: 'With supporting text below as a natural lead-in to additional content.', pagePath: "/Canteen" },
+    { id: 2, imagePath: 'images/library1.png', cardTitle: 'Library', cardDescription: 'With supporting text below as a natural lead-in to additional content.', pagePath: "/Library" },
     { id: 3, imagePath: 'images/calendar3.jpg', cardTitle: 'Calendar', cardDescription: 'With supporting text below as a natural lead-in to additional content.' },
     { id: 4, imagePath: 'images/stuhelp1.jpg', cardTitle: 'Student Helpline', cardDescription: 'With supporting text below as a natural lead-in to additional content.' },
   ];
@@ -21,7 +22,7 @@ export default function Cards({ event }) {
               <div className="card-body">
                 <h2>{item.cardTitle}</h2>
                 <p>{item.cardDescription}</p>
-                <a href="/" className="btn btn-primary btnStyle">Enter</a>
+                <Link to={item.pagePath} className="btn btn-primary btnStyle">Enter</Link>
               </div>
             </div>
             </div>

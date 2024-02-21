@@ -7,7 +7,7 @@ export default function Footer() {
     const year = yearObj.getFullYear();
     return (
         <>
-            <div className="container" >
+            <div className="container">
                 <footer className="py-5 my-5 border-top">
                     <div className="row">
                         <div className="col-6 col-md-2 mb-3 text-white">
