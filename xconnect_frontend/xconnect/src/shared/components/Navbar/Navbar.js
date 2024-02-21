@@ -6,16 +6,18 @@ import "../../../modules/events/Events";
 
 export default function Navbar() {
   const [auth, setAuth] = useState(null);
+  function handleTokenUpdate() {
+    console.log("k");
+    setAuth(localStorage.getItem("access_token") ? true : false);
+  }
   useEffect(() => {
-    function handleTokenUpdate() {
-      setAuth(localStorage.getItem("access_token") ? true : false);
-    }
+    console.log(auth);
+    setAuth(localStorage.getItem("access_token") ? true : false);
     window.addEventListener("addedToken", handleTokenUpdate);
   }, []);
-  const logout = (h) => {
-    localStorage.removeItem("accessToken");
-    localStorage.removeItem("refreshToken");
-    setAuth(null);
+  const logout = () => {
+    localStorage.clear();
+    setAuth(false);
   };
   return (
     <nav className="navbar navbar-expand-lg" data-bs-theme="dark">

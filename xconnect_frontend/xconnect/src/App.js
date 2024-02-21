@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LoginForm from "./components/loginForm";
+import LoginForm from "./pages/Login/loginForm";
 import Navbar from "./shared/components/Navbar/Navbar";
 import Footer from "./shared/components/Footer/Footer";
 import Home from "./pages/Home/Home";
