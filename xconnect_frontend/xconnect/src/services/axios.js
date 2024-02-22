@@ -3,15 +3,15 @@ import axios from "axios";
 const baseURL = "http://127.0.0.1:8000/api/";
 
 const axiosInstance = axios.create({
-    baseURL:baseURL,
-    timeout:5000,
-    headers:{
-        Authorization:localStorage.getItem("access_token")
-        ? localStorage.getItem("access_token")
-        : null,
-        'Content-Type':'application/json',
-        Accept:'application/json',
-    }
+	baseURL: baseURL,
+	timeout: 5000,
+	headers: {
+		Authorization: localStorage.getItem("access_token")
+			? localStorage.getItem("access_token")
+			: null,
+		'Content-Type': 'application/json',
+		Accept: 'application/json',
+	}
 })
 export default axiosInstance;
 
@@ -25,8 +25,8 @@ axiosInstance.interceptors.response.use(
 		if (typeof error.response === 'undefined') {
 			alert(
 				'A server/network error occurred. ' +
-					'Looks like CORS might be the problem. ' +
-					'Sorry about this - we will get it fixed shortly.'
+				'Looks like CORS might be the problem. ' +
+				'Sorry about this - we will get it fixed shortly.'
 			);
 			return Promise.reject(error);
 		}
