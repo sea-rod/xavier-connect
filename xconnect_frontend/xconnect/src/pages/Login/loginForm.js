@@ -17,7 +17,7 @@ export default function LoginForm() {
       [e.target.name]: e.target.value.trim(),
     });
   };
-
+  const [error, seterror] = useState(null);
   const handleSubmit = () => {
     console.log("submit btn clicked", formData);
     axiosInstance
@@ -29,21 +29,31 @@ export default function LoginForm() {
         localStorage.setItem("access_token", res.data.access);
         localStorage.setItem("refresh_token", res.data.refresh);
         axiosInstance.defaults.headers["Authorization"] =
-          localStorage.getItem("access_token");
+          "Bearer " + localStorage.getItem("access_token");
         navigate("/");
         let event = new Event("addedToken");
         window.dispatchEvent(event);
+      })
+      .catch((error) => {
+        seterror(error.response.data.detail);
       });
   };
 
   return (
-    <div className="container pt-5 mt-5" style={{ height: '95vh' }}>
+    <div className="container pt-5 mt-5" style={{ height: "95vh" }}>
       <div className="custom-container mb-1 mt-5">
         <div className="heading text-center">Login</div>
 
         <form className="form form-floating ">
+          {error ? (
+            <div className="alert alert-danger">
+              <strong>{error}</strong>
+            </div>
+          ) : null}
+
           <div className="form-floating mb-3">
             <input
+              autoComplete="username"
               onChange={handleChange}
               value={formData.username}
               type="text"
@@ -58,6 +68,7 @@ export default function LoginForm() {
           </div>
           <div className="form-floating">
             <input
+              autoComplete="current-password"
               onChange={handleChange}
               type="password"
               name="password"

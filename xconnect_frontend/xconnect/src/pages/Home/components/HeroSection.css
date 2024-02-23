@@ -3,6 +3,6 @@
     background-position: center;
     color: #ececec;
     padding: 100px 20px;
-    backdrop-filter: blur(40px);
+    backdrop-filter: blur(20px);
     font-weight: 600;
 }
