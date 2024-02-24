@@ -5,7 +5,6 @@ from .models import Items,Cart,Menu
 
 @receiver(post_save,sender=Items)
 def update_cart_total(sender,instance,**kwargs):
-    print("yo")
     cart = Cart.objects.get(pk=instance.cart_id.pk)
     sum_total = Sum("price",filter=Q(cart_id=instance.cart_id.pk))
     total = Items.objects.aggregate(sum_total=sum_total)

@@ -1,21 +1,53 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Item.css";
 import axiosInstance from "../../../../services/axios";
-import { useState } from "react";
 
 const Item = (props) => {
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState("Add");
+
+  useEffect(() => {
+    setQuantity(props.quantity);
+  }, [props.quantity]);
+
+  useEffect(() => {
+    console.log("Quantity changed:", quantity);
+    // Call addToCart only when quantity changes
+    if (quantity !== "Add") {
+      const timerId = setTimeout(addToCart, 1000);
+      return () => clearTimeout(timerId); // Cleanup
+    }
+  }, [quantity, props.quantity]);
+
   const incItem = () => {
-    setQuantity(quantity + 1);
+    if (quantity === "Add") {
+      setQuantity(1);
+    } else {
+      setQuantity((prevQuantity) => prevQuantity + 1); // Functional update
+    }
   };
+
   const descItem = () => {
-    setQuantity(quantity - 1);
+    if (quantity !== "Add") {
+      setQuantity((prevQuantity) => prevQuantity - 1); // Functional update
+    }
+    if (quantity - 1 <= 0) {
+      setQuantity("Add");
+      deleteItem();
+    }
   };
-  const addToCart = (i) => {
+
+  const deleteItem = () => {
+    axiosInstance.delete("canteen/" + props.id + "/item/").then((res) => {
+      console.log(res);
+    });
+  };
+
+  const addToCart = () => {
+    console.log("Adding to cart:", quantity);
     axiosInstance
       .post("canteen/item/", {
-        menu_id: i,
-        quantity: "1",
+        menu_id: props.id,
+        quantity: quantity,
       })
       .then((res) => {
         console.log(res);
@@ -24,30 +56,38 @@ const Item = (props) => {
 
   return (
     <div className="item" id="canteen-item">
-      <div class="card">
-        <div class="card-img">
+      <div className="card">
+        <div className="card-img">
           <img src={props.image} alt="" />
         </div>
-        <div class="card-info">
-          <p class="text-title">{props.name} </p>
-          <p class="text-body">Product description and details</p>
+        <div className="card-info">
+          <p className="text-title">{props.name} </p>
+          <p className="text-body">Product description and details</p>
         </div>
-        <div class="card-footer">
-          <span className="text-title">₹{props.new_price}</span>
-          {/* <div className="d-fle justify-content-between"> */}
-          <div className="card-button text-black" onClick={descItem}>
-            <i className="fa fa-minus"></i>
+        {props.status ? (
+          <div className="card-footer">
+            <span className="text-title">₹{props.new_price}</span>
+            <div className="card-button text-black" onClick={descItem}>
+              <i className="fa fa-minus"></i>
+            </div>
+            <div className="d-flex">
+              <p className="my-auto" style={{ fontSize: "18px" }}>
+                {quantity}
+              </p>
+            </div>
+            <div className="card-button text-black" onClick={incItem}>
+              <i className="fa fa-plus"></i>
+            </div>
           </div>
-          <div className="d-flex">
-            <p className="my-auto" style={{ fontSize: "18px" }}>
-              {quantity}
-            </p>
+        ) : (
+          <div className="card-footer">
+            <div className="d-flex w-100">
+              <p className="m-auto align-center" style={{ fontSize: "18px" }}>
+                Out of Stock
+              </p>
+            </div>
           </div>
-          <div className="card-button text-black" onClick={incItem}>
-            <i className="fa fa-plus"></i>
-          </div>
-          {/* </div> */}
-        </div>
+        )}
       </div>
     </div>
   );
