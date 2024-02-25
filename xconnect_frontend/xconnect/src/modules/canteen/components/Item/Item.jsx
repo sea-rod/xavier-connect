@@ -4,9 +4,11 @@ import axiosInstance from "../../../../services/axios";
 
 const Item = (props) => {
   const [quantity, setQuantity] = useState("Add");
+  const [itemId, setItemId] = useState(null);
 
   useEffect(() => {
     setQuantity(props.quantity);
+    setItemId(props.item_id);
   }, [props.quantity]);
 
   useEffect(() => {
@@ -14,10 +16,11 @@ const Item = (props) => {
     // Call addToCart only when quantity changes
     if (quantity !== "Add") {
       const timerId = setTimeout(addToCart, 1000);
-      return () => clearTimeout(timerId); // Cleanup
+      return () => clearTimeout(timerId);
     }
   }, [quantity, props.quantity]);
 
+  // increase item quantity
   const incItem = () => {
     if (quantity === "Add") {
       setQuantity(1);
@@ -26,6 +29,7 @@ const Item = (props) => {
     }
   };
 
+  // decrease item quantity
   const descItem = () => {
     if (quantity !== "Add") {
       setQuantity((prevQuantity) => prevQuantity - 1); // Functional update
@@ -36,12 +40,19 @@ const Item = (props) => {
     }
   };
 
+  // makes api call to delete item from cart
   const deleteItem = () => {
-    axiosInstance.delete("canteen/" + props.id + "/item/").then((res) => {
-      console.log(res);
-    });
+    axiosInstance
+      .delete("canteen/" + itemId + "/item/")
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
+  // makes api call to add item to cart
   const addToCart = () => {
     console.log("Adding to cart:", quantity);
     axiosInstance
@@ -51,7 +62,11 @@ const Item = (props) => {
       })
       .then((res) => {
         console.log(res);
-      });
+        setItemId(res.data.id);
+      })
+      .catch((err) => {
+        console.log(err);
+      });;
   };
 
   return (

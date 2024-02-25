@@ -1,8 +1,13 @@
 import React from "react";
 import "./Cartitem.css";
 import trashbin from "../../Ascets/trash-bin.png";
+import { useEffect } from "react";
 
 function Cartitem(props) {
+  useEffect(() => {
+    console.log(props.item_id);
+  }, []);
+  
   return (
     <>
       <div className="orderitem">
@@ -15,7 +20,7 @@ function Cartitem(props) {
           <div className="price">Rs {props.price}</div>
           <hr />
         </div>
-        <div className="trashbin">
+        <div className="trashbin" onClick={()=>props.delete_item(props.item_id)}>
           <img src={trashbin} alt="trashbin" />
         </div>
       </div>

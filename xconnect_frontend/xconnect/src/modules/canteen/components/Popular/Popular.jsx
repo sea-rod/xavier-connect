@@ -5,8 +5,16 @@ import axiosInstance from "../../../../services/axios";
 
 const Popular = () => {
   const [data, setData] = useState([]);
-  const [cartData, setCartData] = useState({});
+  const [cartData, setCartData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    console.log(cartData, "ll");
+    if (cartData) {
+      console.log("inside", cartData);
+      setIsLoading(false);
+    }
+  }, [cartData]);
 
   useEffect(() => {
     // Function to fetch menu data
@@ -25,14 +33,14 @@ const Popular = () => {
         const response = await axiosInstance.get("canteen/cart/");
         const d = {};
         response.data.menu_items.forEach((item) => {
-          d[item.menu.id] = item.quantity;
+          d[item.menu.id] = { quantity: item.quantity, item_id: item.id };
         });
         setCartData(d);
       } catch (error) {
         console.error("Error fetching cart data:", error);
-      } finally {
-        setIsLoading(false); // Set isLoading to false after cartData is fetched
-      }
+      } //finally {
+      //   setIsLoading(false); // Set isLoading to false after cartData is fetched
+      // }
     };
 
     // Call both functions to fetch data
@@ -55,8 +63,9 @@ const Popular = () => {
               name={item.item_name}
               image={item.image}
               new_price={item.price}
-              quantity={cartData[item.id] || "Add"}
-              status = {item.status}
+              quantity={cartData[item.id]?.quantity || "Add"}
+              item_id = {cartData[item.id]?.item_id}
+              status={item.status}
             />
           ))
         )}

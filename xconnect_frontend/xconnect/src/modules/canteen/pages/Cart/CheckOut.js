@@ -9,11 +9,12 @@ export default function CheckOut() {
   const [cartData, setCartData] = useState({});
   const [totalItems, setTotalItems] = useState(0);
 
-  useEffect(() => {
+  const fetchData = () => {
     axiosInstance.get("canteen/cart/").then((res) => {
       console.log(res.data);
       setCartData(res.data);
       setItemData(res.data.menu_items);
+      // console.log(itemData[0].id);
       let sum = 0;
       res.data.menu_items.forEach((item) => {
         sum += item.quantity;
@@ -21,7 +22,24 @@ export default function CheckOut() {
       setTotalItems(sum);
       console.log("res:", sum);
     });
+  };
+
+  useEffect(() => {
+    fetchData();
   }, []);
+
+  const deleteItem = (itemId) => {
+    axiosInstance
+      .delete(`canteen/${itemId}/item/`)
+      .then((res) => {
+        console.log(res);
+        fetchData();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div>
       <div className="cartpage">
@@ -30,12 +48,14 @@ export default function CheckOut() {
         </h2>
         {itemData.map((item) => (
           <Cartitem
-            key={item.id}
+            key={item?.id}
+            item_id={item?.id}
             id={item.menu.id}
             name={item.menu.item_name}
             image={item.menu.image}
             price={item.menu.price}
             quantity={item.quantity}
+            delete_item={deleteItem}
           />
         ))}
       </div>
