@@ -58,11 +58,9 @@ axiosInstance.interceptors.response.use(
           return axiosInstance
             .post("/token/refresh/", { refresh: refreshToken })
             .then((response) => {
-              if ((response.data.refresh = "undefined")) {
-                console.log("hello");
-              }
+              localStorage.setItem("refresh_token",response.data.refresh)
               localStorage.setItem("access_token", response.data.access);
-              console.log(response.data);
+              console.log("axios:",response.data);
               axiosInstance.defaults.headers["Authorization"] =
                 "Bearer " + response.data.access;
               originalRequest.headers["Authorization"] =
