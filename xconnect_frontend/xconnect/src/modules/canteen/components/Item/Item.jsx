@@ -8,6 +8,7 @@ const Item = (props) => {
 
   useEffect(() => {
     setQuantity(props.quantity);
+    console.log(props.status);
     setItemId(props.item_id);
   }, [props.quantity]);
 
@@ -66,46 +67,34 @@ const Item = (props) => {
       })
       .catch((err) => {
         console.log(err);
-      });;
+      });
   };
 
   return (
-    <div className="item" id="canteen-item">
-      <div className="card">
-        <div className="card-img">
-          <img src={props.image} alt="" />
-        </div>
-        <div className="card-info">
-          <p className="text-title">{props.name} </p>
-          <p className="text-body">Product description and details</p>
-        </div>
-        {props.status ? (
-          <div className="card-footer">
-            <span className="text-title">₹{props.new_price}</span>
-            <div className="card-button text-black" onClick={descItem}>
-              <i className="fa fa-minus"></i>
-            </div>
-            <div className="d-flex">
-              <p className="my-auto" style={{ fontSize: "18px" }}>
-                {quantity}
-              </p>
-            </div>
-            <div className="card-button text-black" onClick={incItem}>
-              <i className="fa fa-plus"></i>
-            </div>
-          </div>
+    <div className="d-flex flex-column bg-dark col-5 col-md-2 py-2 px-0 justify-content-be mx-1">
+      <div className="m-0 p-0">
+        <img src={props.image} alt="" className="col-12 m-0" />
+      </div>
+      <div className="bg-dark text-white  mt-2 d-flex flex-column justify-content-start">
+        <p className="m-0 item">{props.name}</p>
+        <p className="m-0 price">Rs {props.price}/-</p>
+        {quantity === "Add" ? (
+          <button
+            className=" col-7 mt-1"
+            onClick={incItem}
+            disabled={!props.status}
+          >
+            {quantity}
+          </button>
         ) : (
-          <div className="card-footer">
-            <div className="d-flex w-100">
-              <p className="m-auto align-center" style={{ fontSize: "18px" }}>
-                Out of Stock
-              </p>
-            </div>
-          </div>
+          <button className="d-flex justify-content-between mt-1">
+            <i className="fa fa-minus my-auto" onClick={descItem}></i>
+            <p>{quantity}</p>
+            <i className="fa fa-plus my-auto" onClick={incItem}></i>
+          </button>
         )}
       </div>
     </div>
   );
 };
-
 export default Item;

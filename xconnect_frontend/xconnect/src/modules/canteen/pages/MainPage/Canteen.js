@@ -1,22 +1,17 @@
 import React from "react";
-import Hero from "../../components/Hero/Hero";
 import Popular from "../../components/Popular/Popular";
 import "./Canteen.css";
-import Services from "../../components/Services/Services";
-import fpack from "../../Ascets/fpack.png";
-import { Link } from "react-router-dom";
 
 export default function Canteen() {
   return (
     <div id="canteen">
-      <Link to="/Cart">
-        <div className="cart">
-          <img src={fpack} alt="food pack icon" />
-        </div>
-      </Link>
-      <Hero />
+      <div className="d-flex mx-5 mt-4">
+        <input type="search" placeholder="Search" className="mx-auto col-12" />
+        <button>
+          <i className="fa fa-search"></i>
+        </button>
+      </div>
       <Popular />
-      <Services />
     </div>
   );
 }

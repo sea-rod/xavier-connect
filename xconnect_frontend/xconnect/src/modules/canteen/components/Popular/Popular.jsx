@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./Popular.css";
 import Item from "../Item/Item";
 import axiosInstance from "../../../../services/axios";
 
@@ -49,27 +48,25 @@ const Popular = () => {
   }, []);
 
   return (
-    <div className="popular" id="canteen">
-      <h1>SUPER DELICIOUS DEALS</h1>
+    <div class="row mt-2 mx-5 d-flex justify-content-between">
+      <h1>Trending orders</h1>
       <hr />
-      <div className="popular-item">
-        {isLoading ? (
-          <p>Loading...</p>
-        ) : (
-          data.map((item) => (
-            <Item
-              key={item.id}
-              id={item.id}
-              name={item.item_name}
-              image={item.image}
-              new_price={item.price}
-              quantity={cartData[item.id]?.quantity || "Add"}
-              item_id = {cartData[item.id]?.item_id}
-              status={item.status}
-            />
-          ))
-        )}
-      </div>
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        data.map((item) => (
+          <Item
+            key={item.id}
+            id={item.id}
+            name={item.item_name}
+            image={item.image}
+            price={item.price}
+            quantity={cartData[item.id]?.quantity || "Add"}
+            item_id={cartData[item.id]?.item_id}
+            status={item.status}
+          />
+        ))
+      )}
     </div>
   );
 };
