@@ -33,7 +33,7 @@ export default function SubEvents() {
             <div class="container pb-5">
                 <div class="row">
                     <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
-                        <img src="Reel.png" class="card-img-top" alt="reel.img" />
+                    <img src={process.env.PUBLIC_URL + '/images/Events/Reel.jpg'} class="card-img-top" alt="Reel" />
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">Reel</h5>
@@ -54,7 +54,7 @@ export default function SubEvents() {
                                 <p class="description-font"><strong>OMKAR</strong><span class="text-primary"
                                     style={{ textDecoration: "underline", marginLeft: "20px" }}>9607245631</span>
                                 </p>
-                                <details id="details1">
+                                <details className="description-font" id="details1">
                                     <summary>Read More</summary>
                                     <h6>Rules</h6>
                                     <ol>
@@ -91,9 +91,10 @@ export default function SubEvents() {
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
-                        <img src="Meme.jpg" class="card-img-top" alt="Meme.img" />
+                    <img src={process.env.PUBLIC_URL + '/images/Events/Meme.jpg'} class="card-img-top" alt="Meme" />
+                        
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">Meme</h5>
@@ -117,7 +118,7 @@ export default function SubEvents() {
                                 <p class="description-font"><strong>LAXMAN</strong><span class="text-primary"
                                     style={{ textDecoration: "underline", marginLeft: "20px" }}>9764858445</span>
                                 </p>
-                                <details id="details2">
+                                <details className="description-font" id="details2">
                                     <summary>Read More</summary>
                                     <h6>Rules</h6>
                                     <ol>
@@ -153,7 +154,7 @@ export default function SubEvents() {
                         </div>
                     </div>
                     <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
-                        <img src="TechRunway.png" class="card-img-top" alt="Tech Runway.img" />
+                        <img src={process.env.PUBLIC_URL + '/images/Events/Runway.png'} class="card-img-top" alt="Tech Runway.img" />
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">TECH RUNWAY</h5>
@@ -175,7 +176,7 @@ export default function SubEvents() {
                                 <p class="description-font"><strong>WHITNEY</strong><span class="text-primary"
                                     style={{ textDecoration: "underline", marginLeft: "20px" }}>7620483329</span>
                                 </p>
-                                <details id="details3">
+                                <details className="description-font" id="details3">
                                     <summary>Read More</summary>
                                     <h6>RULES:</h6>
                                     <ol>
@@ -202,7 +203,7 @@ export default function SubEvents() {
                     </div>
 
                     <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
-                        <img src="TechFusionGroove.jpg" class="card-img-top" alt="..." />
+                        <img src={process.env.PUBLIC_URL + '/images/Events/Fusion.jpg'} class="card-img-top" alt="Techfusion Groove" />
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">TECHFUSION GROOVE</h5>
@@ -221,7 +222,7 @@ export default function SubEvents() {
                                 <p class="description-font"><strong>ZAINAB</strong><span class="text-primary"
                                     style={{ textDecoration: "underline", marginLeft: "20px" }}>9049945441</span>
                                 </p>
-                                <details id="details4">
+                                <details className="description-font" id="details4">
                                     <summary>Read More</summary>
                                     <h6>RULES:</h6>
                                     <ol>
@@ -246,7 +247,7 @@ export default function SubEvents() {
                     </div>
 
                     <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
-                        <img src="MixBeats.jpg" class="card-img-top" alt="..." />
+                        <img src={process.env.PUBLIC_URL + '/images/Events/Beats.jpg'} class="card-img-top" alt="Mix Beats" />
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">MIX BEATS</h5>
@@ -264,7 +265,7 @@ export default function SubEvents() {
                                 <p class="description-font"><strong>JONATHAN</strong><span class="text-primary"
                                     style={{ textDecoration: "underline", marginLeft: "20px" }}>9307552946</span>
                                 </p>
-                                <details id="details5">
+                                <details className="description-font" id="details5">
                                     <summary>Read More</summary>
                                     <h6>RULES:</h6>
                                     <ol>
@@ -283,7 +284,7 @@ export default function SubEvents() {
                     </div>
 
                     <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
-                        <img src="CDPainting.png" class="card-img-top" alt="..." />
+                        <img src={process.env.PUBLIC_URL + '/images/Events/CD paint.jpg'} class="card-img-top" alt="CD Painting" />
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">CD PAINTING</h5>
@@ -301,7 +302,7 @@ export default function SubEvents() {
                                 <p class="description-font"><strong>SUSANNA</strong><span class="text-primary"
                                     style={{ textDecoration: "underline", marginLeft: "20px" }}>7972408450</span>
                                 </p>
-                                <details id="details6">
+                                <details className="description-font" id="details6">
                                     <summary>Read More</summary>
                                     <h6>RULES:</h6>
                                     <ol>
@@ -321,7 +322,7 @@ export default function SubEvents() {
                     </div>
 
                     <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
-                        <img src="TechTreasure.png" class="card-img-top" alt="..." />
+                        <img src={process.env.PUBLIC_URL + '/images/Events/Treasure.jpg'} class="card-img-top" alt="Tech Treasure Trail" />
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">TECH TREASURE TRAIL</h5>
@@ -340,7 +341,7 @@ export default function SubEvents() {
                                 <p class="description-font"><strong>MANOJ</strong><span class="text-primary"
                                     style={{ textDecoration: "underline", marginLeft: "20px" }}>9021543870</span>
                                 </p>
-                                <details id="details7">
+                                <details className="description-font" id="details7">
                                     <summary>Read More</summary>
                                     <h6>RULES:</h6>
                                     <ol>
@@ -358,7 +359,7 @@ export default function SubEvents() {
                         </div>
                     </div>
                     <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
-                        <img src="MobilePhotography.jpg" class="card-img-top" alt="..." />
+                        <img src={process.env.PUBLIC_URL + '/images/Events/Photography.jpg'} class="card-img-top" alt="Mobile Photography" />
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">MOBILE PHOTOGRAPHY</h5>
@@ -377,7 +378,7 @@ export default function SubEvents() {
                                 <p class="description-font"><strong>AVINASH</strong><span class="text-primary"
                                     style={{ textDecoration: "underline", marginLeft: "20px" }}>8208184068</span>
                                 </p>
-                                <details id="details8">
+                                <details className="description-font" id="details8">
                                     <summary>Read More</summary>
                                     <h6>RULES:</h6>
                                     <ol>
@@ -400,7 +401,7 @@ export default function SubEvents() {
                     </div>
 
                     <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
-                        <img src="TechTrivia.png" class="card-img-top" alt="..." />
+                        <img src={process.env.PUBLIC_URL + '/images/Events/Trivia.jpg'} class="card-img-top" alt="Tech Trivia Showdown" />
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">TECH TRIVIA SHOWDOWN</h5>
@@ -423,7 +424,7 @@ export default function SubEvents() {
                                 <p class="description-font"><strong>DANIELA</strong><span class="text-primary"
                                     style={{ textDecoration: "underline", marginLeft: "20px" }}>8767545825</span>
                                 </p>
-                                <details id="details9">
+                                <details className="description-font" id="details9">
                                     <summary>Read More</summary>
                                     <h6>RULES:</h6>
                                     <ol>
@@ -448,7 +449,7 @@ export default function SubEvents() {
                     </div>
 
                     <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
-                        <img src="JigSaw.jpg" class="card-img-top" alt="..." />
+                        <img src={process.env.PUBLIC_URL + '/images/Events/Jigsaw.jpg'} class="card-img-top" alt="JigSaw" />
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">JIGSAW - USING HTML/CSS</h5>
@@ -464,7 +465,7 @@ export default function SubEvents() {
                                 <p class="description-font"><strong>SEAMUS</strong><span class="text-primary"
                                     style={{ textDecoration: "underline", marginLeft: "20px" }}>7517710481</span>
                                 </p>
-                                <details id="details10">
+                                <details className="description-font" id="details10">
                                     <summary>Read More</summary>
                                     <h6>RULES:</h6>
                                     <ol>
@@ -496,7 +497,7 @@ export default function SubEvents() {
                     </div>
 
                     <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
-                        <img src="CodingSeries.png" class="card-img-top" alt="..." />
+                        <img src={process.env.PUBLIC_URL + '/images/Events/Coding.jpg'} class="card-img-top" alt="Coding" />
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">CODING SERIES</h5>
@@ -512,7 +513,7 @@ export default function SubEvents() {
                                 <p class="description-font"><strong>DANIEL</strong><span class="text-primary"
                                     style={{ textDecoration: "underline", marginLeft: "20px" }}>76663 11560</span>
                                 </p>
-                                <details id="details11">
+                                <details className="description-font" id="details11">
                                     <summary>Read More</summary>
                                     <h6>TASKS:</h6>
                                     <ul>
@@ -561,7 +562,7 @@ export default function SubEvents() {
                         </div>
                     </div>
                     <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
-                        <img src="Gaming.png" class="card-img-top" alt="..." />
+                        <img src={process.env.PUBLIC_URL + '/images/Events/gaming.jpg'} class="card-img-top" alt="Gaming" />
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">GAMING</h5>
@@ -574,7 +575,7 @@ export default function SubEvents() {
                                 </p>
                             </div>
                             <div>
-                                <details id="details12">
+                                <details className="description-font" id="details12">
                                     <summary>Read More</summary>
                                     <h6>RULES:</h6>
                                     <ol>
@@ -602,7 +603,7 @@ export default function SubEvents() {
                     </div>
 
                     <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
-                        <img src="BlockNTackle.png" class="card-img-top" alt="..." />
+                        <img src={process.env.PUBLIC_URL + '/images/Events/debate.jpg'} class="card-img-top" alt="Block n Tackle" />
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">BLOCK N TACKLE</h5>
@@ -620,7 +621,7 @@ export default function SubEvents() {
                                 <p class="description-font"><strong>OLENCIA</strong><span class="text-primary"
                                     style={{ textDecoration: "underline", marginLeft: "20px" }}>9545371426</span>
                                 </p>
-                                <details id="details13">
+                                <details className="description-font" id="details13">
                                     <summary>Read More</summary>
                                     <h6>RULES:</h6>
                                     <ol>
@@ -638,7 +639,7 @@ export default function SubEvents() {
                     </div>
 
                     <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
-                        <img src="PenaltyShootout.jpg" class="card-img-top" alt="..." />
+                        <img src={process.env.PUBLIC_URL + '/images/Events/penalty.jpg'} class="card-img-top" alt="Penalty Shootout" />
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">PENALTY SHOOT OUT</h5>
@@ -651,7 +652,7 @@ export default function SubEvents() {
                                 </p>
                             </div>
                             <div>
-                                <details id="details14">
+                                <details className="description-font" id="details14">
                                     <summary>Read More</summary>
                                     <h6>RULES:</h6>
                                     <ol>
@@ -665,7 +666,7 @@ export default function SubEvents() {
                         </div>
                     </div>
                     <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
-                        <img src="SharkTank.jpeg" class="card-img-top" alt="..." />
+                        <img src={process.env.PUBLIC_URL + '/images/Events/Shark Tank.jpg'} class="card-img-top" alt="Shark Tank" />
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">SHARK TANK</h5>
@@ -680,7 +681,7 @@ export default function SubEvents() {
                                 <p class="description-font"><strong>SUJEET</strong><span class="text-primary"
                                     style={{ textDecoration: "underline", marginLeft: "20px" }}>70576 66514</span>
                                 </p>
-                                <details id="details15">
+                                <details className="description-font" id="details15">
                                     <summary>Read More</summary>
                                     <h6>RULES:</h6>
                                     <ol>
@@ -701,7 +702,7 @@ export default function SubEvents() {
                     </div>
 
                     <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
-                        <img src="SurpriseEvent.jpg" class="card-img-top" alt="..." />
+                        <img src={process.env.PUBLIC_URL + '/images/Events/Surprise.jpg'} class="card-img-top" alt="Surprise Event" />
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">SURPRISE EVENT</h5>
