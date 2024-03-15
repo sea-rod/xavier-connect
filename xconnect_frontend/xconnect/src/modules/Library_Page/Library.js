@@ -6,12 +6,13 @@ export default function Library() {
     <div id="libary">
       <header>
         <div className="header">
-          <h1>Welcome to Xavier's Library</h1>
+          <h1>XConnect Library</h1>
         </div>
-        <div class="input-group">
-          <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-          <button type="button" class="btn rounded" data-mdb-ripple-init>search</button>
+        <div className="input-group">
+          <input type="search" className="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+          <button type="button" className="btn rounded" data-mdb-ripple-init>search</button>
         </div>
+
       </header>
       <div className="bgimg">
         <img src={process.env.PUBLIC_URL + '/images/Library/library.jpg'} alt="Library" />

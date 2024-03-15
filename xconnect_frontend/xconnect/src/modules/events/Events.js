@@ -22,7 +22,7 @@ export default function Events() {
                                 <div class="mb-1 text-body-secondary">Feb 3</div>
                                 <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
                                 <a href="/" class="icon-link gap-1 icon-link-hover stretched-link mt-2">
-                                Events List
+                                    Events List
                                 </a>
                             </div>
                             <div class="col-auto d-none d-lg-block">
