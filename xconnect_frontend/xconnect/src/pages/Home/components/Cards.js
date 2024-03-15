@@ -2,7 +2,7 @@ import React from 'react';
 import "./Cards.css";
 import { Link } from 'react-router-dom';
 
-export default function Cards({ event }) {
+export default function Cards() {
 
   const imageData = [
     { id: 1, imagePath: 'images/canteen1.jpg', cardTitle: 'Canteen', cardDescription: 'With supporting text below as a natural lead-in to additional content.', pagePath: "/Canteen" },
