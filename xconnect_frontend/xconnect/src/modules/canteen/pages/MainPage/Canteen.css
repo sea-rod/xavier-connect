@@ -2,7 +2,14 @@ body {
     margin: 0;
     padding: 0;
   }
- 
+
+#canteen input[type="search"]{
+  border-radius: 20px;
+  border: none;
+  padding-left: 10px;
+}
+
+
 #canteen .cart {
     position: fixed;
     z-index: 2;

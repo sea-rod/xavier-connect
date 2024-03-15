@@ -1,48 +1,30 @@
-import React from 'react';
-import './Cartitem.css';
-import burger from '../../Ascets/food/Frame 17.png'
-import trashbin from '../../Ascets/trash-bin.png'
-import { Link } from 'react-router-dom';
+import React from "react";
+import "./Cartitem.css";
+import trashbin from "../../Ascets/trash-bin.png";
+import { useEffect } from "react";
 
-function 	Cartitem() {
+function Cartitem(props) {
+  useEffect(() => {
+    console.log(props.item_id);
+  }, []);
+  
   return (
-	<>
-    <div className="cartpage">
-		<h2>Shopping Cart <span>(1 item in your cart)</span></h2>
-		<div className="orderitem">
-			<div className="image"><img src={burger} alt="text"/></div>
-			<div className="details">
-				<div className="name">Burger</div>
-				<div className="quantity">2</div>
-				<div className="price">Rs 299.00</div>
-				<hr />
-			</div>
-			<div className="trashbin">
-				<img src={trashbin} alt='trashbin'/>
-			</div>
-		</div>
-		<div className="orderitem">
-			<div className="image"><img src={burger} alt="text"/></div>
-			<div className="details">
-				<div className="name">Burger</div>
-				<div className="quantity">2</div>
-				<div className="price">Rs 299.00</div>
-				<hr />
-			</div>
-			<div className="trashbin">
-				<img src={trashbin} alt='trashbin'/>
-			</div>
-		</div>
-		</div>
-		<div className="cartpage" id="cartpage-sub">
-		<div className="total">
-			<div className="label">Order total:</div>
-			<div className="value">Rs 598</div>
-		</div>
-		<Link to="/Canteen"><button className="backtocanteen">Continue shopping</button></Link>
-		<button className="reserve">Reserve</button>
-		</div>
-	</>
+    <>
+      <div className="orderitem">
+        <div className="image">
+          <img src={props.image} alt="text" />
+        </div>
+        <div className="details">
+          <div className="name">{props.name}</div>
+          <div className="quantity">quantity:{props.quantity}</div>
+          <div className="price">Rs {props.price}</div>
+          <hr />
+        </div>
+        <div className="trashbin" onClick={()=>props.delete_item(props.item_id)}>
+          <img src={trashbin} alt="trashbin" />
+        </div>
+      </div>
+    </>
   );
 }
 

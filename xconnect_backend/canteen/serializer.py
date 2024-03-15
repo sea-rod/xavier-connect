@@ -1,5 +1,4 @@
 from rest_framework import serializers
-from rest_framework.exceptions import ValidationError
 from .models import Menu, Items, Cart
 
 
@@ -19,17 +18,18 @@ class ItemSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         menu = Menu.objects.get(id=validated_data.get("menu_id").id)
-        if menu.avail_quantity < validated_data["quantity"]:
-            raise ValidationError({"Quantity": "This Item is over"})
         validated_data["price"] = menu.price * validated_data["quantity"]
-        menu.avail_quantity -= validated_data["quantity"]
-        menu.save()
-        print("hehe2")
-        items = Items.objects.create(**validated_data)
+        cart_id = validated_data["cart_id"]
+        try:
+            items = Items.objects.get(cart_id=cart_id, menu_id=menu.pk)
+            items.price = validated_data["price"]
+            items.quantity = validated_data["quantity"]
+            items.save()
+        except Items.DoesNotExist as error:
+            items = Items.objects.create(**validated_data)
         return items
 
     def save(self, **kwargs):
-        print("ll")
         return super().save(**kwargs)
 
 

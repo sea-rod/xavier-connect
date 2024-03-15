@@ -24,11 +24,6 @@ axiosInstance.interceptors.response.use(
     console.log(error);
 
     if (typeof error.response === "undefined") {
-      alert(
-        "A server/network error occurred. " +
-          "Looks like CORS might be the problem. " +
-          "Sorry about this - we will get it fixed shortly."
-      );
       return Promise.reject(error);
     }
 
@@ -58,9 +53,9 @@ axiosInstance.interceptors.response.use(
           return axiosInstance
             .post("/token/refresh/", { refresh: refreshToken })
             .then((response) => {
+              localStorage.setItem("refresh_token",response.data.refresh)
               localStorage.setItem("access_token", response.data.access);
-              localStorage.setItem("refresh_token", response.data.refresh);
-              console.log(response.data);
+              console.log("axios:",response.data);
               axiosInstance.defaults.headers["Authorization"] =
                 "Bearer " + response.data.access;
               originalRequest.headers["Authorization"] =
