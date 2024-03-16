@@ -25,3 +25,11 @@ class Items(models.Model):
     menu_id = models.ForeignKey(Menu, on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
     price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+
+class Order(models.Model):
+    ...
+
+class OrderItem(models.Model):
+    menu_id = models.ForeignKey(Menu, on_delete=models.CASCADE)
+    quantity = models.IntegerField(default=1)
+    price = models.DecimalField(max_digits=10, decimal_places=2, default=0)

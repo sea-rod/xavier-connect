@@ -14,6 +14,13 @@ class ListCreateMenu(generics.ListCreateAPIView):
     permission_classes = (IsCanteenStaff,)
     parser_classes = (MultiPartParser, FormParser)
 
+    def get_queryset(self):
+        search = self.request.GET.get("search", None)
+        print(search)
+        if search:
+            return Menu.objects.filter(item_name__contains=search)
+        return super().get_queryset()
+
 
 class RetrieveUpdateDestroyMenu(generics.RetrieveUpdateDestroyAPIView):
     queryset = Menu.objects.all()
