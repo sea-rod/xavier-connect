@@ -30,7 +30,7 @@ export default function Events() {
                     <div class="col-md-6">
                         <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative bg-body">
                             <div class="col p-4 d-flex flex-column position-static">
-                                <strong class="d-inline-block mb-2 text-success-emphasis">Dept of Mass Comm.</strong>
+                                <strong class="d-inline-block mb-2 text-primary-emphasis">Dept of Mass Comm.</strong>
                                 <h3 class="mb-0">MediaScope</h3>
                                 <div class="mb-1 text-body-secondary">Oct 15</div>
                                 <p class="mb-auto">Exciting Events</p>
