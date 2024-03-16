@@ -37,7 +37,7 @@ export default function SubEvents() {
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">Reel</h5>
-                                <p class="card-text description-font">
+                                <p class="card-text description-font mb-3">
                                     Step into the world of storytelling with our Reel Challenge.
                                     Unleash your creativity and showcase your filmmaking prowess
                                     in this exciting competition. Craft a reel that takes the audience
@@ -98,7 +98,7 @@ export default function SubEvents() {
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">Meme</h5>
-                                <p class="card-text description-font">
+                                <p class="card-text description-font mb-3">
                                     Prepare for a meme showdown like never before in the "AI vs
                                     The World Meme Battle." In this solo competition, participants
                                     are invited to unleash their creativity and wit to create healthy
@@ -158,7 +158,7 @@ export default function SubEvents() {
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">TECH RUNWAY</h5>
-                                <p class="card-text description-font">
+                                <p class="card-text description-font mb-3">
                                     Welcome to a captivating journey where style meets spectacle.
                                     Unveiling the latest trends, our runway will be adorned with
                                     cutting-edge designs and the epitome of fashion innovation.
@@ -207,7 +207,7 @@ export default function SubEvents() {
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">TECHFUSION GROOVE</h5>
-                                <p class="card-text description-font">
+                                <p class="card-text description-font mb-3">
                                     Embark on a captivating journey of rhythm and movement with our dance program. Immerse yourself in the
                                     artistry of dance as we celebrate diversity, creativity, and expression through a myriad of dance
                                     styles. Join us in creating unforgettable moments where passion meets the dance floor, and let the
@@ -251,7 +251,7 @@ export default function SubEvents() {
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">MIX BEATS</h5>
-                                <p class="card-text description-font">
+                                <p class="card-text description-font mb-3">
                                     Step into the electrifying realm of DJ Mixing with our cutting-edge program. Explore the art of
                                     seamlessly blending beats, creating a symphony of sound that transforms any event into an
                                     unforgettable experience. Join us and embark on a musical journey where each mix becomes a masterpiece.
@@ -288,7 +288,7 @@ export default function SubEvents() {
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">CD PAINTING</h5>
-                                <p class="card-text description-font">
+                                <p class="card-text description-font mb-3">
                                     Discover the artistry within each note with our CD Painting collection. Immerse yourself in a symphony
                                     of
                                     colors and creativity as we transform ordinary CDs into vibrant canvases. Each piece is a unique fusion
@@ -326,7 +326,7 @@ export default function SubEvents() {
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">TECH TREASURE TRAIL</h5>
-                                <p class="card-text description-font">
+                                <p class="card-text description-font mb-3">
                                     Join fellow enthusiasts in a Tech Treasure Trail that blends intellect, teamwork, and digital prowess.
                                     Navigate through the campus as you decipher cryptic clues, unraveling a tapestry of hidden knowledge.
                                     Engage in challenges that test your coding finesse and problem-solving skills, forging camaraderie and
@@ -363,7 +363,7 @@ export default function SubEvents() {
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">MOBILE PHOTOGRAPHY</h5>
-                                <p class="card-text description-font">
+                                <p class="card-text description-font mb-3">
                                     Trying to capture a moment or an emotion is a very good exercise for photographers to do all the time,
                                     and the best ones do it very well. This is a type of contest that can really show off a photographer's
                                     skill not just as a technician but as an artist. The task is to go capture a moment which best suits the
@@ -405,7 +405,7 @@ export default function SubEvents() {
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">TECH TRIVIA SHOWDOWN</h5>
-                                <p class="card-text description-font">
+                                <p class="card-text description-font mb-3">
                                     The Tech Trivia Showdown is a quiz competition designed to test participants' knowledge across various
                                     domains of technology. This fast-paced event aims to challenge, entertain, and celebrate tech
                                     enthusiasts'
@@ -453,7 +453,7 @@ export default function SubEvents() {
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">JIGSAW - USING HTML/CSS</h5>
-                                <p class="card-text description-font">
+                                <p class="card-text description-font mb-3">
                                     Get ready to embark on a creative journey as we present to you the Image Puzzle Challenge! In this
                                     exciting event, you will be given a set of separate image pieces, and your task is to skillfully arrange
                                     them to reconstruct the original image. This challenge not only tests your HTML and CSS skills but also
@@ -501,7 +501,7 @@ export default function SubEvents() {
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">CODING SERIES</h5>
-                                <p class="card-text description-font">
+                                <p class="card-text description-font mb-3">
                                     Welcome to the Coding Series - an exhilarating event designed to test your coding prowess and typing
                                     skills! In this unique competition, participants will form teams of two and navigate through two
                                     distinct
@@ -607,7 +607,7 @@ export default function SubEvents() {
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">BLOCK N TACKLE</h5>
-                                <p class="card-text description-font">
+                                <p class="card-text description-font mb-3">
                                     Rise to the Challenge: Block and Tackle Competition. Participants will engage in thought-provoking
                                     discussions, presenting and defending their viewpoints with clarity and rigor. Unleash your potential
                                     and be part of a competition that provides you an opportunity to showcase your diction.
@@ -670,7 +670,7 @@ export default function SubEvents() {
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">SHARK TANK</h5>
-                                <p class="card-text description-font">
+                                <p class="card-text description-font mb-3">
                                     Dive into the excitement of our college Shark Tank! Witness students pitch their creative ideas to a
                                     panel of judges, competing for a chance to turn their dreams into reality. Get ready for innovation,
                                     passion, and entrepreneurial spirit.
@@ -706,7 +706,7 @@ export default function SubEvents() {
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">SURPRISE EVENT</h5>
-                                <p class="card-text description-font">
+                                <p class="card-text description-font mb-3">
                                     Experience the thrill of the unknown at our surprise event! Join us for an evening filled with mystery,
                                     excitement, and unforgettable moments. Unveil surprises, embrace spontaneity, and create memories that
                                     will last a lifetime. Don't miss out on this one-of-a-kind event!
