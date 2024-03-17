@@ -1,45 +1,11 @@
-#canteen .popular{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    min-height: 90vh;
-    height: auto;
-    margin-top: -3vw;
-}
-
-#canteen .popular h1{
-    color: #171717;
-    font-size: 2vw;
-    font-weight: 600;
-    margin-top: 5vw;
-}
-
-#canteen .popular hr{
-    width: 200px;
-    height: 6px;
+#cart-bar{
+    background-color: #FEB804;
     border-radius: 10px;
-    background: #252525;
+    font-weight: bold;
+    font-size: 14px;
 }
 
-/* .popular-item{
-    margin-top: 50px;
-    display: flex;
-    gap: 30px;
-    margin-bottom: 8vw;
-} */
-
-
-#canteen .popular-item {
-    gap: 3vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-bottom: 4vh;
-  }
-
-  @media (max-width:900px){
-    .popular h1{
-        font-size: 3vh;
-    }
-  }
+#cart-bar a{
+    color: rgb(240, 240, 240);
+    text-decoration: none;
+}

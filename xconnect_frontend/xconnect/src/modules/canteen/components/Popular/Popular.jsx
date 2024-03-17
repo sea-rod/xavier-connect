@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Item from "../Item/Item";
+import CartBar from "../CartBar/CartBar";
 import axiosInstance from "../../../../services/axios";
+import "./Popular.css";
 
 const Popular = () => {
   const [data, setData] = useState([]);
-  const [cartData, setCartData] = useState(null);
+  const [cartItemCount, setCartItemCount] = useState(new Set());
+  const [IsEmpty, setIsEmpty] = useState(true);
+  const [cartData, setCartData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -30,6 +34,9 @@ const Popular = () => {
     const fetchCartData = async () => {
       try {
         const response = await axiosInstance.get("canteen/cart/");
+        console.log(response.data.menu_items);
+        setIsEmpty(response.data.menu_items.length === 0);
+
         const d = {};
         response.data.menu_items.forEach((item) => {
           d[item.menu.id] = { quantity: item.quantity, item_id: item.id };
@@ -37,15 +44,38 @@ const Popular = () => {
         setCartData(d);
       } catch (error) {
         console.error("Error fetching cart data:", error);
-      } //finally {
-      //   setIsLoading(false); // Set isLoading to false after cartData is fetched
-      // }
+      }
     };
 
     // Call both functions to fetch data
     fetchMenuData();
     fetchCartData();
+
+    window.addEventListener("cart_updated", function (event) {
+      console.log("CartUpdated", event.detail);
+      if (event.detail[1]) {
+        setCartItemCount((prevItemCount) => {
+          const updatedCartItems = new Set(prevItemCount);
+          updatedCartItems.add(event.detail[0]);
+          return updatedCartItems;
+        });
+        setIsEmpty(false);
+      } else {
+        setCartItemCount((prevItemCount) => {
+          const updatedCartItems = new Set(prevItemCount);
+          updatedCartItems.delete(event.detail[0]);
+          return updatedCartItems;
+        });
+      }
+    });
   }, []);
+
+  useEffect(() => {
+    console.log(cartItemCount, "kk");
+    if (!cartItemCount.size) {
+      setIsEmpty(true);
+    }
+  }, [cartItemCount]);
 
   return (
     <div class="row mt-2 mx-5 d-flex justify-content-between">
@@ -67,6 +97,7 @@ const Popular = () => {
           />
         ))
       )}
+      <CartBar item_count={cartItemCount.size} display={!IsEmpty} />
     </div>
   );
 };
