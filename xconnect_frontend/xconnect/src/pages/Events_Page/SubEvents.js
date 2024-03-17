@@ -30,132 +30,127 @@ export default function SubEvents() {
     //   ];
     return (
         <>
-            <div class="container pb-5">
+            <div class="container">
+            <h1 id="events-header">SUB EVENTS</h1>
                 <div class="row">
-                    <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
-                    <img src={process.env.PUBLIC_URL + '/images/Events/Reel.jpg'} class="card-img-top" alt="Reel" />
-                        <div class="card-body d-flex flex-column justify-content-between">
-                            <div>
-                                <h5 class="card-title event-font">Reel</h5>
-                                <p class="card-text description-font mb-3">
-                                    Step into the world of storytelling with our Reel Challenge.
-                                    Unleash your creativity and showcase your filmmaking prowess
-                                    in this exciting competition. Craft a reel that takes the audience
-                                    on a captivating journey, leaving them spellbound with your
-                                    storytelling magic.
-                                </p>
-                            </div>
-                            
-                            <div>
-                                <h6 class="event-font">Contact Student Coordinator</h6>
-                                <p class="description-font"><strong>LUDWIG</strong><span class="text-primary"
-                                    style={{ textDecoration: "underline", marginLeft: "20px" }}>9689464763</span>
-                                </p>
-                                <p class="description-font"><strong>OMKAR</strong><span class="text-primary"
-                                    style={{ textDecoration: "underline", marginLeft: "20px" }}>9607245631</span>
-                                </p>
-                                <details className="description-font" id="details1">
-                                    <summary>Read More</summary>
-                                    <h6>Rules</h6>
-                                    <ol>
-                                        <li>Theme : “Time Travel Tales” (Explore the concept of time travel in your reel.
-                                            Craft a narrative that takes characters on a journey through different eras,
-                                            showcasing the challenges and joys of navigating the past and future)</li>
-                                        <li>Reel should be between 1 to 5 minutes</li>
-                                        <li>Be a trailblazer! Create a storyline that is entirely unique and has never been seen
-                                            before.</li>
-                                        <li>Language: English</li>
-                                        <li>Reel should be of the highest quality possible.
-                                        </li>
-                                        <li>Any use of inappropriate content or props will result in immediate
-                                            disqualification.
-                                        </li>
-                                        <li>Submit the reel in MP4 format for easy viewing and evaluation.</li>
-                                        <li>Each team is allowed one entry</li>
-                                        <li>The reel must be submitted on a pen-drive on the day of the event during
-                                            registration.</li>
-                                    </ol>
-                                    <h6>JUDGING CRITERIA:</h6>
-                                    <ol>
-                                        <li>Relevance to the theme.</li>
-                                        <li>Storytelling: The effectiveness of the narrative, character development, and
-                                            overall storytelling technique.</li>
-                                        <li>Creativity and Originality</li>
-                                        <li>Technical Excellence ( Cinematography, editing, sound design, and overall
-                                            production quality)
-                                        </li>
-                                        <li>Overall Presentation: How well the elements come together to create a cohesive
-                                            and memorable cinematic experience.</li>
-                                    </ol>
-                                </details>
-                            </div>
+                    <div class="card border-success mb-3 card-margin">
+                        <img src={process.env.PUBLIC_URL + '/images/Events/Reel.jpg'} class="card-img-top " alt="Reel" />
+                        <div>
+                            <h5 class="card-title event-font">Reel</h5>
+                            <p class="card-text description-font mb-3">
+                                Step into the world of storytelling with our Reel Challenge.
+                                Unleash your creativity and showcase your filmmaking prowess
+                                in this exciting competition. Craft a reel that takes the audience
+                                on a captivating journey, leaving them spellbound with your
+                                storytelling magic.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h6 class="event-font">Contact Student Coordinator</h6>
+                            <p class="description-font"><strong>LUDWIG</strong><span class="text-primary"
+                                style={{ textDecoration: "underline", marginLeft: "20px" }}>9689464763</span>
+                            </p>
+                            <p class="description-font"><strong>OMKAR</strong><span class="text-primary"
+                                style={{ textDecoration: "underline", marginLeft: "20px" }}>9607245631</span>
+                            </p>
+                            <details className="description-font" id="details1">
+                                <summary>Read More</summary>
+                                <h6>Rules</h6>
+                                <ol>
+                                    <li>Theme : “Time Travel Tales” (Explore the concept of time travel in your reel.
+                                        Craft a narrative that takes characters on a journey through different eras,
+                                        showcasing the challenges and joys of navigating the past and future)</li>
+                                    <li>Reel should be between 1 to 5 minutes</li>
+                                    <li>Be a trailblazer! Create a storyline that is entirely unique and has never been seen
+                                        before.</li>
+                                    <li>Language: English</li>
+                                    <li>Reel should be of the highest quality possible.
+                                    </li>
+                                    <li>Any use of inappropriate content or props will result in immediate
+                                        disqualification.
+                                    </li>
+                                    <li>Submit the reel in MP4 format for easy viewing and evaluation.</li>
+                                    <li>Each team is allowed one entry</li>
+                                    <li>The reel must be submitted on a pen-drive on the day of the event during
+                                        registration.</li>
+                                </ol>
+                                <h6>JUDGING CRITERIA:</h6>
+                                <ol>
+                                    <li>Relevance to the theme.</li>
+                                    <li>Storytelling: The effectiveness of the narrative, character development, and
+                                        overall storytelling technique.</li>
+                                    <li>Creativity and Originality</li>
+                                    <li>Technical Excellence ( Cinematography, editing, sound design, and overall
+                                        production quality)
+                                    </li>
+                                    <li>Overall Presentation: How well the elements come together to create a cohesive
+                                        and memorable cinematic experience.</li>
+                                </ol>
+                            </details>
                         </div>
                     </div>
 
-                    <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
-                    <img src={process.env.PUBLIC_URL + '/images/Events/Meme.jpg'} class="card-img-top" alt="Meme" />
-                        
-                        <div class="card-body d-flex flex-column justify-content-between">
-                            <div>
-                                <h5 class="card-title event-font">Meme</h5>
-                                <p class="card-text description-font mb-3">
-                                    Prepare for a meme showdown like never before in the "AI vs
-                                    The World Meme Battle." In this solo competition, participants
-                                    are invited to unleash their creativity and wit to create healthy
-                                    memes that humorously explore the clash between AI and the
-                                    world around us . Dive into the realm of artificial intelligence and
-                                    its interactions with the world. Explore the humorous side of AI's
-                                    encounters with everyday situations, people, or anything that
-                                    sparks your creative genius
-                                </p>
-                            </div>
-                            <div>
+                    <div class="card border-success mb-3 card-margin">
+                        <img src={process.env.PUBLIC_URL + '/images/Events/Meme.jpg'} class="card-img-top" alt="Meme" />
+                        <div>
+                            <h5 class="card-title event-font">Meme</h5>
+                            <p class="card-text description-font mb-3">
+                                Prepare for a meme showdown like never before in the "AI vs
+                                The World Meme Battle." In this solo competition, participants
+                                are invited to unleash their creativity and wit to create healthy
+                                memes that humorously explore the clash between AI and the
+                                world around us . Dive into the realm of artificial intelligence and
+                                its interactions with the world. Explore the humorous side of AI's
+                                encounters with everyday situations, people, or anything that
+                                sparks your creative genius
+                            </p>
+                        </div>
+                        <div>
 
-                                <h6 class="event-font">Contact Student Coordinator</h6>
-                                <p class="description-font"><strong>LUDWIG</strong><span class="text-primary"
-                                    style={{ textDecoration: "underline", marginLeft: "20px" }}>9689464763</span>
-                                </p>
-                                <p class="description-font"><strong>LAXMAN</strong><span class="text-primary"
-                                    style={{ textDecoration: "underline", marginLeft: "20px" }}>9764858445</span>
-                                </p>
-                                <details className="description-font" id="details2">
-                                    <summary>Read More</summary>
-                                    <h6>Rules</h6>
-                                    <ol>
-                                        <li>Theme: “AI vs The World”</li>
-                                        <li>Language: English.</li>
-                                        <li>This battle is a solo endeavor.</li>
-                                        <li>Participants must create memes that are free from any form of abuse,
-                                            disrespect towards any religion, or sentiments of individuals.
-                                        </li>
-                                        <li>Create and submit your memes in image or GIF format.
+                            <h6 class="event-font">Contact Student Coordinator</h6>
+                            <p class="description-font"><strong>LUDWIG</strong><span class="text-primary"
+                                style={{ textDecoration: "underline", marginLeft: "20px" }}>9689464763</span>
+                            </p>
+                            <p class="description-font"><strong>LAXMAN</strong><span class="text-primary"
+                                style={{ textDecoration: "underline", marginLeft: "20px" }}>9764858445</span>
+                            </p>
+                            <details className="description-font" id="details2">
+                                <summary>Read More</summary>
+                                <h6>Rules</h6>
+                                <ol>
+                                    <li>Theme: “AI vs The World”</li>
+                                    <li>Language: English.</li>
+                                    <li>This battle is a solo endeavor.</li>
+                                    <li>Participants must create memes that are free from any form of abuse,
+                                        disrespect towards any religion, or sentiments of individuals.
+                                    </li>
+                                    <li>Create and submit your memes in image or GIF format.
 
-                                        </li>
-                                        <li>Ensure your images or GIFs are clear.
-                                        </li>
-                                        <li>Participant to submit only ONE meme.
-                                        </li>
-                                        <li>The meme must be submitted on a pen-drive on the day of the event during
-                                            registration.</li>
-                                    </ol>
-                                    <h6>JUDGING CRITERIA:</h6>
-                                    <ol>
-                                        <li>Humor</li>
-                                        <li>Uniqueness and originality in presenting comedic ideas related to AI vs The
-                                            World.</li>
-                                        <li>Relevance</li>
-                                        <li>The quality of images or GIFs and their overall aesthetic appeal.
-                                        </li>
-                                        <li>Adherence to the rule of creating healthy memes without any form of abuse
-                                            or disrespect</li>
-                                    </ol>
-                                </details>
-                            </div>
+                                    </li>
+                                    <li>Ensure your images or GIFs are clear.
+                                    </li>
+                                    <li>Participant to submit only ONE meme.
+                                    </li>
+                                    <li>The meme must be submitted on a pen-drive on the day of the event during
+                                        registration.</li>
+                                </ol>
+                                <h6>JUDGING CRITERIA:</h6>
+                                <ol>
+                                    <li>Humor</li>
+                                    <li>Uniqueness and originality in presenting comedic ideas related to AI vs The
+                                        World.</li>
+                                    <li>Relevance</li>
+                                    <li>The quality of images or GIFs and their overall aesthetic appeal.
+                                    </li>
+                                    <li>Adherence to the rule of creating healthy memes without any form of abuse
+                                        or disrespect</li>
+                                </ol>
+                            </details>
                         </div>
                     </div>
-                    <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
+                    <div class="card border-success mb-3 card-margin">
                         <img src={process.env.PUBLIC_URL + '/images/Events/Runway.png'} class="card-img-top" alt="Tech Runway.img" />
-                        <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">TECH RUNWAY</h5>
                                 <p class="card-text description-font mb-3">
@@ -199,12 +194,10 @@ export default function SubEvents() {
                                     </ul>
                                 </details>
                             </div>
-                        </div>
                     </div>
 
-                    <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
+                    <div class="card border-success mb-3 card-margin">
                         <img src={process.env.PUBLIC_URL + '/images/Events/Fusion.jpg'} class="card-img-top" alt="Techfusion Groove" />
-                        <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">TECHFUSION GROOVE</h5>
                                 <p class="card-text description-font mb-3">
@@ -243,12 +236,10 @@ export default function SubEvents() {
                                     </ul>
                                 </details>
                             </div>
-                        </div>
                     </div>
 
-                    <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
+                    <div class="card border-success mb-3 card-margin">
                         <img src={process.env.PUBLIC_URL + '/images/Events/Beats.jpg'} class="card-img-top" alt="Mix Beats" />
-                        <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">MIX BEATS</h5>
                                 <p class="card-text description-font mb-3">
@@ -280,12 +271,10 @@ export default function SubEvents() {
                                     </ol>
                                 </details>
                             </div>
-                        </div>
                     </div>
 
-                    <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
+                    <div class="card border-success mb-3 card-margin">
                         <img src={process.env.PUBLIC_URL + '/images/Events/CD paint.jpg'} class="card-img-top" alt="CD Painting" />
-                        <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">CD PAINTING</h5>
                                 <p class="card-text description-font mb-3">
@@ -318,12 +307,10 @@ export default function SubEvents() {
                                     </ul>
                                 </details>
                             </div>
-                        </div>
                     </div>
 
-                    <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
+                    <div class="card border-success mb-3 card-margin">
                         <img src={process.env.PUBLIC_URL + '/images/Events/Treasure.jpg'} class="card-img-top" alt="Tech Treasure Trail" />
-                        <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">TECH TREASURE TRAIL</h5>
                                 <p class="card-text description-font mb-3">
@@ -356,11 +343,9 @@ export default function SubEvents() {
                                     </ol>
                                 </details>
                             </div>
-                        </div>
                     </div>
-                    <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
+                    <div class="card border-success mb-3 card-margin">
                         <img src={process.env.PUBLIC_URL + '/images/Events/Photography.jpg'} class="card-img-top" alt="Mobile Photography" />
-                        <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">MOBILE PHOTOGRAPHY</h5>
                                 <p class="card-text description-font mb-3">
@@ -397,12 +382,10 @@ export default function SubEvents() {
                                     </ul>
                                 </details>
                             </div>
-                        </div>
                     </div>
 
-                    <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
+                    <div class="card border-success mb-3 card-margin">
                         <img src={process.env.PUBLIC_URL + '/images/Events/Trivia.jpg'} class="card-img-top" alt="Tech Trivia Showdown" />
-                        <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">TECH TRIVIA SHOWDOWN</h5>
                                 <p class="card-text description-font mb-3">
@@ -445,12 +428,10 @@ export default function SubEvents() {
                                     </ol>
                                 </details>
                             </div>
-                        </div>
                     </div>
 
-                    <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
+                    <div class="card border-success mb-3 card-margin">
                         <img src={process.env.PUBLIC_URL + '/images/Events/Jigsaw.jpg'} class="card-img-top" alt="JigSaw" />
-                        <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">JIGSAW - USING HTML/CSS</h5>
                                 <p class="card-text description-font mb-3">
@@ -493,12 +474,10 @@ export default function SubEvents() {
                                     </ul>
                                 </details>
                             </div>
-                        </div>
                     </div>
 
-                    <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
+                    <div class="card border-success mb-3 card-margin">
                         <img src={process.env.PUBLIC_URL + '/images/Events/Coding.jpg'} class="card-img-top" alt="Coding" />
-                        <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">CODING SERIES</h5>
                                 <p class="card-text description-font mb-3">
@@ -559,11 +538,9 @@ export default function SubEvents() {
                                     </ul>
                                 </details>
                             </div>
-                        </div>
                     </div>
-                    <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
+                    <div class="card border-success mb-3 card-margin">
                         <img src={process.env.PUBLIC_URL + '/images/Events/gaming.jpg'} class="card-img-top" alt="Gaming" />
-                        <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">GAMING</h5>
                                 <h6 class="event-font">Contact Event Coordinator</h6>
@@ -599,12 +576,10 @@ export default function SubEvents() {
                                     </ul>
                                 </details>
                             </div>
-                        </div>
                     </div>
 
-                    <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
+                    <div class="card border-success mb-3 card-margin">
                         <img src={process.env.PUBLIC_URL + '/images/Events/debate.jpg'} class="card-img-top" alt="Block n Tackle" />
-                        <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">BLOCK N TACKLE</h5>
                                 <p class="card-text description-font mb-3">
@@ -635,12 +610,10 @@ export default function SubEvents() {
                                     </ol>
                                 </details>
                             </div>
-                        </div>
                     </div>
 
-                    <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
+                    <div class="card border-success mb-3 card-margin">
                         <img src={process.env.PUBLIC_URL + '/images/Events/penalty.jpg'} class="card-img-top" alt="Penalty Shootout" />
-                        <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">PENALTY SHOOT OUT</h5>
                                 <h6 class="event-font">Contact Event Coordinator</h6>
@@ -663,11 +636,9 @@ export default function SubEvents() {
                                     </ol>
                                 </details>
                             </div>
-                        </div>
                     </div>
-                    <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
+                    <div class="card border-success mb-3 card-margin">
                         <img src={process.env.PUBLIC_URL + '/images/Events/Shark Tank.jpg'} class="card-img-top" alt="Shark Tank" />
-                        <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">SHARK TANK</h5>
                                 <p class="card-text description-font mb-3">
@@ -698,12 +669,10 @@ export default function SubEvents() {
                                     </ul>
                                 </details>
                             </div>
-                        </div>
                     </div>
 
-                    <div class="card border-success col-12 col-md-5 col-lg-4 mb-3 card-margin">
+                    <div class="card border-success mb-3 card-margin">
                         <img src={process.env.PUBLIC_URL + '/images/Events/Surprise.jpg'} class="card-img-top" alt="Surprise Event" />
-                        <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title event-font">SURPRISE EVENT</h5>
                                 <p class="card-text description-font mb-3">
@@ -718,7 +687,6 @@ export default function SubEvents() {
                                     style={{ textDecoration: "underline", marginLeft: "20px" }}>8767039564</span>
                                 </p>
                             </div>
-                        </div>
                     </div>
                 </div>
                 <div class="mt-5">

@@ -1,6 +1,7 @@
 #canteen img {
   height: 25vh;
   border-radius: 10px;
+  object-fit: cover;
 }
 
 #canteen button {
