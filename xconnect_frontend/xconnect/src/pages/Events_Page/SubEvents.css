@@ -30,7 +30,7 @@
 }
 
 /* Phone */
-@media (max-width: 576px) {
+@media (max-width: 320px), (max-width: 767px) {
   .Btn {
     display: block;
     width: 150px;
@@ -56,7 +56,7 @@
     max-height: 240px;
     max-width: 24px;
   }
-  
+
   .row {
     margin-left: 0;
   }
@@ -73,8 +73,7 @@
   .Btn {
     transform: translateY(-50%);
     margin-right: 10px;
-    width: 150px;
-    height: 50px;
+
     border: none;
     color: white;
     font-size: 20px;
@@ -93,4 +92,15 @@
     margin-bottom: 20px;
     text-decoration: underline;
   }
+}
+
+.Btn {
+  width: 150px;
+  height: 50px;
+  border: none;
+  color: white;
+  font-size: 20px;
+  border-radius: 10px;
+  background: linear-gradient(-45deg, #6bf8c2, #597fe6, #597fe6, #6bf8c2);
+  font-family: "AudioWide", sans-serif;
 }
