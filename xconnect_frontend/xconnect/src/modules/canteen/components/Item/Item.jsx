@@ -73,8 +73,10 @@ const Item = (props) => {
       })
       .catch((err) => {
         console.log(err.response);
-        // alert(err.response.data);
-        setQuantity((prevQuantity) => prevQuantity - 1);
+        if (err.response.data) {
+          alert(err.response.data)
+          setQuantity((prevQuantity) => prevQuantity - 1);
+        }
       });
   };
 

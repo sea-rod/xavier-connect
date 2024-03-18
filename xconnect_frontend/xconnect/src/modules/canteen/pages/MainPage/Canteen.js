@@ -11,6 +11,18 @@ export default function Canteen() {
   };
   const search = () => {
     console.log(searchValue);
+    axiosInstance
+      .get("canteen/menu/", {
+        params: {
+          search: searchValue,
+        },
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   return (
     <div id="canteen">

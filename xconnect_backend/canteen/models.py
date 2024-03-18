@@ -2,6 +2,13 @@ from django.db import models
 from django.contrib.auth import get_user_model
 
 
+STATUS_CHOICE = (
+    ("preparing", "Preparing"),
+    ("ready", "Ready"),
+    ("picked up", "Picked Up"),
+)
+
+
 class Menu(models.Model):
     item_name = models.CharField(max_length=255)
     price = models.FloatField()
@@ -14,7 +21,9 @@ class Menu(models.Model):
 
 
 class Cart(models.Model):
-    user_id = models.OneToOneField(get_user_model(), on_delete=models.CASCADE)
+    user_id = models.OneToOneField(
+        get_user_model(), on_delete=models.CASCADE, null=True
+    )
     status = models.BooleanField(default=False)
     total = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     menu_id = models.ManyToManyField(Menu, through="Items")
@@ -26,10 +35,8 @@ class Items(models.Model):
     quantity = models.IntegerField(default=1)
     price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
 
-class Order(models.Model):
-    ...
 
-class OrderItem(models.Model):
-    menu_id = models.ForeignKey(Menu, on_delete=models.CASCADE)
-    quantity = models.IntegerField(default=1)
-    price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+class Order(models.Model):
+    user_id = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    cart_id = models.ForeignKey(Cart,on_delete=models.CASCADE)
+    status = models.CharField(max_length=15, choices=STATUS_CHOICE,default="preparing")
