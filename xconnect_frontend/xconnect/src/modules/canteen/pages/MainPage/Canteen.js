@@ -1,15 +1,18 @@
 import React from "react";
 import Popular from "../../components/Popular/Popular";
 import { useState } from "react";
+import SearchCard from "../../components/SearchCard/SearchCard";
 import axiosInstance from "../../../../services/axios";
 import "./Canteen.css";
 
 export default function Canteen() {
   const [searchValue, setSearchValue] = useState("");
+  const [flag, setFlag] = useState(true);
   const searchValueChanged = (e) => {
     setSearchValue(e.target.value);
   };
   const search = () => {
+    setFlag(true);
     console.log(searchValue);
     axiosInstance
       .get("canteen/menu/", {
@@ -38,7 +41,7 @@ export default function Canteen() {
           <i className="fa fa-search"></i>
         </button>
       </div>
-      <Popular />
+      {flag ? <SearchCard /> : <Popular />}
     </div>
   );
 }
