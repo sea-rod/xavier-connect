@@ -12,7 +12,6 @@ const Popular = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    console.log(cartData, "ll");
     if (cartData) {
       console.log("inside", cartData);
       setIsLoading(false);

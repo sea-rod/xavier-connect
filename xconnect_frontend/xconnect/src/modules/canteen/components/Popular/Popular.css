@@ -3,6 +3,11 @@
     border-radius: 10px;
     font-weight: bold;
     font-size: 14px;
+    position: fixed;
+    bottom: 10px;
+    left:4%;
+    right: 4%;
+    width: 90%;
 }
 
 #cart-bar a{

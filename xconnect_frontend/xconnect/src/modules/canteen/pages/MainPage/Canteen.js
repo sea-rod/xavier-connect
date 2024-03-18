@@ -14,15 +14,15 @@ export default function Canteen() {
   };
   return (
     <div id="canteen">
-      <div className="d-flex mx-5 mt-4">
+      <div className="d-flex mx-5 mt-4 justify-content-end">
         <input
           type="search"
           placeholder="Search"
-          className="mx-auto col-12"
+          className="mx-lg-2 col-11 col-lg-3 "
           value={searchValue}
           onChange={searchValueChanged}
         />
-        <button onClick={search}>
+        <button onClick={search} className="col-lg-2 " id="search">
           <i className="fa fa-search"></i>
         </button>
       </div>
