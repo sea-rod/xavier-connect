@@ -1,8 +1,7 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const CartBar = (props) => {
-  useEffect(() => {}, [props.display]);
   return (
     <>
       {props.display ? (

@@ -3,11 +3,9 @@
     border-radius: 10px;
     font-weight: bold;
     font-size: 14px;
-    position: fixed;
-    bottom: 10px;
-    left:4%;
-    right: 4%;
-    width: 90%;
+    position:-webkit-sticky;
+    position: sticky;
+    bottom: 30px;
 }
 
 #cart-bar a{
