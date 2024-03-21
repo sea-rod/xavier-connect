@@ -7,7 +7,7 @@ import "./Canteen.css";
 
 export default function Canteen() {
   const [searchValue, setSearchValue] = useState("");
-  const [flag, setFlag] = useState(true);
+  const [flag, setFlag] = useState(false);
   const searchValueChanged = (e) => {
     setSearchValue(e.target.value);
   };
