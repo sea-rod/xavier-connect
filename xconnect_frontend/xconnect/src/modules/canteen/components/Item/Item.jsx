@@ -47,6 +47,9 @@ const Item = (props) => {
       .delete("canteen/" + itemId + "/item/")
       .then((res) => {
         console.log(res);
+        let cartdata = [props.id, false];
+        let event = new CustomEvent("cart_updated", { detail: cartdata });
+        window.dispatchEvent(event);
       })
       .catch((err) => {
         console.log(err);
@@ -62,11 +65,18 @@ const Item = (props) => {
         quantity: quantity,
       })
       .then((res) => {
-        console.log(res);
-        setItemId(res.data.id);
+        console.log(res.status);
+        setItemId(res.data?.id);
+        let cartdata = [props.id, true];
+        let event = new CustomEvent("cart_updated", { detail: cartdata });
+        window.dispatchEvent(event);
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err.response);
+        if (err.response.data) {
+          alert(err.response.data)
+          setQuantity((prevQuantity) => prevQuantity - 1);
+        }
       });
   };
 

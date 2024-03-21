@@ -3,9 +3,9 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.response import Response
 from rest_framework import status
-from .models import Menu, Cart, Items
+from .models import Menu, Cart, Items, Order
 from .permissions import IsCanteenStaff, IsUser, IsCartUser
-from .serializer import MenuSerializer, ItemSerializer, CartSerializer
+from .serializer import MenuSerializer, ItemSerializer, CartSerializer,OrderSerializer
 
 
 class ListCreateMenu(generics.ListCreateAPIView):
@@ -54,3 +54,10 @@ class ListCart(generics.ListAPIView):
         serializer = self.get_serializer(cart)
 
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+class OrderCreate(generics.ListCreateAPIView):
+    serializer_class = OrderSerializer
+    queryset = Order.objects.all()
+    def perform_create(self, serializer):
+        serializer.save(user_id=self.request.user)

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Menu,Cart,Items
+from .models import Menu,Cart,Items,Order
 
 class ItemsInline(admin.TabularInline):
     model = Items
@@ -11,5 +11,6 @@ class ItemsAdmin(admin.ModelAdmin):
 admin.site.register(Menu)
 admin.site.register(Cart,ItemsAdmin)
 admin.site.register(Items)
+admin.site.register(Order)
 
 

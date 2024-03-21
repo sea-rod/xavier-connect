@@ -5,6 +5,7 @@ from .views import (
     CreateItem,
     ListCart,
     DeleteItem,
+    OrderCreate
 )
 
 urlpatterns = [
@@ -13,4 +14,5 @@ urlpatterns = [
     path("item/", CreateItem.as_view()),
     path("<int:pk>/item/", DeleteItem.as_view()),
     path("cart/", ListCart.as_view()),
+    path("order/",OrderCreate.as_view())
 ]
