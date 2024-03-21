@@ -55,7 +55,18 @@ export default function Navbar() {
     }
   }, [location]);
 
-
+  // Collapsing Navbar
+  const collapseNavbar = () => {
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    if (navbarToggler) {
+      navbarToggler.classList.add('collapsed');
+      navbarToggler.setAttribute('aria-expanded', false);
+      const navbarCollapse = document.querySelector('.navbar-collapse');
+      if (navbarCollapse) {
+        navbarCollapse.classList.remove('show');
+      }
+    }
+  };
   const handleTokenUpdate = () => {
     setAuth(localStorage.getItem("access_token") ? true : false);
   };
@@ -68,7 +79,7 @@ export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg" style={{ backgroundColor: navbarColor, color: navbarTextColor }} data-bs-theme="dark">
       <div className="container-fluid">
-        <Link className="navbar-brand navbar-xconnect" to="/" style={{ color: navbarTextColor }}>
+        <Link className="navbar-brand navbar-xconnect" to="/" style={{ color: navbarTextColor }} onClick={collapseNavbar}>
           XConnect
         </Link>
         <button
@@ -85,15 +96,15 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0"></ul>
           <ul className="navbar-nav ml-auto">
-            <Link className="nav-link active" aria-current="page" to="/Events" style={{ color: navbarTextColor }}>
+            <Link className="nav-link active" aria-current="page" to="/Events" style={{ color: navbarTextColor }} onClick={collapseNavbar}>
               Events
             </Link>
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/" style={{ color: navbarTextColor }}>
+              <a className="nav-link active" aria-current="page" href="/" style={{ color: navbarTextColor }} onClick={collapseNavbar}>
                 Time Table
               </a>
             </li>
-            <Link className="nav-link active" aria-current="page" to="/Canteen" style={{ color: navbarTextColor }}>
+            <Link className="nav-link active" aria-current="page" to="/Canteen" style={{ color: navbarTextColor }} onClick={collapseNavbar}>
               Canteen
             </Link>
 
@@ -103,7 +114,10 @@ export default function Navbar() {
                   style={{ color: navbarTextColor }}
                   className="nav-link active"
                   aria-current="page"
-                  onClick={logout}
+                  onClick={() => {
+                    logout();
+                    collapseNavbar();
+                  }}
                 >
                   Logout
                 </Link>
@@ -115,6 +129,7 @@ export default function Navbar() {
                   className="nav-link active"
                   aria-current="page"
                   to="/Login"
+                  onClick={collapseNavbar}
                 >
                   Login
                 </Link>
