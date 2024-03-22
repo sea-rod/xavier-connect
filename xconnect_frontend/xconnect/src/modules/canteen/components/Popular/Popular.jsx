@@ -21,11 +21,12 @@ const Popular = () => {
   useEffect(() => {
     // Function to fetch menu data
     const fetchMenuData = async () => {
+      console.log("request send");
       try {
         const response = await axiosInstance.get("canteen/menu/");
         setData(response.data);
       } catch (error) {
-        console.error("Error fetching menu data:", error);
+        console.log("Error fetching menu data:", error);
       }
     };
 
