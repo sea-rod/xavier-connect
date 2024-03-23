@@ -1,0 +1,107 @@
+/* Nothing has changed added this only because this didn't get committed last time */
+/* Common CSS */
+.description-font {
+  font-family: "Oxanium", sans-serif;
+  margin: 10px;
+}
+
+.event-font {
+  font-family: "AudioWide", sans-serif;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.Btn a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+.card-img-top {
+  max-height: 200px;
+  object-fit: cover;
+}
+
+#events-header {
+  text-align: center;
+  font-family: Audiowide, sans-serif;
+  font-size: 40px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* Phone */
+@media (max-width: 320px), (max-width: 767px) {
+  .Btn {
+    display: block;
+    width: 150px;
+    height: 50px;
+    margin: 10px auto;
+    border: none;
+    color: white;
+    font-size: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    background: linear-gradient(-45deg, #6bf8c2, #597fe6, #597fe6, #6bf8c2);
+    font-family: "AudioWide", sans-serif;
+  }
+
+  .card {
+    max-width: 377px;
+    padding: 3px;
+    margin: auto;
+  }
+
+  .subevent-img {
+    max-height: 240px;
+    max-width: 24px;
+  }
+
+  .row {
+    margin-left: 0;
+  }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+  .card {
+    max-width: 400px;
+    padding: 3px;
+    margin-right: 40px;
+  }
+
+  .Btn {
+    transform: translateY(-50%);
+    margin-right: 10px;
+
+    border: none;
+    color: white;
+    font-size: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    background: linear-gradient(-45deg, #6bf8c2, #597fe6, #597fe6, #6bf8c2);
+    font-family: "AudioWide", sans-serif;
+  }
+
+  #events-header {
+    text-align: center;
+    font-family: Audiowide, sans-serif;
+    font-size: 60px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-decoration: underline;
+  }
+}
+
+.Btn {
+  width: 150px;
+  height: 50px;
+  border: none;
+  color: white;
+  font-size: 20px;
+  border-radius: 10px;
+  background: linear-gradient(-45deg, #6bf8c2, #597fe6, #597fe6, #6bf8c2);
+  font-family: "AudioWide", sans-serif;
+}
