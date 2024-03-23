@@ -32,6 +32,7 @@ export default function Navbar() {
         setNavbarColor("#AED6F1");
         break;
       case "/Login":
+      case "/SignUp":
         setNavbarColor("#EE3A57");
         break;
       case "/Events":
@@ -107,6 +108,9 @@ export default function Navbar() {
             <Link className="nav-link active" aria-current="page" to="/Canteen" style={{ color: navbarTextColor }} onClick={collapseNavbar}>
               Canteen
             </Link>
+            <Link className="nav-link active" aria-current="page" to="/SignUp" style={{ color: navbarTextColor }} onClick={collapseNavbar}>
+              SignUp
+            </Link>
 
             {auth ? (
               <li className="nav-item">
@@ -131,7 +135,7 @@ export default function Navbar() {
                   to="/Login"
                   onClick={collapseNavbar}
                 >
-                  Login
+                  SignIn
                 </Link>
               </li>
             )}

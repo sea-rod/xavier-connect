@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "../../pages/Home/Home";
 import LoginForm from "../../pages/Login/loginForm";
+import SignUp from "../../pages/Sign up/SignUp";
 import Events from "../../pages/Events_Page/Events";
 import Library from "../../modules/Library_Page/Library";
 import SubEvents from "../../pages/Events_Page/SubEvents";
@@ -13,6 +14,7 @@ export default function AppRoutes() {
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/Login' element={<LoginForm />} />
+                <Route path='/SignUp' element={<SignUp />} />
                 <Route path='/Events' element={<Events />} />
                 <Route path='/SubEvents' element={<SubEvents />} />
                 <Route path='/Library' element={<Library />} />
