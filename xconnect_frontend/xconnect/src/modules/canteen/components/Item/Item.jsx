@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import "./Item.css";
 import axiosInstance from "../../../../services/axios";
+import { useNavigate } from "react-router-dom";
+import "./Item.css";
 
 const Item = (props) => {
+  const navigate = useNavigate();
   const [quantity, setQuantity] = useState("Add");
   const [itemId, setItemId] = useState(null);
 
@@ -74,7 +76,14 @@ const Item = (props) => {
       .catch((err) => {
         console.log(err.response);
         if (err.response.data) {
-          alert(err.response.data)
+          alert(err.response.data);
+          setQuantity("Add");
+        }
+        if (
+          err.response.status === 403 &&
+          !localStorage.getItem("access_token")
+        ) {
+          navigate("/Login");
           setQuantity((prevQuantity) => prevQuantity - 1);
         }
       });

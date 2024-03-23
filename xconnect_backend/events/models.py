@@ -19,7 +19,7 @@ class SubEvent(models.Model):
     no_of_participants = models.IntegerField()
     img = models.ImageField(default="media/default.png", upload_to="media/events")
     desc = models.TextField()
-   
+    rules_n_judging = models.TextField()
 
     def __str__(self):
         return f"{self.name} {self.pk}"

@@ -7,6 +7,7 @@ import "./Canteen.css";
 
 export default function Canteen() {
   const [searchValue, setSearchValue] = useState("");
+  const [searchData, setSearchData] = useState([]);
   const [flag, setFlag] = useState(false);
   const searchValueChanged = (e) => {
     setSearchValue(e.target.value);
@@ -22,6 +23,7 @@ export default function Canteen() {
       })
       .then((res) => {
         console.log(res);
+        setSearchData(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -41,7 +43,7 @@ export default function Canteen() {
           <i className="fa fa-search"></i>
         </button>
       </div>
-      {flag ? <SearchCard /> : <Popular />}
+      {flag ? searchData.map((item) => <SearchCard />) : <Popular />}
     </div>
   );
 }
