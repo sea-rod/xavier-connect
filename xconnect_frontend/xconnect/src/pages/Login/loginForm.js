@@ -42,7 +42,7 @@ export default function LoginForm() {
   return (
     <div className="container pt-1 mt-5" id="login" style={{ height: "95vh" }}>
       <div className="custom-container mb-1 mt-5">
-        <div className="heading">Login</div>
+        <div className="heading">SignIn</div>
 
         <form className="form form-floating mt-3 col-10 mx-auto">
           {error ? (
