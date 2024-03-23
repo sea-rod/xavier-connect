@@ -75,8 +75,11 @@ const Item = (props) => {
       })
       .catch((err) => {
         console.log(err.response);
-        if (err.response.data) {
+        if(err.response.status===400){
+          setQuantity((prevQuantity) => prevQuantity - 1);
           alert(err.response.data);
+        }
+        else if(err.response.data) {
           setQuantity("Add");
         }
         if (
@@ -84,7 +87,6 @@ const Item = (props) => {
           !localStorage.getItem("access_token")
         ) {
           navigate("/Login");
-          setQuantity((prevQuantity) => prevQuantity - 1);
         }
       });
   };
