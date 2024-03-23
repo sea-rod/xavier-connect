@@ -1,59 +1,29 @@
 import React from 'react';
-import './Library.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import './Library.css'; // Import your CSS file
 
-export default function Library() {
+// Define the Library component
+const Library = () => {
   return (
-    <div id="libary">
-      <header>
-        <div className="header">
-          <h1>Welcome to Xavier's Library</h1>
+    <div className="container">
+      <form>
+        <div className="searchContainer">
+          <input
+            type="text"
+            name="SearchBooks"
+            placeholder="Search Books"
+            className="searchInput" // Added className for styling
+            />
+             <button type="submit" className="searchButton">
+            <FontAwesomeIcon icon={faSearch} />
+          </button>
         </div>
-        <div class="input-group">
-          <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-          <button type="button" class="btn rounded" data-mdb-ripple-init>search</button>
-        </div>
-      </header>
-      <div className="bgimg">
-        <img src={process.env.PUBLIC_URL + '/images/Library/library.jpg'} alt="Library" />
-      </div>
-      <div className="books">
-        <h3>TOP PICKS</h3>
-        <p>A source of endless knowledge</p>
-        <br />
-        <div className="row">
-          <div className="column">
-            <img src={process.env.PUBLIC_URL + '/images/Library/book1.jpg'} alt="Snow" style={{ width: '100%' }} />
-          </div>
-          <div className="column">
-            <img src={process.env.PUBLIC_URL + '/images/Library/book2.jpg'} alt="Forest" style={{ width: '100%' }} />
-          </div>
-          <div className="column">
-            <img src={process.env.PUBLIC_URL + '/images/Library/book3.jpg'} alt="Forest" style={{ width: '100%' }} />
-          </div>
-        </div>
-        <div className="row">
-          <div className="column">
-            <img src={process.env.PUBLIC_URL + '/images/Library/book4.jpg'} alt="Snow" style={{ width: '100%' }} />
-          </div>
-          <div className="column">
-            <img src={process.env.PUBLIC_URL + '/images/Library/book5.jpg'} alt="Forest" style={{ width: '100%' }} />
-          </div>
-          <div className="column">
-            <img src={process.env.PUBLIC_URL + '/images/Library/book6.jpeg'} alt="Forest" style={{ width: '100%' }} />
-          </div>
-        </div>
-        <div className="row">
-          <div className="column">
-            <img src={process.env.PUBLIC_URL + '/images/Library/book7.jpg'} alt="Snow" style={{ width: '100%' }} />
-          </div>
-          <div className="column">
-            <img src={process.env.PUBLIC_URL + '/images/Library/book8.jpg'} alt="Forest" style={{ width: '100%' }} />
-          </div>
-          <div className="column">
-            <img src={process.env.PUBLIC_URL + '/images/Library/book10.jpg'} alt="Forest" style={{ width: '100%' }} />
-          </div>
-        </div>
-      </div>
+      </form>
     </div>
   );
-}
+};
+
+// Export the Library component
+export default Library;
+
