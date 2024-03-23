@@ -6,6 +6,7 @@ import Events from "../../modules/events/pages/Events";
 import SubEvents from "../../modules/events/pages/SubEvents";
 import Canteen from "../../modules/canteen/pages/MainPage/Canteen";
 import CheckOut from "../../modules/canteen/pages/Cart/CheckOut";
+import SignUp from "../../pages/Sign up/SignUp";
 
 export default function AppRoutes() {
     return (
@@ -16,7 +17,7 @@ export default function AppRoutes() {
                 <Route path='/SignUp' element={<SignUp />} />
                 <Route path='/Events' element={<Events />} />
                 <Route path='/SubEvents' element={<SubEvents />} />
-                <Route path='/Library' element={<Library />} />
+                {/* <Route path='/Library' element={<Library />} /> */}
                 <Route path='/Canteen' element={<Canteen />} />
                 <Route path='/Cart' element={<CheckOut />} />
                 <Route path='/BtoCanteen' element={<Canteen />} />
