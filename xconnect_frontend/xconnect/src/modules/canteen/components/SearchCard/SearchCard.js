@@ -4,16 +4,21 @@ import "./SearchCard.css";
 
 const SearchCard = () => {
   return (
-    <div class="mt-5 col-10 d-flex mx-4 search-card pt-3 justify-content-between">
-      <div class="product-details pt-0">
-        <p class="product-title">Tropicana Orange Juice</p>
-        <p class="product-price">Rs. 20/-</p>
-        <button class="mt-4">Add</button>
-      </div>
-      <div className="col-2">
-        <img src={Orange} alt="Product Image" class="product-image" />
+    <div className="container">
+      <div className="mt-5 d-flex justify-content-center">
+        <div className="col-10 d-flex search-card pt-3 justify-content-between">
+          <div className="product-details pt-0">
+            <p className="product-title">Tropicana Orange Juice</p>
+            <p className="product-price">Rs. 20/-</p>
+            <button className="mt-4">Add</button>
+          </div>
+          <div className="col-2">
+            <img src={Orange} alt="Product.img" className="product-image" />
+          </div>
+        </div>
       </div>
     </div>
+
   );
 };
 
