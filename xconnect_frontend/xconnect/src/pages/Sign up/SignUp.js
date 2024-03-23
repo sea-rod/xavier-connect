@@ -15,8 +15,10 @@ export default function SignUp() {
                 <div className="custom-container mb-1 mt-5">
                     <div className="title">SignUp</div>
                     <form id="signup" className="form form-floating mt-3 col-10 mx-auto ">
-
-
+                        <div className="form-floating mx-auto col-12 mb-3">
+                            <input type="text" className="form-control" placeholder="" />
+                            <label htmlFor="floatingInput" style={{ paddingLeft: "20px" }}>Roll Number</label>
+                        </div>
                         <div className="form-floating mx-auto col-12 mb-3">
                             <input type="email" className="form-control" placeholder="" />
                             <label htmlFor="floatingInput" style={{ paddingLeft: "20px" }}>Email address</label>
