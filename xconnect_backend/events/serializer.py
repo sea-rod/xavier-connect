@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Event, SubEvent
+from .models import Event, SubEvent, Cordinator
 
 
 class SubEventSerializer(serializers.HyperlinkedModelSerializer):
@@ -8,7 +8,13 @@ class SubEventSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = SubEvent
-        fields = ("id", "event_id", "name", "desc", "no_of_participants", "url","img")
+        fields = ("id", "event_id", "name", "desc", "no_of_participants", "url", "img","rules_n_judging")
+
+
+class CordinatorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Cordinator
+        fields = ("id", "name", "contact_no")
 
 
 class EventSerializer(serializers.HyperlinkedModelSerializer):
