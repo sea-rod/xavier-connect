@@ -3,6 +3,9 @@ db.sqlite3
 .vscode
 media
 docs
+!media/default.jpg
+
+
 ### react
 
 
