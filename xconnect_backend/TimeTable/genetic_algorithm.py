@@ -18,12 +18,11 @@ class Timetable:
 def generate_initial_population(classes, teachers, days, timetable_count):
     population = []
     for _ in range(timetable_count):
-        timetable = {class_: Timetable(days) for class_ in classes}
+        timetable = {class_: Timetable(days) for class_ in classes.keys()} # Corrected
         for day in days:
             for class_ in classes:
                 subjects = classes[class_]
                 random.shuffle(subjects)
-                
                 for subject in subjects:
                     teacher = random.choice(teachers[subject])
                     lecture = Lecture(subject, teacher)
@@ -63,15 +62,15 @@ def mutate(timetable, teachers, days):
     day_to_mutate = random.choice(days)
     
     # Remove a random lecture
-    if mutated_timetable[class_].schedule[day_to_mutate]:
-        mutated_timetable[class_].schedule[day_to_mutate].pop(random.randint(0, len(mutated_timetable[class_].schedule[day_to_mutate])-1))
+    if mutated_timetable[class_to_mutate].schedule[day_to_mutate]:
+        mutated_timetable[class_to_mutate].schedule[day_to_mutate].pop(random.randint(0, len(mutated_timetable[class_to_mutate].schedule[day_to_mutate])-1)) # Corrected
 
     # Add a new random lecture
-    subjects = classes[class_to_mutate]
+    subjects = classes[class_to_mutate] 
     random.shuffle(subjects)
     teacher = random.choice(teachers[random.choice(subjects)])
     new_lecture = Lecture(random.choice(subjects), teacher)
-    mutated_timetable[class_].add_lecture(day_to_mutate, new_lecture)
+    mutated_timetable[class_to_mutate].add_lecture(day_to_mutate, new_lecture)
 
     return mutated_timetable
 

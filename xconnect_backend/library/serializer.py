@@ -1,17 +1,25 @@
 from rest_framework import serializers
-from .models import Books,Reservation
+from .models import Books,Reservation,Genre,Fine
 
-class BookSerializer(serializers.ModelSerializer):
+
+
+class GenreViewSerilizer(serializers.ModelSerializer):
+   class Meta:
+      model = Genre
+      fields = ("genre",)
+class BooksViewSerializer(serializers.ModelSerializer):
      class Meta:
       model = Books
-      fields = ("id","book_name","isbn","category","avaliable_copys")
+      fields = ("id","name","author","isbn","genre","total_copies","available_copies","image")
 
 class ReservationViewSerializer(serializers.ModelSerializer):
      class Meta:
       model = Reservation
-      fields = ("user_id","book_id","reserve_date","return_date","states")
+      fields = ("id","user_id","book_id","reserve_date","return_deadline","return_date","states")
 
 class ReservationSerializer(serializers.ModelSerializer):
      class Meta:
       model = Reservation
-      fields = ("user_id","book_id")
+      fields = ("book_id",)
+
+      

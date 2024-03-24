@@ -37,6 +37,7 @@ urlpatterns = [
     path("api/events/", include("events.urls")),
     path("api/library/", include("library.urls")),
     path("api/timetable/", include("TimeTable.urls")),
+    path("api/calendar/", include("calendarEvents.urls")),
     path("docs/<str:file_path>/", download_file),
 
 ]
