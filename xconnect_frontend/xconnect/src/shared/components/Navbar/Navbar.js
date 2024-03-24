@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
-import "../../../modules/events/Events";
 
 export default function Navbar() {
   const [auth, setAuth] = useState(null);

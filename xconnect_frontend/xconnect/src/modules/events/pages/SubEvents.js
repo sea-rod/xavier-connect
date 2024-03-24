@@ -34,28 +34,34 @@ export default function SubEvents() {
   }, []);
   return (
     <>
-      {subEventData.map((item) => (
-        <SubEventCard
-          key={item.id}
-          name={item.name}
-          desc={item.desc}
-          img={item.img}
-          rules={item.rules_n_judging}
-        />
-      ))}
-      <div class="container pb-5">
-        <div class="row"></div>
-        <div class="mt-5">
-          <a href="http://127.0.0.1:8000/api/events/register/1/">
-            <button class="Btn mb-3">
-              <strong>REGISTER</strong>
-            </button>
-          </a>
-          <a href="./techlipse_brochure.pdf" target="_blank">
-            <button class="Btn">
-              <strong>BROCHURE</strong>
-            </button>
-          </a>
+      <div class="container">
+        <h1 id="events-header">SUB EVENTS</h1>
+        <div class="row">
+          {subEventData.map((item) => (
+            <SubEventCard
+              key={item.id}
+              name={item.name}
+              desc={item.desc}
+              img={item.img}
+              rules={item.rules_n_judging}
+              cord={item.cordinator}
+            />
+          ))}
+        </div>
+        <div class="container pb-5">
+          <div class="row"></div>
+          <div class="mt-5">
+            <a href="http://127.0.0.1:8000/api/events/register/1/">
+              <button class="Btn mb-3">
+                <strong>REGISTER</strong>
+              </button>
+            </a>
+            <a href="./techlipse_brochure.pdf" target="_blank">
+              <button class="Btn">
+                <strong>BROCHURE</strong>
+              </button>
+            </a>
+          </div>
         </div>
       </div>
     </>

@@ -10,27 +10,21 @@ const SubEventCard = (props) => {
 
         <div>
           <h6 class="event-font">Contact Student Coordinator</h6>
-          <p class="description-font">
-            <strong>LUDWIG</strong>
-            <span
-              class="text-primary"
-              style={{ textDecoration: "underline", marginLeft: "20px" }}
-            >
-              9689464763
-            </span>
-          </p>
-          <p class="description-font">
-            <strong>OMKAR</strong>
-            <span
-              class="text-primary"
-              style={{ textDecoration: "underline", marginLeft: "20px" }}
-            >
-              9607245631
-            </span>
-          </p>
+          {props.cord.map((item) => (
+            <p class="description-font">
+              <strong>{item.name}</strong>
+              <span
+                class="text-primary"
+                style={{ textDecoration: "underline", marginLeft: "20px" }}
+              >
+                {item.contact_no}
+              </span>
+            </p>
+          ))}
+
           <details className="description-font" id="details1">
             <summary>Read More</summary>
-            <div dangerouslySetInnerHTML={{ __html: props.rules }}/>
+            <div dangerouslySetInnerHTML={{ __html: props.rules }} />
           </details>
         </div>
       </div>
