@@ -4,8 +4,9 @@ import CartBar from "../CartBar/CartBar";
 import axiosInstance from "../../../../services/axios";
 import "./Popular.css";
 
-const Popular = () => {
+const Menu = () => {
   const [data, setData] = useState([]);
+  const [popularData, setPopularData] = useState([]);
   const [cartItemCount, setCartItemCount] = useState(new Set());
   const [IsEmpty, setIsEmpty] = useState(true);
   const [cartData, setCartData] = useState({});
@@ -24,7 +25,11 @@ const Popular = () => {
       console.log("request send");
       try {
         const response = await axiosInstance.get("canteen/menu/");
+        const popdata = await axiosInstance.get("canteen/menu/", {
+          params: { popular: "True" },
+        });
         setData(response.data);
+        setPopularData(popdata.data);
       } catch (error) {
         console.log("Error fetching menu data:", error);
       }
@@ -84,6 +89,24 @@ const Popular = () => {
       {isLoading ? (
         <p>Loading...</p>
       ) : (
+        popularData.map((item) => (
+          <Item
+            key={item.id}
+            id={item.id}
+            name={item.item_name}
+            image={item.image}
+            price={item.price}
+            quantity={cartData[item.id]?.quantity || "Add"}
+            item_id={cartData[item.id]?.item_id}
+            status={item.status}
+          />
+        ))
+      )}
+      <hr />
+      <h1>Menu</h1>
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
         data.map((item) => (
           <Item
             key={item.id}
@@ -102,4 +125,4 @@ const Popular = () => {
   );
 };
 
-export default Popular;
+export default Menu;
