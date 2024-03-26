@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.db.models import Count
 from django.contrib.auth.models import Group
-from rest_framework import generics,permissions
+from rest_framework import generics
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from django.db import transaction
 from django.utils import timezone
@@ -15,17 +16,17 @@ from .permissions import IsLibraryStaff,IsReserverReadOnly,IsStudent
 class GenreListView(generics.ListCreateAPIView):
     queryset = Genre.objects.all()
     serializer_class = GenreViewSerilizer
-    permission_classes = (IsLibraryStaff,)
+    permission_classes = (IsAuthenticated,IsLibraryStaff,)
 
 class GenreView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Genre.objects.all()
     serializer_class = GenreViewSerilizer
-    permission_classes = (IsLibraryStaff,)
+    permission_classes = (IsAuthenticated,IsLibraryStaff,)
 
 class BooksListView(generics.ListCreateAPIView):
     queryset = Books.objects.all()
     serializer_class = BooksViewSerializer
-    permission_classes = (IsLibraryStaff,)
+    permission_classes = (IsAuthenticated,IsLibraryStaff,)
     def get_queryset(self):
         keyword = self.request.GET.get('keyword', '')
         genre = self.request.GET.get('genre', '')
@@ -44,12 +45,12 @@ class BooksListView(generics.ListCreateAPIView):
 class BookView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Books.objects.all()
     serializer_class = BooksViewSerializer
-    permission_classes = (IsLibraryStaff,)
+    permission_classes = (IsAuthenticated,IsLibraryStaff,)
 
 class  ReservationListView(generics.ListCreateAPIView):
     queryset = Reservation.objects.all()
     serializer_class = ReservationViewSerializer
-    permission_classes = (IsLibraryStaff,)
+    permission_classes = (IsAuthenticated,IsLibraryStaff,)
     def get_queryset(self):
         user = self.request.user
         current_user_group = user.group
@@ -64,7 +65,7 @@ class  ReservationListView(generics.ListCreateAPIView):
 class CreateReservation(generics.CreateAPIView):
     queryset = Reservation.objects.all()
     serializer_class = ReservationSerializer
-    permission_classes = (IsStudent,)#only allow student of the collage to reserve
+    permission_classes = (IsAuthenticated,IsStudent,)#only allow student of the collage to reserve
 
     @transaction.atomic
     def perform_create(self, serializer):  
@@ -91,7 +92,7 @@ class CreateReservation(generics.CreateAPIView):
 class  ReservationView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Reservation.objects.all()
     serializer_class = ReservationViewSerializer
-    permission_classes = (IsReserverReadOnly,)
+    permission_classes = (IsAuthenticated,IsReserverReadOnly,)
     
     def partial_update(self, request, *args, **kwargs):# empty patch by library staff when book returned
         instance = self.get_object()

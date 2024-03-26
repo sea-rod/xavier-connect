@@ -1,12 +1,11 @@
 # timetable_app/views.py
 from rest_framework import generics
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from .genetic_algorithm import genetic_algorithm
 from .permissions import IsTeacherOnly
-from .models import *
-
 class TimetableGenerator(generics.ListCreateAPIView):
-    permission_classes = (IsTeacherOnly,)
+    permission_classes = (IsAuthenticated,IsTeacherOnly,)
     def post(self, request):
         received_data = request.data
         classes = received_data.get('classes')
