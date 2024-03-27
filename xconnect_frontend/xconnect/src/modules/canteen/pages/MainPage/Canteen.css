@@ -9,6 +9,12 @@ body {
   padding-left: 10px;
 }
 
+#canteen input:focus-visible {
+  border: none;
+  border-radius: 20px;
+  padding-left: 10px;
+}
+
 #canteen #search{
   width: auto;
 }

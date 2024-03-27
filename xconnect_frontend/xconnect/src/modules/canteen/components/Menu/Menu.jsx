@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Item from "../Item/Item";
 import CartBar from "../CartBar/CartBar";
 import axiosInstance from "../../../../services/axios";
-import "./Popular.css";
+import "./Menu.css";
 
 const Menu = () => {
   const [data, setData] = useState([]);

@@ -1,4 +1,4 @@
-#canteen img {
+ #canteen img {
   height: 25vh;
   border-radius: 10px;
   object-fit: cover;
@@ -20,7 +20,7 @@
 }
 
 #canteen .item {
-  font-size: 15px;
+  font-size: 20px;
   font-weight: bold;
   color: white;
 }

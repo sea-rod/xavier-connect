@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from "react";
 import axiosInstance from "../../../../services/axios";
+import Card from "../card/card";
 import { useNavigate } from "react-router-dom";
+import SearchCard from "../SearchCard/SearchCard";
 import "./Item.css";
 
 const Item = (props) => {
   const navigate = useNavigate();
   const [quantity, setQuantity] = useState("Add");
   const [itemId, setItemId] = useState(null);
+  const [searchFlag, setSearchFlag] = useState(false);
+
+  useEffect(() => {
+    setSearchFlag(props.search);
+  }, []);
 
   useEffect(() => {
     setQuantity(props.quantity);
@@ -75,11 +82,10 @@ const Item = (props) => {
       })
       .catch((err) => {
         console.log(err.response);
-        if(err.response.status===400){
+        if (err.response.status === 400) {
           setQuantity((prevQuantity) => prevQuantity - 1);
           alert(err.response.data);
-        }
-        else if(err.response.data) {
+        } else if (err.response.data) {
           setQuantity("Add");
         }
         if (
@@ -92,30 +98,33 @@ const Item = (props) => {
   };
 
   return (
-    <div className="d-flex flex-column bg-dark col-5 col-md-2 py-2 px-0 justify-content-be mx-1">
-      <div className="m-0 p-0">
-        <img src={props.image} alt="" className="col-12 m-0" />
-      </div>
-      <div className="bg-dark text-white  mt-2 d-flex flex-column justify-content-start">
-        <p className="m-0 item">{props.name}</p>
-        <p className="m-0 price">Rs {props.price}/-</p>
-        {quantity === "Add" ? (
-          <button
-            className=" col-7 mt-1"
-            onClick={incItem}
-            disabled={!props.status}
-          >
-            {quantity}
-          </button>
-        ) : (
-          <button className="d-flex justify-content-between mt-1">
-            <i className="fa fa-minus my-auto" onClick={descItem}></i>
-            <p>{quantity}</p>
-            <i className="fa fa-plus my-auto" onClick={incItem}></i>
-          </button>
-        )}
-      </div>
-    </div>
+    <>
+      {searchFlag ? (
+        <SearchCard
+          id={props.id}
+          key={props.id}
+          name={props.name}
+          image={props.image}
+          price={props.price}
+          quantity={quantity}
+          status={props.status}
+          incItem={incItem}
+          descItem={descItem}
+        />
+      ) : (
+        <Card
+          id={props.id}
+          key={props.id}
+          name={props.name}
+          image={props.image}
+          price={props.price}
+          quantity={quantity}
+          status={props.status}
+          incItem={incItem}
+          descItem={descItem}
+        />
+      )}
+    </>
   );
 };
 export default Item;
