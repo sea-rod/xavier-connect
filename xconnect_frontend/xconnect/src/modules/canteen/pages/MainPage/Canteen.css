@@ -10,7 +10,9 @@ body {
 }
 
 #canteen input:focus-visible {
+  outline: none;
   border: none;
+  box-shadow:0 0 10px 0.2rem rgba(248, 206, 17, 0.806);
   border-radius: 20px;
   padding-left: 10px;
 }

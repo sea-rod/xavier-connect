@@ -17,11 +17,11 @@ export default function Canteen() {
   };
   return (
     <div id="canteen">
-      <div className="d-flex mx-5 mt-4 justify-content-end">
+      <div className="d-flex mx-5 mt-4 justify-content-lg-end">
         <input
           type="search"
           placeholder="Search"
-          className="mx-lg-2 col-11 col-lg-3 "
+          className="mx-lg-2 col-11 me-1 col-lg-3 "
           value={searchValue}
           onChange={searchValueChanged}
         />
@@ -32,6 +32,4 @@ export default function Canteen() {
       {flag ? <SearchItems search_value={searchValue} /> : <Popular />}
     </div>
   );
-
 }
-
