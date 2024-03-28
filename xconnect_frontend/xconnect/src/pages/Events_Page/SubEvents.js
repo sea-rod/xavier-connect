@@ -1,5 +1,5 @@
 import React from "react";
-import "../Events_Page/SubEvents.css"
+// import "../Events_Page/SubEvents.css";
 // Have to get subevent-img class here in every img tag
 export default function SubEvents() {
     // const imageData = [

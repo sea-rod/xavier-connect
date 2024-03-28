@@ -7,8 +7,8 @@ export default function Cards() {
   const imageData = [
     { id: 1, imagePath: 'images/canteen1.jpg', cardTitle: 'Canteen', cardDescription: 'With supporting text below as a natural lead-in to additional content.', pagePath: "/Canteen" },
     { id: 2, imagePath: 'images/library1.jpg', cardTitle: 'Library', cardDescription: 'With supporting text below as a natural lead-in to additional content.', pagePath: "/Library" },
-    { id: 3, imagePath: 'images/calendar3.jpg', cardTitle: 'Calendar', cardDescription: 'With supporting text below as a natural lead-in to additional content.' },
-    { id: 4, imagePath: 'images/stuhelp1.jpg', cardTitle: 'Student Helpline', cardDescription: 'With supporting text below as a natural lead-in to additional content.' },
+    { id: 3, imagePath: 'images/calendar3.jpg', cardTitle: 'Calendar', cardDescription: 'With supporting text below as a natural lead-in to additional content.', pagePath: "/Calendar" },
+    { id: 4, imagePath: 'images/stuhelp1.jpg', cardTitle: 'Student Helpline', cardDescription: 'With supporting text below as a natural lead-in to additional content.', pagePath:"/HelpLine" },
   ];
 
   return (
