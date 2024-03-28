@@ -1,0 +1,57 @@
+.helpline-hero-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.helpline-hero-container img {
+  width: 100%;
+  height: auto;
+  
+}
+
+.helpline-hero-text {
+  position: absolute;
+  z-index: 1;
+}
+
+
+.helpline-department {
+  background: #292b34;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+}
+
+.helpline-department h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #000000;
+  background-color: #add8e6;
+}
+
+.helpline-department p {
+  margin: 8px 10px;
+  padding: 9px;
+}
+.department-header {
+  position: relative;
+}
+
+.department-header h2 {
+  padding: 10px 80px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.department-icon {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  height: 32px;
+  width: 32px;
+}
