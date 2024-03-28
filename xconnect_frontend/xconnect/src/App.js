@@ -3,7 +3,6 @@ import Navbar from './shared/components/Navbar/Navbar';
 import Footer from './shared/components/Footer/Footer';
 import AppRoutes from "./services/Router/RouteConfig";
 
-
 function App() {
   return (
     <>
