@@ -1,41 +1,27 @@
 import React from "react";
-import Popular from "../../components/Popular/Popular";
+import Popular from "../../components/Menu/Menu";
 import { useState } from "react";
-import SearchCard from "../../components/SearchCard/SearchCard";
-import axiosInstance from "../../../../services/axios";
+import SearchItems from "../../components/SearchItems/SearchItems";
 import "./Canteen.css";
 
 export default function Canteen() {
   const [searchValue, setSearchValue] = useState("");
-  const [searchData, setSearchData] = useState([]);
   const [flag, setFlag] = useState(false);
   const searchValueChanged = (e) => {
     setSearchValue(e.target.value);
   };
+
   const search = () => {
     setFlag(true);
     console.log(searchValue);
-    axiosInstance
-      .get("canteen/menu/", {
-        params: {
-          search: searchValue,
-        },
-      })
-      .then((res) => {
-        console.log(res);
-        setSearchData(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
   };
   return (
     <div id="canteen">
-      <div className="d-flex mx-5 mt-4 justify-content-end">
+      <div className="d-flex mx-5 mt-4 justify-content-lg-end">
         <input
           type="search"
           placeholder="Search"
-          className="mx-lg-2 col-11 col-lg-3 "
+          className="mx-lg-2 col-11 me-1 col-lg-3 "
           value={searchValue}
           onChange={searchValueChanged}
         />
@@ -43,7 +29,7 @@ export default function Canteen() {
           <i className="fa fa-search"></i>
         </button>
       </div>
-      {flag ? searchData.map((item) => <SearchCard />) : <Popular />}
+      {flag ? <SearchItems search_value={searchValue} /> : <Popular />}
     </div>
   );
 }

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Event, SubEvent, College, Participant
+from .models import Event, SubEvent, College, Participant, Cordinator
 
 
 class SubEventInline(admin.StackedInline):
@@ -15,3 +15,4 @@ admin.site.register(Event, SubEventAdmin)
 admin.site.register(SubEvent)
 admin.site.register(College)
 admin.site.register(Participant)
+admin.site.register(Cordinator)
