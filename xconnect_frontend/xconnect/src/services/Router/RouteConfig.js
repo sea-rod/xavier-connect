@@ -7,6 +7,8 @@ import SubEvents from "../../modules/events/pages/SubEvents";
 import Canteen from "../../modules/canteen/pages/MainPage/Canteen";
 import CheckOut from "../../modules/canteen/pages/Cart/CheckOut";
 import SignUp from "../../pages/Sign up/SignUp" 
+import Calendar from "../../modules/calendar/calendar";
+import HelpLine from "../../modules/helpLine/helpline";
 
 export default function AppRoutes() {
     return (
@@ -21,6 +23,8 @@ export default function AppRoutes() {
           <Route path="/Canteen" element={<Canteen />} />
           <Route path="/Cart" element={<CheckOut />} />
           <Route path="/BtoCanteen" element={<Canteen />} />
+          <Route path='/Calendar' element={<Calendar />} />
+          <Route path='/HelpLine' element={<HelpLine />} />
         </Routes>
       </>
     );
