@@ -42,7 +42,7 @@
         font-size: 14px;
         color: white;
         background-color: #5D9AF8;
-        width: 25%;
+        
         position: relative;
     }
 }
@@ -57,7 +57,7 @@
         border-radius: 8px;
         width: 400px;
         height: 260px;
-        padding: 40px;
+        padding: 10px;
         font-size: 15px;
         animation: body-animation 5s ease infinite;
         color: white;
@@ -69,7 +69,6 @@
         font-size: 14px;
         color: white;
         background-color: #5D9AF8;
-        width: 25%;
         position: relative;
     }
 }
@@ -83,7 +82,7 @@
         border-radius: 8px;
         width: 400px;
         height: 260px;
-        padding: 40px;
+        padding: 10px;
         font-size: 15px;
         animation: body-animation 5s ease infinite;
         color: white;
@@ -95,7 +94,6 @@
         font-size: 14px;
         color: white;
         background-color: #5D9AF8;
-        width: 25%;
         position: relative;
     }
 }

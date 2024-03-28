@@ -23,15 +23,15 @@ export default function Calendar() {
         </div>
       </div>
       <div className="mt-4 container" style={{ position: "relative" }}>
-        <div className="custom-container textStyle">
+        <div className="calendar-custom-container textStyle">
           <p>THU 08</p>
           <h1 className="boxStyle">CHEMIFEST</h1>
         </div>
-        <div className="custom-container textStyle">
+        <div className="calendar-custom-container textStyle">
           <p>WED 24</p>
           <h1 className="boxStyle">SPORTS DAY</h1>
         </div>
-        <div className="custom-container textStyle">
+        <div className="calendar-custom-container textStyle">
           <p>MON 26</p>
           <h1 className="boxStyle">CANTEEN DAY</h1>
         </div>

@@ -6,7 +6,7 @@ function HeroSection() {
 
   return (
     <>
-     <div className='container vh-100'>
+     <div className='container'>
      <div className="px-4 text-center border-bottom">
     <h1 className="display-4 fw-bold text-body-emphasis">Welcome to XConnect: Shaping Futures, Igniting Minds</h1>
     <div className="col-lg-6 mx-auto">
