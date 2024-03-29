@@ -7,12 +7,14 @@ import SubEvents from "../../modules/events/pages/SubEvents";
 import Canteen from "../../modules/canteen/pages/MainPage/Canteen";
 import CheckOut from "../../modules/canteen/pages/Cart/CheckOut";
 import SignUp from "../../pages/Sign up/SignUp" 
+import Admin from "../../modules/canteen/Admin/admin";
 
 export default function AppRoutes() {
     return (
       <>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/a" element={<Admin />} />
           <Route path="/Login" element={<LoginForm />} />
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/Events" element={<Events />} />

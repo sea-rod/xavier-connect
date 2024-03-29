@@ -32,7 +32,9 @@ const Item = (props) => {
 
   // increase item quantity
   const incItem = () => {
+    console.log(quantity);
     if (quantity === "Add") {
+      console.log("inc");
       setQuantity(1);
     } else {
       setQuantity((prevQuantity) => prevQuantity + 1); // Functional update
@@ -41,10 +43,13 @@ const Item = (props) => {
 
   // decrease item quantity
   const descItem = () => {
+    console.log("desc", quantity);
     if (quantity !== "Add") {
+      console.log("desc 1");
       setQuantity((prevQuantity) => prevQuantity - 1); // Functional update
     }
     if (quantity - 1 <= 0) {
+      console.log("desc 2");
       setQuantity("Add");
       deleteItem();
     }
