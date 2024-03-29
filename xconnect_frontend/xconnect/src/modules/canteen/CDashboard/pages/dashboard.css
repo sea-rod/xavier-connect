@@ -1,0 +1,12 @@
+#order-cards-dashboard{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    /* overflow-y: scroll; */
+    height: 10vw;
+    width: auto;
+}
+
+::-webkit-scrollbar{
+    width: 20px;
+  }
