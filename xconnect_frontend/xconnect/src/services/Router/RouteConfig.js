@@ -6,11 +6,13 @@ import Library from "../../modules/Library_Page/Library";
 import SubEvents from "../../pages/Events_Page/SubEvents";
 import Canteen from "../../modules/canteen/pages/MainPage/Canteen";
 import CheckOut from "../../modules/canteen/pages/Cart/CheckOut";
+import Cdash from "../../modules/canteen/CDashboard/cdash";
 
 export default function AppRoutes() {
     return (
         <>
             <Routes>
+                <Route path='/d' element={<Cdash />} />
                 <Route path='/' element={<Home />} />
                 <Route path='/Login' element={<LoginForm />} />
                 <Route path='/Events' element={<Events />} />
