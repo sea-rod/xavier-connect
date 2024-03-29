@@ -8,11 +8,13 @@ import Canteen from "../../modules/canteen/pages/MainPage/Canteen";
 import CheckOut from "../../modules/canteen/pages/Cart/CheckOut";
 import SignUp from "../../pages/Sign up/SignUp" 
 import Admin from "../../modules/canteen/Admin/admin";
+import Cdash from "../../modules/canteen/CDashboard/cdash";
 
 export default function AppRoutes() {
     return (
       <>
         <Routes>
+                <Route path='/d' element={<Cdash />} />
           <Route path="/" element={<Home />} />
           <Route path="/a" element={<Admin />} />
           <Route path="/Login" element={<LoginForm />} />
