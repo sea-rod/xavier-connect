@@ -9,6 +9,7 @@ import CheckOut from "../../modules/canteen/pages/Cart/CheckOut";
 import SignUp from "../../pages/Sign up/SignUp" 
 import Admin from "../../modules/canteen/Admin/admin";
 import Cdash from "../../modules/canteen/CDashboard/cdash";
+import HelpLine from "../../modules/helpLine/helpline";
 
 export default function AppRoutes() {
     return (
@@ -25,6 +26,7 @@ export default function AppRoutes() {
           <Route path="/Canteen" element={<Canteen />} />
           <Route path="/Cart" element={<CheckOut />} />
           <Route path="/BtoCanteen" element={<Canteen />} />
+          <Route path="/HelpLine" element={<HelpLine />} />
         </Routes>
       </>
     );

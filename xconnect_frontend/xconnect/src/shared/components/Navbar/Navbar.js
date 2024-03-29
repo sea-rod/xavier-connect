@@ -38,6 +38,9 @@ export default function Navbar() {
       case "/SubEvents":
         setNavbarColor("#FFF500");
         break;
+      case "/HelpLine":
+        setNavbarColor("#ADD8E6");
+        break;
       default:
         setNavbarColor("");
     }
@@ -47,7 +50,8 @@ export default function Navbar() {
   useEffect(() => {
     switch (location.pathname) {
       case "/Events":
-      case "SubEvents":
+      case "/SubEvents":
+      case "/HelpLine":
         setNavbarTextColor("black");
         break;
       default:
