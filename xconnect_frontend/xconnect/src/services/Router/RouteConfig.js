@@ -7,14 +7,19 @@ import SubEvents from "../../modules/events/pages/SubEvents";
 import Canteen from "../../modules/canteen/pages/MainPage/Canteen";
 import CheckOut from "../../modules/canteen/pages/Cart/CheckOut";
 import SignUp from "../../pages/Sign up/SignUp" 
+
 import Calendar from "../../modules/calendar/calendar";
+import Admin from "../../modules/canteen/Admin/admin";
+import Cdash from "../../modules/canteen/CDashboard/cdash";
 import HelpLine from "../../modules/helpLine/helpline";
 
 export default function AppRoutes() {
     return (
       <>
         <Routes>
+                <Route path='/d' element={<Cdash />} />
           <Route path="/" element={<Home />} />
+          <Route path="/a" element={<Admin />} />
           <Route path="/Login" element={<LoginForm />} />
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/Events" element={<Events />} />

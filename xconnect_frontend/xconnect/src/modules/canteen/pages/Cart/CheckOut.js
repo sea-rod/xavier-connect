@@ -28,46 +28,18 @@ export default function CheckOut() {
     fetchData();
   }, []);
 
-  const deleteItem = (itemId) => {
-    axiosInstance
-      .delete(`canteen/${itemId}/item/`)
-      .then((res) => {
-        console.log(res);
-        fetchData();
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
   return (
-    <div>
-      <div className="cartpage">
-        <h2>
-          Shopping Cart <span>({totalItems} item in your cart)</span>
-        </h2>
-        {itemData.map((item) => (
-          <Cartitem
-            key={item?.id}
-            item_id={item?.id}
-            id={item.menu.id}
-            name={item.menu.item_name}
-            image={item.menu.image}
-            price={item.menu.price}
-            quantity={item.quantity}
-            delete_item={deleteItem}
-          />
-        ))}
-      </div>
-      <div className="cartpage" id="cartpage-sub">
-        <div className="total">
-          <div className="label">Order total:</div>
-          <div className="value">Rs {cartData.total}</div>
+    <div className="container" id="canteen-cart">
+      <h1 className="text-center">Your Order</h1>
+      <div className="py-2">
+        <Cartitem />
+        <hr className="my-2 " />
+        <div className="px-3 d-flex">
+          <p className="m-0">Add More Items</p>
+          <Link className="ms-auto" to="/Canteen">
+            <i className="fa fa-plus"></i>
+          </Link>
         </div>
-        <Link to="/Canteen">
-          <button className="backtocanteen">Continue shopping</button>
-        </Link>
-        <button className="reserve">Reserve</button>
       </div>
     </div>
   );
