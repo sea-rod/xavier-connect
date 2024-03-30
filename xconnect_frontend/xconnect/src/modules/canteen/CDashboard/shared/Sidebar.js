@@ -45,7 +45,7 @@ const Sidebar = ({children}) => {
     <motion.div animate={{ width: "250px"}} className="sidebar" id="sidebar">
 
         <div className="user" id="sidebar">
-            <div className="user-icon" id="sidebar" ><LiaUserCircleSolid /></div>
+            <div className="user-icon d-flex justify-content-center" id="sidebar" ><LiaUserCircleSolid className="my-auto" /></div>
             <div className="user-name" id="sidebar">
             <h4>ADMIN</h4>
             <h6>James Anderson</h6>
