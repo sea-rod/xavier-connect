@@ -1,4 +1,5 @@
 //menu UI
+import AddBtn from "../AddBtn/AddBtn";
 const Card = (props) => {
   return (
     <div className="d-flex flex-column col-5 col-md-2 py-2 px-0 justify-content-be mx-1">
@@ -8,21 +9,12 @@ const Card = (props) => {
       <div className="text-white  mt-2 d-flex flex-column justify-content-start">
         <p className="m-0 item ">{props.name}</p>
         <p className="m-0 price">Rs {props.price}/-</p>
-        {props.quantity === "Add" ? (
-          <button
-            className=" col-7 mt-1"
-            onClick={props.incItem}
-            disabled={!props.status}
-          >
-            {props.quantity}
-          </button>
-        ) : (
-          <button className="d-flex justify-content-between mt-1">
-            <i className="fa fa-minus my-auto" onClick={props.descItem}></i>
-            <p>{props.quantity}</p>
-            <i className="fa fa-plus my-auto" onClick={props.incItem}></i>
-          </button>
-        )}
+        <AddBtn
+          quantity={props.quantity}
+          status={props.status}
+          incItem={props.incItem}
+          descItem={props.descItem}
+        />
       </div>
     </div>
   );

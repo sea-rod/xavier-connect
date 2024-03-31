@@ -14,13 +14,7 @@ export default function CheckOut() {
       console.log(res.data);
       setCartData(res.data);
       setItemData(res.data.menu_items);
-      // console.log(itemData[0].id);
-      let sum = 0;
-      res.data.menu_items.forEach((item) => {
-        sum += item.quantity;
-      });
-      setTotalItems(sum);
-      console.log("res:", sum);
+      
     });
   };
 
@@ -32,7 +26,19 @@ export default function CheckOut() {
     <div className="container" id="canteen-cart">
       <h1 className="text-center">Your Order</h1>
       <div className="py-2">
-        <Cartitem />
+        {itemData.map((item) => (
+          <Cartitem
+            quantity={item.quantity}
+            key={item.menu.id}
+            id={item.menu.id}
+            name={item.menu.item_name}
+            image={item.menu.image}
+            price={item.menu.price}
+            item_id={item.id}
+            status={item.status}
+          />
+        ))}
+
         <hr className="my-2 " />
         <div className="px-3 d-flex">
           <p className="m-0">Add More Items</p>

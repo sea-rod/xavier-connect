@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import axiosInstance from "../../../../services/axios";
 import Card from "../card/card";
 import { useNavigate } from "react-router-dom";
 import SearchCard from "../SearchCard/SearchCard";
 import "./Item.css";
+import { addToCartAPICall, inc_qauntity, desc_qauntity } from "./utils";
 
 const Item = (props) => {
   const navigate = useNavigate();
@@ -30,76 +30,45 @@ const Item = (props) => {
     }
   }, [quantity, props.quantity]);
 
+  useEffect(() => {
+    console.log(itemId, "itemId");
+  }, [itemId]);
+
   // increase item quantity
   const incItem = () => {
-    console.log(quantity);
-    if (quantity === "Add") {
-      console.log("inc");
-      setQuantity(1);
-    } else {
-      setQuantity((prevQuantity) => prevQuantity + 1); // Functional update
-    }
+    setQuantity((prevQuantity) => inc_qauntity(prevQuantity)); // Functional update
   };
 
   // decrease item quantity
   const descItem = () => {
-    console.log("desc", quantity);
-    if (quantity !== "Add") {
-      console.log("desc 1");
-      setQuantity((prevQuantity) => prevQuantity - 1); // Functional update
-    }
-    if (quantity - 1 <= 0) {
-      console.log("desc 2");
-      setQuantity("Add");
-      deleteItem();
-    }
+    setQuantity((prevQuantity) =>
+      desc_qauntity(props.id, itemId, prevQuantity)
+    );
   };
-
   // makes api call to delete item from cart
-  const deleteItem = () => {
-    axiosInstance
-      .delete("canteen/" + itemId + "/item/")
-      .then((res) => {
-        console.log(res);
-        let cartdata = [props.id, false];
-        let event = new CustomEvent("cart_updated", { detail: cartdata });
-        window.dispatchEvent(event);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
 
   // makes api call to add item to cart
   const addToCart = () => {
     console.log("Adding to cart:", quantity);
-    axiosInstance
-      .post("canteen/item/", {
-        menu_id: props.id,
-        quantity: quantity,
-      })
-      .then((res) => {
-        console.log(res.status);
-        setItemId(res.data?.id);
-        let cartdata = [props.id, true];
-        let event = new CustomEvent("cart_updated", { detail: cartdata });
-        window.dispatchEvent(event);
-      })
-      .catch((err) => {
-        console.log(err.response);
-        if (err.response.status === 400) {
-          setQuantity((prevQuantity) => prevQuantity - 1);
-          alert(err.response.data);
-        } else if (err.response.data) {
-          setQuantity("Add");
-        }
-        if (
-          err.response.status === 403 &&
-          !localStorage.getItem("access_token")
-        ) {
-          navigate("/Login");
-        }
+    try {
+      addToCartAPICall(props.id, quantity).then((id) => {
+        setItemId(id);
       });
+    } catch (err) {
+      console.log(err.response);
+      if (err.response.status === 400) {
+        setQuantity((prevQuantity) => prevQuantity - 1);
+        alert(err.response.data);
+      } else if (err.response.data) {
+        setQuantity("Add");
+      }
+      if (
+        err.response.status === 403 &&
+        !localStorage.getItem("access_token")
+      ) {
+        navigate("/Login");
+      }
+    }
   };
 
   return (
