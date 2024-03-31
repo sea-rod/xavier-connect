@@ -7,6 +7,6 @@
     width: auto;
 }
 
-::-webkit-scrollbar{
+#order-cards-dashboaed::-webkit-scrollbar{
     width: 20px;
   }
