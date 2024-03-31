@@ -9,11 +9,6 @@
     align-items: center;
 }
 
-/* img, svg {
-    vertical-align:auto;
-} */
-
-
 #sidebar .main-container{
     display: flex;
     flex-direction: row;
@@ -35,12 +30,18 @@
 }
 
 #sidebar .user-icon{
-    color: black;
     background-color: aliceblue;
-    border-radius: 100px;
-    height: 70px;
-    font-size: 65px;
-    margin-right: 7px;
+  border-radius: 50%; /* Use 50% to make it circular */
+  height: 70px;
+  width: 70px;
+  padding: 5px;
+  margin-right: 7px;
+  overflow: hidden; /* Ensure the image doesn't overflow */
+}
+
+#usericon-sidebar{
+    max-width: 100%;
+    max-height: 100%;
 }
 
 #sidebar .user-name h3{

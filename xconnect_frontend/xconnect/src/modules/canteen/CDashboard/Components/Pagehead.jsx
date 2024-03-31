@@ -5,7 +5,7 @@ function Pagehead({ names }) {
     <>
     <div id="pagehead" >
     {names.map((item, index) => (
-      <h1 className="page-name" key={index}>{item.name}</h1>
+      <h1 id="pageheadpage-name" key={index}>{item.name}</h1>
     ))}
     </div>
     </>
