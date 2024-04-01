@@ -1,3 +1,4 @@
+from django.db import transaction
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 from .models import Menu, Items, Cart, Order
@@ -22,13 +23,14 @@ class ItemSerializer(serializers.ModelSerializer):
         validated_data["price"] = menu.price * validated_data["quantity"]
         cart_id = validated_data["cart_id"]
         try:
-            items = Items.objects.get(cart_id=cart_id, menu_id=menu.pk)
-            items.price = validated_data["price"]
-            if menu.avail_quantity >= validated_data["quantity"]:
-                items.quantity = validated_data["quantity"]
-                items.save()
-            else:
-                raise ValidationError("Out of Stock")
+            with transaction.atomic():
+                items = Items.objects.get(cart_id=cart_id, menu_id=menu.pk)
+                items.price = validated_data["price"]
+                if menu.avail_quantity >= validated_data["quantity"]:
+                    items.quantity = validated_data["quantity"]
+                    items.save()
+                else:
+                    raise ValidationError("Out of Stock")
         except Items.DoesNotExist as error:
             items = Items.objects.create(**validated_data)
         return items
@@ -53,25 +55,28 @@ class OrderSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         try:
-            cart = Cart.objects.get(user_id=validated_data["user_id"])
-            validated_data["cart_id"] = cart
-            items = Items.objects.filter(cart_id=cart)
-            if not items:
-                raise ValidationError("Cart is Empty")
-            in_stock = set()
-            for item in items:
-                menu = Menu.objects.get(pk=item.menu_id.pk)
-                if menu.avail_quantity >= item.quantity:
-                    menu.avail_quantity -= item.quantity
-                    in_stock.add(menu)
-                else:
-                    in_stock.clear()
-                    raise ValidationError(f"{menu.item_name} is out of stock")
-            for menu in in_stock:
-                menu.save()
-            cart.user_id = None
-            cart.save()
-            Cart.objects.create(user_id=validated_data["user_id"])
-            return super().create(validated_data)
+            with transaction.atomic():
+                cart = Cart.objects.select_for_update().get(
+                    user_id=validated_data["user_id"]
+                )
+                validated_data["cart_id"] = cart
+                items = Items.objects.filter(cart_id=cart)
+                if not items:
+                    raise ValidationError("Cart is Empty")
+                in_stock = set()
+                for item in items:
+                    menu = item.menu_id
+                    if menu.avail_quantity >= item.quantity:
+                        menu.avail_quantity -= item.quantity
+                        in_stock.add(menu)
+                    else:
+                        in_stock.clear()
+                        raise ValidationError(f"{menu.item_name} is out of stock")
+                for menu in in_stock:
+                    menu.save()
+                cart.user_id = None
+                cart.save()
+                Cart.objects.create(user_id=validated_data["user_id"])
+                return "Checkout successful"
         except Cart.DoesNotExist as e:
-            raise ValidationError("cart does not exist", e)
+            raise ValidationError("Cart does not exist", e)
