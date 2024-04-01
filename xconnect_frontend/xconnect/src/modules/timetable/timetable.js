@@ -28,9 +28,58 @@ export default function TimeTable() {
                         </ul>
                     </div>
                 </div>
-                <div className="mt-4" style={{width:'100%'}}>
-                    <div className="" style={{backgroundColor:"#E34A64", border:'5px solid #E34A64', paddingLeft:'10px', borderRadius:"5px"}}>
+                <div className="container mt-4" style={{ width: '100%' }}>
+                    <div className="timetable-heading">
                         TYBCA
+                        <div className='mt-1' style={{ backgroundColor: '#3D3D3D', height: 'auto', borderRadius: '5px' }}>
+                            <table id="timetable">
+                                <tbody>
+                                    <tr>
+                                        <th>MON</th>
+                                        <td>IOT</td>
+                                        <td>IOT</td>
+                                        <td>IOT</td>
+                                        <td>IOT</td>
+                                    </tr>
+                                    <tr>
+                                        <th>TUE</th>
+                                        <td>IOT</td>
+                                        <td>IOT</td>
+                                        <td>IOT</td>
+                                        <td>IOT</td>
+                                    </tr>
+                                    <tr>
+                                        <th>WED</th>
+                                        <td>IOT</td>
+                                        <td>IOT</td>
+                                        <td>IOT</td>
+                                        <td>IOT</td>
+                                    </tr>
+                                    <tr>
+                                        <th>THU</th>
+                                        <td>IOT</td>
+                                        <td>IOT</td>
+                                        <td>IOT</td>
+                                        <td>IOT</td>
+                                    </tr>
+                                    <tr>
+                                        <th>FRI</th>
+                                        <td>IOT</td>
+                                        <td>IOT</td>
+                                        <td>IOT</td>
+                                        <td>IOT</td>
+                                    </tr>
+                                    <tr>
+                                        <th>SAT</th>
+                                        <td>IOT</td>
+                                        <td>IOT</td>
+                                        <td>IOT</td>
+                                        <td>IOT</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
                     </div>
                 </div>
             </div>

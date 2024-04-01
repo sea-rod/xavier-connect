@@ -33,6 +33,7 @@
 #login .login-button{
   color: #f8f9fd;
   border-radius: 20px;
+  font-weight: 600;
   font-size: 20px;
   padding: 5px 30px;
   background-color: #e34a64;;

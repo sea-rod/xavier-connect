@@ -7,9 +7,9 @@ import SubEvents from "../../modules/events/pages/SubEvents";
 import Canteen from "../../modules/canteen/pages/MainPage/Canteen";
 import CheckOut from "../../modules/canteen/pages/Cart/CheckOut";
 import SignUp from "../../pages/Sign up/SignUp" 
-import Calendar from "../../modules/calendar/calendar";
 import Admin from "../../modules/canteen/Admin/admin";
 import Cdash from "../../modules/canteen/CDashboard/cdash";
+import Calendar from "../../modules/calendar/Calendar"
 import HelpLine from "../../modules/helpLine/helpline";
 import TimeTable from "../../modules/timetable/timetable";
 

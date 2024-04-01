@@ -4,6 +4,7 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 // import { Link, useNavigate } from "react-router-dom";
 // import axiosInstance from "../../services/axios";
 import "./SignUp.css"
+import { Link } from "react-router-dom";
 
 export default function SignUp() {
     const [showPassword, setShowPassword] = useState(false);
@@ -62,7 +63,7 @@ export default function SignUp() {
                         </div>
 
                         <button className="signupbtn col-10 d-flex justify-content-center mx-auto mt-5">SignUp</button>
-                        <div className="signin mt-3">Already have an account? <a href="/">Signin</a> </div>
+                        <div className="signin mt-3">Already have an account? <Link to="/Login">Signin</Link> </div>
                     </form>
                 </div>
             </div>
