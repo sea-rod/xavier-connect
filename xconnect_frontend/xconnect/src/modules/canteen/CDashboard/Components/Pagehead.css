@@ -1,0 +1,20 @@
+#pagehead{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.page-name{
+    width: 100%;
+    color: #ffffff;
+    background-color: #3B3B3B;
+    border-radius: 8px;
+    border: solid 2px  #FF7D34;
+    padding: 0.5rem;
+    text-align: center;
+    justify-content: space-around;
+    margin-top: 2vh;
+    text-transform: uppercase;
+}

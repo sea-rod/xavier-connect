@@ -14,13 +14,6 @@ export default function CheckOut() {
       console.log(res.data);
       setCartData(res.data);
       setItemData(res.data.menu_items);
-      // console.log(itemData[0].id);
-      let sum = 0;
-      res.data.menu_items.forEach((item) => {
-        sum += item.quantity;
-      });
-      setTotalItems(sum);
-      console.log("res:", sum);
     });
   };
 
@@ -28,47 +21,37 @@ export default function CheckOut() {
     fetchData();
   }, []);
 
-  const deleteItem = (itemId) => {
-    axiosInstance
-      .delete(`canteen/${itemId}/item/`)
-      .then((res) => {
-        console.log(res);
-        fetchData();
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
   return (
-    <div>
-      <div className="cartpage">
-        <h2>
-          Shopping Cart <span>({totalItems} item in your cart)</span>
-        </h2>
-        {itemData.map((item) => (
-          <Cartitem
-            key={item?.id}
-            item_id={item?.id}
-            id={item.menu.id}
-            name={item.menu.item_name}
-            image={item.menu.image}
-            price={item.menu.price}
-            quantity={item.quantity}
-            delete_item={deleteItem}
-          />
-        ))}
-      </div>
-      <div className="cartpage" id="cartpage-sub">
-        <div className="total">
-          <div className="label">Order total:</div>
-          <div className="value">Rs {cartData.total}</div>
+    <div
+      className="container vh-100 d-flex flex-column justify-content-between"
+      id="canteen-cart"
+    >
+      <div>
+        <h1 className="text-center">Your Order</h1>
+        <div className="py-2">
+          {itemData.map((item) => (
+            <Cartitem
+              quantity={item.quantity}
+              key={item.menu.id}
+              id={item.menu.id}
+              name={item.menu.item_name}
+              image={item.menu.image}
+              price={item.menu.price}
+              item_id={item.id}
+              status={item.status}
+            />
+          ))}
+
+          <hr className="my-2 " />
+          <div className="px-3 d-flex">
+            <p className="m-0">Add More Items</p>
+            <Link className="ms-auto" to="/Canteen">
+              <i className="fa fa-plus"></i>
+            </Link>
+          </div>
         </div>
-        <Link to="/Canteen">
-          <button className="backtocanteen">Continue shopping</button>
-        </Link>
-        <button className="reserve">Reserve</button>
       </div>
+      <button className="order-btn">Pay | Rs {cartData.total}/-</button>
     </div>
   );
 }

@@ -12,7 +12,7 @@ STATUS_CHOICE = (
 class Menu(models.Model):
     item_name = models.CharField(max_length=255)
     price = models.FloatField()
-    image = models.ImageField(default="media/default.jpg", upload_to="media/canteen")
+    image = models.ImageField(default="default/default.jpg", upload_to="media/canteen")
     avail_quantity = models.IntegerField(default=0)
     status = models.BooleanField(default=False)
 

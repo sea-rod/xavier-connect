@@ -1,36 +1,31 @@
-import React, { useEffect, useState } from "react";
-import Item from "../Item/Item";
 import CartBar from "../CartBar/CartBar";
 import axiosInstance from "../../../../services/axios";
-import "./Popular.css";
+import { useEffect, useState } from "react";
+import Item from "../Item/Item";
 
-const Popular = () => {
-  const [data, setData] = useState([]);
+const SearchItems = ({ search_value }) => {
+  const [cartData, setCartData] = useState([]);
   const [cartItemCount, setCartItemCount] = useState(new Set());
+  const [searchData, setSearchData] = useState([]);
   const [IsEmpty, setIsEmpty] = useState(true);
-  const [cartData, setCartData] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    if (cartData) {
-      console.log("inside", cartData);
-      setIsLoading(false);
-    }
-  }, [cartData]);
+    axiosInstance
+      .get("canteen/menu/", {
+        params: {
+          search: search_value,
+        },
+      })
+      .then((res) => {
+        console.log(res);
+        setSearchData(res.data, "search data");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [search_value]);
 
   useEffect(() => {
-    // Function to fetch menu data
-    const fetchMenuData = async () => {
-      console.log("request send");
-      try {
-        const response = await axiosInstance.get("canteen/menu/");
-        setData(response.data);
-      } catch (error) {
-        console.log("Error fetching menu data:", error);
-      }
-    };
-
-    // Function to fetch cart data
     const fetchCartData = async () => {
       try {
         const response = await axiosInstance.get("canteen/cart/");
@@ -47,8 +42,6 @@ const Popular = () => {
       }
     };
 
-    // Call both functions to fetch data
-    fetchMenuData();
     fetchCartData();
 
     window.addEventListener("cart_updated", function (event) {
@@ -78,28 +71,22 @@ const Popular = () => {
   }, [cartItemCount]);
 
   return (
-    <div class="row mt-2 mx-5 d-flex justify-content-between">
-      <h1>Trending orders</h1>
-      <hr />
-      {isLoading ? (
-        <p>Loading...</p>
-      ) : (
-        data.map((item) => (
-          <Item
-            key={item.id}
-            id={item.id}
-            name={item.item_name}
-            image={item.image}
-            price={item.price}
-            quantity={cartData[item.id]?.quantity || "Add"}
-            item_id={cartData[item.id]?.item_id}
-            status={item.status}
-          />
-        ))
-      )}
+    <div className="container">
+      {searchData.map((item) => (
+        <Item
+          key={item.id}
+          id={item.id}
+          name={item.item_name}
+          image={item.image}
+          price={item.price}
+          quantity={cartData[item.id]?.quantity || "Add"}
+          item_id={cartData[item.id]?.item_id}
+          status={item.status}
+          search={true}
+        />
+      ))}
       <CartBar item_count={cartItemCount.size} display={!IsEmpty} />
     </div>
   );
 };
-
-export default Popular;
+export default SearchItems;
