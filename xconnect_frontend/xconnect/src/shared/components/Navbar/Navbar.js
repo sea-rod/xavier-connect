@@ -32,6 +32,7 @@ export default function Navbar() {
         break;
       case "/Login":
       case "/SignUp":
+      case "/TimeTable":
         setNavbarColor("#EE3A57");
         break;
       case "/Events":
@@ -41,6 +42,9 @@ export default function Navbar() {
       case "/HelpLine":
         setNavbarColor("#ADD8E6");
         break;
+      case "/Calendar":
+        setNavbarColor("#5CC1A3");
+        break
       default:
         setNavbarColor("");
     }
@@ -52,6 +56,7 @@ export default function Navbar() {
       case "/Events":
       case "/SubEvents":
       case "/HelpLine":
+      case "/Calendar":
         setNavbarTextColor("black");
         break;
       default:
@@ -104,7 +109,7 @@ export default function Navbar() {
               Events
             </Link>
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/" style={{ color: navbarTextColor }} onClick={collapseNavbar}>
+              <a className="nav-link active" aria-current="page" href="/TimeTable" style={{ color: navbarTextColor }} onClick={collapseNavbar}>
                 Time Table
               </a>
             </li>

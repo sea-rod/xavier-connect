@@ -8,6 +8,8 @@ import Canteen from "../../modules/canteen/pages/MainPage/Canteen";
 import CheckOut from "../../modules/canteen/pages/Cart/CheckOut";
 import SignUp from "../../pages/Sign up/SignUp" 
 import HelpLine from "../../modules/helpLine/helpline";
+import Calendar from "../../modules/calendar/Calendar";
+import TimeTable from "../../modules/timetable/timetable";
 
 export default function AppRoutes() {
     return (
@@ -21,8 +23,9 @@ export default function AppRoutes() {
           {/* <Route path='/Library' element={<Library />} /> */}
           <Route path="/Canteen" element={<Canteen />} />
           <Route path="/Cart" element={<CheckOut />} />
-          <Route path="/BtoCanteen" element={<Canteen />} />
           <Route path="/HelpLine" element={<HelpLine />} />
+          <Route path="/Calendar" element={<Calendar />} />
+          <Route path="/TimeTable" element={<TimeTable />} />
         </Routes>
       </>
     );
