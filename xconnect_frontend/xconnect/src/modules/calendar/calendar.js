@@ -1,41 +1,14 @@
 import React from "react";
-import "./calendar.css";
+import "./Calendar.css"
 
 export default function Calendar() {
-  const calendarImg = process.env.PUBLIC_URL + "/calendarImages/calendar.png";
-
-  return (
-    <>
-      <div className="row flex-lg-row-reverse">
-        <div className="text-center">
-          <div style={{ position: "relative", maxHeight: "170px" }}>
-            <img
-              src={calendarImg}
-              className="img-fluid"
-              alt="Bootstrap Themes"
-              loading="lazy"
-              style={{ width: "100%" }}
-            />
-            <div className="calendar col-lg-6">
-              <h1 className="display-3 fw-bold month-text">JUNE 2024</h1>
-            </div>
-          </div>
+    return (
+        <>
+        <div className="container">
+            <div className='mt-3 d-flex justify-content-center align-items-center calendar-hero-font' style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/Calendar/image33.png)`, height:'200px'}}>March 2021</div>
+            <div style={{display: "inline", color:'#55C1A3'}}>THU <span style={{fontSize:'25px'}}><strong>08</strong></span></div>
+            <div className="mt-3 announcement-font" style={{backgroundColor: '#5CC1A3', height: 'auto', padding: "10px", borderRadius:"12px", display: "inline-block", width: "80%", marginLeft: "10px"}}>CHEMFEST</div>
         </div>
-      </div>
-      <div className="mt-4 container" style={{ position: "relative" }}>
-        <div className="calendar-custom-container textStyle">
-          <p>THU 08</p>
-          <h1 className="boxStyle">CHEMIFEST</h1>
-        </div>
-        <div className="calendar-custom-container textStyle">
-          <p>WED 24</p>
-          <h1 className="boxStyle">SPORTS DAY</h1>
-        </div>
-        <div className="calendar-custom-container textStyle">
-          <p>MON 26</p>
-          <h1 className="boxStyle">CANTEEN DAY</h1>
-        </div>
-      </div>
-    </>
-  );
+        </>
+    );
 }

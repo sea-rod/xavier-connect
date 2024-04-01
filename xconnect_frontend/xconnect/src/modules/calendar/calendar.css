@@ -1,92 +1,15 @@
-.calendar {
-    color: #000000;
-    transform: translate(-2%, -230%);
+.calendar-hero-font{
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 35px;
+    color: black;
 }
 
-.textStyle {
-    color: #5CC1A3;
-}
-
-.calendar-custom-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 14px;
-    font-weight: bold;
-}
-
-.boxStyle {
-    background-color: #5CC1A3;
-    color: #000000;
-    font-size: 16px;
-    margin-left: 12px;
-    margin-bottom: 4%;
-    font-weight: bold;
-    border-radius: 10px;
-    padding: 8px;
-    width: 290px;
-}
-
-/* Media Query for small screens */
-@media only screen and (min-width: 350px) and (max-width: 411px){
-    .calendar {
-        color: #000000;
-        transform: translate(-2%, -230%);
-    }
-    
-    .textStyle {
-        color: #5CC1A3;
-    }
-    
-    .calendar-custom-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: 14px;
-        font-weight: bold;
-    }
-    
-    .boxStyle {
-        background-color: #5CC1A3;
-        color: #000000;
-        font-size: 14px;
-        margin-left: 12px;
-        margin-bottom: 4%;
-        font-weight: bold;
-        border-radius: 10px;
-        padding: 8px;
-        width: 250px;
-    }
-}
-
-/* Media Query for tabs */
-@media only screen and (min-width: 1024px) and (max-width: 1366px){
-    .calendar {
-        color: #000000;
-        transform: translate(50%, -340%);
-    }
-    
-    .textStyle {
-        color: #5CC1A3;
-    }
-    
-    .calendar-custom-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: 14px;
-        font-weight: bold;
-    }
-    
-    .boxStyle {
-        background-color: #5CC1A3;
-        color: #000000;
-        font-size: 16px;
-        margin-left: 12px;
-        margin-bottom: 4%;
-        font-weight: bold;
-        border-radius: 10px;
-        padding: 8px;
-        width: 290px;
-    }
+.announcement-font{
+    font-family: "Inter", sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    font-style: normal;
+    color: black;
 }
