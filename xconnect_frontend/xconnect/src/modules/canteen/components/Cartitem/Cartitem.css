@@ -1,4 +1,4 @@
-#canteen-cart div {
+#canteen-cart div div.py-2 {
 	background-color: rgb(44, 44, 44);
 	border-radius: 10px;
 }
@@ -26,4 +26,11 @@
 #canteen-cart .item-name{
 	font-size: 15px;
 	font-weight: bold;
+}
+#canteen-cart .order-btn{
+	position: sticky;
+	bottom: 40px;
+	align-self: center;
+	width: 90%;
+	font-size: 20px;
 }

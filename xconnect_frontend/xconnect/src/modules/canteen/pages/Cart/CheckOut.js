@@ -14,7 +14,6 @@ export default function CheckOut() {
       console.log(res.data);
       setCartData(res.data);
       setItemData(res.data.menu_items);
-      
     });
   };
 
@@ -23,30 +22,36 @@ export default function CheckOut() {
   }, []);
 
   return (
-    <div className="container" id="canteen-cart">
-      <h1 className="text-center">Your Order</h1>
-      <div className="py-2">
-        {itemData.map((item) => (
-          <Cartitem
-            quantity={item.quantity}
-            key={item.menu.id}
-            id={item.menu.id}
-            name={item.menu.item_name}
-            image={item.menu.image}
-            price={item.menu.price}
-            item_id={item.id}
-            status={item.status}
-          />
-        ))}
+    <div
+      className="container vh-100 d-flex flex-column justify-content-between"
+      id="canteen-cart"
+    >
+      <div>
+        <h1 className="text-center">Your Order</h1>
+        <div className="py-2">
+          {itemData.map((item) => (
+            <Cartitem
+              quantity={item.quantity}
+              key={item.menu.id}
+              id={item.menu.id}
+              name={item.menu.item_name}
+              image={item.menu.image}
+              price={item.menu.price}
+              item_id={item.id}
+              status={item.status}
+            />
+          ))}
 
-        <hr className="my-2 " />
-        <div className="px-3 d-flex">
-          <p className="m-0">Add More Items</p>
-          <Link className="ms-auto" to="/Canteen">
-            <i className="fa fa-plus"></i>
-          </Link>
+          <hr className="my-2 " />
+          <div className="px-3 d-flex">
+            <p className="m-0">Add More Items</p>
+            <Link className="ms-auto" to="/Canteen">
+              <i className="fa fa-plus"></i>
+            </Link>
+          </div>
         </div>
       </div>
+      <button className="order-btn">Pay | Rs {cartData.total}/-</button>
     </div>
   );
 }
