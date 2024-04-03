@@ -1,0 +1,48 @@
+html, .content {
+    height: auto;
+    width: auto;
+ }
+ 
+ body{
+   min-height:100vh;
+   width: 100vw;
+   position: relative;
+   /* overflow-x: hidden; */
+   overflow-y: hidden;
+ }
+ 
+ #scroll-container-outer-insideadmin{
+  display: flex;
+  justify-content: space-around;
+ }
+ .scroll-container-insideadmin{
+   align-items: center;
+   justify-content: space-evenly;
+   overflow-y: scroll;
+   height: auto;
+   /* border: 2px solid red; */
+   margin-top: 2rem;
+   max-height: 80vh;
+   width: 83vw;
+ }
+ 
+ .container-for-cards{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   padding: 2rem;
+   flex-wrap: wrap;
+   width: fit-content;
+ }
+ 
+ .app{
+   height: auto;
+   width:  100vw;
+   display: flex;
+   position: relative;
+   font-family: 'Source Sans Pro', sans-serif;
+ }
+ 
+ #sidebar.main-box{
+   width: 100vw;
+ }

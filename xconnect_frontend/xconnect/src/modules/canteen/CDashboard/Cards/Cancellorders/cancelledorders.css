@@ -1,0 +1,110 @@
+#cancelledorders-card.cancelledorders{
+    color: #ffff;
+    border: 2px solid #FF7D34;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 10px;
+    background-color: #ffffff20;
+    overflow: hidden;
+  }
+  
+  #top-section.cancelledorders{
+    align-items: center;
+    background-color: #FF7D34;
+    min-width: 65vh;
+    height: 12vh;
+    padding: 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: hidden;
+  } 
+  
+  #top-left.cancelledorders{
+    display: flex;
+  }
+  
+  #card-image.cancelledorders{
+    width: 7vh;
+    height: 7vh;
+    position: relative;
+  }
+  
+  #customer-name-time.cancelledorders{
+    margin-left: 20px;
+  }
+  
+  #middle-section.cancelledorders{
+    display: flex;
+    background-color: #ffffff20;
+    min-width: 55vh;
+    height: fit-content;
+    padding: 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  #middle-left.cancelledorders, #middle-middle.cancelledorders, #middle-right.cancelledorders{
+    padding: 10px;
+  }
+  
+  #qty-mrp.cancelledorders{
+    display: flex;
+  }
+  
+  #bottom-section.cancelledorders{
+    background-color: #ffffff20;
+    border-top: 1.5px solid #FF7D34 ;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  
+  #btn-callcustomer.cancelledorders {
+    margin: .1rem;
+    display: inline-block;
+    padding: 0.4rem;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    border: 2px solid #FF7D34;
+    color: #FF7D34;
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
+    font-family: inherit;
+    height: fit-content;
+    border-radius: 10px;
+   }
+   
+   #bottom-right.cancelledorders{
+    flex-wrap: nowrap;
+   }
+  
+  #btn-ordercompleted.cancelledorders{
+    display: inline-block;
+    padding: 0.4rem;
+    /* font-size: 16px; */
+    font-weight: 600;
+    color: white;
+    background-color: #39A561;
+    border: 2px solid #39A561;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
+    font-family: inherit;
+    height: fit-content;
+    border-radius: 10px;
+  }
+  
+  @media (max-width: 600px) {
+      
+  }

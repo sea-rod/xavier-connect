@@ -2,36 +2,36 @@ import {motion} from "framer-motion";
 import "./Sidebar.css";
 import {FaHome} from 'react-icons/fa';
 import { NavLink } from "react-router-dom";
-import { LiaUserCircleSolid } from "react-icons/lia";
+import usericon from "../../Ascets/usericon.png";
 
 const routes = [
     {
-        path:"/dashboard",
+        path:"/d/dashboard",
         name:"Dashboard",
         icon: <FaHome/>,
     },
     {
-        path:"/neworders",
+        path:"/d/neworders",
         name:"NEW ORDERS",
         icon: <FaHome/>,
     },
     {
-        path:"/ongoingorders",
+        path:"/d/ongoingorders",
         name:"OONGING ORDERS",
         icon: <FaHome/>,
     },
     {
-        path:"/cancelledorders",
+        path:"/d/cancelledorders",
         name:"CANCELLED ORDERS",
         icon: <FaHome/>,
     },
     {
-        path:"/additems",
+        path:"/d/additems",
         name:"ADD ITEMS",
         icon: <FaHome/>,
     },
     {
-        path:"/inventory",
+        path:"/d/inventory",
         name:"INVENTORY",
         icon: <FaHome/>,
     },
@@ -45,7 +45,9 @@ const Sidebar = ({children}) => {
     <motion.div animate={{ width: "250px"}} className="sidebar" id="sidebar">
 
         <div className="user" id="sidebar">
-            <div className="user-icon d-flex justify-content-center" id="sidebar" ><LiaUserCircleSolid className="my-auto" /></div>
+            <div className="user-icon" id="sidebar" >
+                <img src={usericon} id="usericon-sidebar"/>    
+            </div>
             <div className="user-name" id="sidebar">
             <h4>ADMIN</h4>
             <h6>James Anderson</h6>

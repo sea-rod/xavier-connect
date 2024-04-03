@@ -1,5 +1,5 @@
 import Pagehead from "../Components/Pagehead";
-// import Inventorycard from "../components/cards/inventorycard";
+import Inventorycard from "../Cards/Inventory/inventorycard";
 
 const names = [
     {
@@ -12,7 +12,7 @@ const Inventory = () => {
         <>
         <Pagehead names={names}/>
         <div className="inventory-items">
-    
+            <Inventorycard/>   
         </div>
         </>
     );
