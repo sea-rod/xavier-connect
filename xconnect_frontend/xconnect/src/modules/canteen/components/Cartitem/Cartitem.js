@@ -52,6 +52,7 @@ function Cartitem(props) {
       addToCartAPICall(props.id, quantity).then((id) => {
         setItemId(id);
       });
+      // props.callback();
     } catch (err) {
       console.log(err.response);
       if (err.response.status === 400) {

@@ -7,7 +7,6 @@ import axiosInstance from "../../../../services/axios";
 export default function CheckOut() {
   const [itemData, setItemData] = useState([]);
   const [cartData, setCartData] = useState({});
-  const [totalItems, setTotalItems] = useState(0);
 
   const fetchData = () => {
     axiosInstance.get("canteen/cart/").then((res) => {
@@ -19,7 +18,13 @@ export default function CheckOut() {
 
   useEffect(() => {
     fetchData();
+    window.addEventListener("cart_updated", (e) => {
+      fetchData();
+      console.log("event triggred");
+    });
   }, []);
+
+  
 
   return (
     <div
@@ -39,6 +44,7 @@ export default function CheckOut() {
               price={item.menu.price}
               item_id={item.id}
               status={item.status}
+              callback={fetchData}
             />
           ))}
 
