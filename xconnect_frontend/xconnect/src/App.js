@@ -31,19 +31,17 @@ function App() {
             <>
               <Topbar />
               <div className="app">
-            <Sidebar>
-              <Routes>
-                <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/neworders" element={<Neworders />} />
-                <Route path="/ongoingorders" element={<Ongoingorders />} />
-                <Route path="/cancelledorders" element={<Cancelledorders />} />
-                <Route path="/additems" element={<Additems />} />
-                <Route path="/inventory" element={<Inventory />} />
-              </Routes>
-
-            </Sidebar>
-
-      </div>
+                <Sidebar>
+                  <Routes>
+                    <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/neworders" element={<Neworders />} />
+                    <Route path="/ongoingorders" element={<Ongoingorders />} />
+                    <Route path="/cancelledorders" element={<Cancelledorders />} />
+                    <Route path="/additems" element={<Additems />} />
+                    <Route path="/inventory" element={<Inventory />} />
+                  </Routes>
+                </Sidebar>
+              </div>
             </>
           }
         />

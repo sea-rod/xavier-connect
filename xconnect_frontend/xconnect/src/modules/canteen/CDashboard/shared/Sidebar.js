@@ -17,7 +17,7 @@ const routes = [
     },
     {
         path:"/ongoingorders",
-        name:"OONGING ORDERS",
+        name:"ONGING ORDERS",
         icon: <FaHome/>,
     },
     {
