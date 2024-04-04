@@ -1,0 +1,38 @@
+.book{
+    display: flex;
+    flex-direction: column;
+}
+
+.Newpage{
+    margin-top: 12px;
+    display: flex;
+    position: relative;
+    margin-left: 80px;
+    border-bottom: 3px solid grey;
+    padding-bottom: 16px;
+}
+
+.newtext{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0px 16px;
+    p{
+        font-weight: 700;
+        font-size: 18px;
+        color: grey;
+    }
+    h2{
+        font-weight: 700;
+        font-size: 24px;
+    }
+}
+
+
+.Newpage-img {
+    width: 15%;
+    img{
+        width: 95%;
+        border-radius: 12px;
+    }
+}
