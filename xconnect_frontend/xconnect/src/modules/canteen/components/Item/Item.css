@@ -1,152 +1,32 @@
-
-#canteen-item .item{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: nowrap;
+ #canteen img {
+  height: 25vh;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
-#canteen-item .card {
-    width: 290px;
-    height: 454px;
-    padding: .8em;
-    background: #f5f5f5;
-    position: relative;
-    overflow: visible;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-   }
-   
-   #canteen-item .card-img img{
-    width: 100%;
-      height: 300px;
-      display: block;
-   }
-
-  #canteen-item .card-img {
-    background-color: #ffcaa6;
-    max-width: 100%;
-      max-height: 100%;
-      overflow: hidden;
-    border-radius: .5rem;
-    transition: .3s ease;
-   }
-   
-#canteen-item   .card-info {
-    padding-top: 10%;
-   }
-   
- #canteen-item  svg {
-    width: 20px;
-    height: 20px;
-   }
-   
-  #canteen-item .card-footer {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 10px;
-    background-color: #5E2BD7;
-    border-top: 1px solid rgb(0, 0, 0);
-    color: #ffffff;
-   }
-   
-   /*Text*/
- #canteen-item  .text-title {
-    font-weight: 900;
-    font-size: 1.2em;
-    line-height: 1.5;
-   }
-   
- #canteen-item  .text-body {
-    font-size: .9em;
-    padding-bottom: 10px;
-   }
-   
-   /*Button*/
- #canteen-item  .card-button {
-    border: 1px solid rgb(255, 255, 255);
-    background-color: #f5f5f5;
-    display: flex;
-    padding: .3em;
-    cursor: pointer;
-    border-radius: 50px;
-    transition: .3s ease-in-out;
-   }
-   
-   /*Hover*/
- #canteen-item  .card-img:hover {
-    transform: translateY(-7%);
-    box-shadow: rgb(95, 61, 182) 0px 13px 47px -5px, rgba(107, 48, 255, 0.632) 0px 8px 16px -8px;
-   }
-   
-  #canteen-item .card-button:hover {
-    border: 2px solid rgb(255, 255, 255);
-    background-color: #ffffff;
-   }
-   
-@media (max-width:900px) {
-  #canteen-item  .item{
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-    }
+#canteen button {
+  width: 60%;
+  border: none;
+  height: 25px;
+  color: white;
+  background-color: #FEB804;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
 }
 
-
-
-
-
-
-
-   /* NOT RESPONSIVE CSS PEOPLE */
-
-/* .item{
-    width: auto;
+#canteen button:disabled{
+  background-color: rgb(234, 220, 154);
 }
 
-.item img{
-    border: solid 2px #000000;
-    border-radius: 0.5rem;
-    box-shadow: 2px 3px #b0b0b063;
+#canteen .item {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
 }
 
-.item p{
-    margin: 6px 0px;
+#canteen .price {
+  font-size: 14px;
+  color: rgb(148, 148, 148);
+  font-weight: bold;
 }
-.item-prices{
-    display: flex;
-    gap: 20px;
-}
-
-.item-price-new{
-    color: #374151;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.item-price-old{
-    color: #8c8c8c;
-    font-size: 18px;
-    font-weight: 600;
-    text-decoration: line-through;
-}
-.item:hover{
-    transition: scale(1.05);
-    transition: 0.6s;
-}
-
-.btn-add{
-    width: 32px;
-    height: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -35px;
-    margin-left: -55px;
-    border-radius: 21px;
-    font-size: 14px;
-    background: #ff0606;
-    color: #ffff;
-} */

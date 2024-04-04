@@ -1,0 +1,34 @@
+
+#pagehead {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    width: 100%;
+  }
+  
+  #pageheadpage-name {
+     /* Adjust this value as needed */
+    font-size: 2vw;
+    width: 70%;
+    /* min-inline-size: 1.5vw; */
+    /* max-width: 400px; */
+    color: #ffffff;
+    background-color: #3B3B3B;
+    border-radius: 8px;
+    border: solid 2px #FF7D34;
+    padding: 1rem; /* Adjust this value as needed */
+    text-align: center;
+    justify-content: space-around;
+    margin-top: 2vh;
+    text-transform: uppercase;
+  }
+  
+  /* Media query for adjusting the card width on smaller screens */
+  @media screen and (max-width: 768px) {
+    .page-name {
+      max-width: none; /* Remove maximum width restriction */
+    }
+  }
+  

@@ -1,13 +1,8 @@
 .btnStyle {
     font-size: 14px;
     color: white;
-    background-color: #4f016d;
+    background-color: #5D9AF8;
     position: relative;
-}
-
-.btnStyle:hover {
-    background-color: #4f016d; 
-    color: white;
 }
 
 .card-container {
@@ -23,6 +18,8 @@
     color: white;
     margin-bottom: 20px;
     opacity: 0.9;
+    max-width: 300px;
+    max-height: 200px;
 }
 
 /* Media Query for Tabs */
@@ -44,8 +41,7 @@
     .btnStyle {
         font-size: 14px;
         color: white;
-        background-color: #4f016d;
-        width: 25%;
+        background-color: #5D9AF8;
         position: relative;
     }
 }
@@ -60,7 +56,7 @@
         border-radius: 8px;
         width: 400px;
         height: 260px;
-        padding: 40px;
+        padding: 10px;
         font-size: 15px;
         animation: body-animation 5s ease infinite;
         color: white;
@@ -71,8 +67,7 @@
     .btnStyle {
         font-size: 14px;
         color: white;
-        background-color: #4f016d;
-        width: 25%;
+        background-color: #5D9AF8;
         position: relative;
     }
 }
@@ -86,7 +81,7 @@
         border-radius: 8px;
         width: 400px;
         height: 260px;
-        padding: 40px;
+        padding: 10px;
         font-size: 15px;
         animation: body-animation 5s ease infinite;
         color: white;
@@ -97,8 +92,7 @@
     .btnStyle {
         font-size: 14px;
         color: white;
-        background-color: #4f016d;
-        width: 25%;
+        background-color: #5D9AF8;
         position: relative;
     }
 }
@@ -124,7 +118,7 @@
     .btnStyle {
         font-size: 14px;
         color: white;
-        background-color: #4f016d;
+        background-color: #5D9AF8;
         width: 25%;
         position: relative;
     }

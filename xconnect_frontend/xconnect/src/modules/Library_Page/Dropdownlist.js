@@ -31,23 +31,24 @@ const Dropdownlist = () => {
   }, []);
 
   return (
-    <div className="nav-container">
-      <ul className="nav-items">
-        <li className="nav-item nav-item-dropdown">
-          <a className="dropdown-trigger" href="#" onClick={toggleDropdown}>
-            {selectedGenre || 'Browse by Genres'}
-            <i className={`${dropdownOpen ? 'up' : 'down'}`}></i>
-          </a>
-          <ul className={`dropdown-menu ${dropdownOpen ? 'show' : ''}`}>
-            {genres.map((genre, index) => (
-              <li key={index} className="dropdown-menu-item">
-                <a href="#" onClick={() => handleGenreSelect(genre)}>{genre}</a>
-              </li>
-            ))}
-          </ul>
-        </li>
-      </ul>
-    </div>
+    <></>
+    // <div className="nav-container">
+    //   <ul className="nav-items">
+    //     <li className="nav-item nav-item-dropdown">
+    //       <a className="dropdown-trigger" href="#" onClick={toggleDropdown}>
+    //         {selectedGenre || 'Browse by Genres'}
+    //         <i className={`${dropdownOpen ? 'up' : 'down'}`}></i>
+    //       </a>
+    //       <ul className={`dropdown-menu ${dropdownOpen ? 'show' : ''}`}>
+    //         {genres.map((genre, index) => (
+    //           <li key={index} className="dropdown-menu-item">
+    //             <a href="#" onClick={() => handleGenreSelect(genre)}>{genre}</a>
+    //           </li>
+    //         ))}
+    //       </ul>
+    //     </li>
+    //   </ul>
+    // </div>
   );
 };
 

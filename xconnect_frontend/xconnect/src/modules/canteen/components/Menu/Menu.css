@@ -1,0 +1,14 @@
+#cart-bar{
+    background-color: #FEB804;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    position:-webkit-sticky;
+    position: sticky;
+    bottom: 30px;
+}
+
+#cart-bar a{
+    color: rgb(240, 240, 240);
+    text-decoration: none;
+}

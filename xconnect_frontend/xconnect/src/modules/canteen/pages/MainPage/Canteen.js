@@ -1,22 +1,35 @@
 import React from "react";
-import Hero from "../../components/Hero/Hero";
-import Popular from "../../components/Popular/Popular";
+import Popular from "../../components/Menu/Menu";
+import { useState } from "react";
+import SearchItems from "../../components/SearchItems/SearchItems";
 import "./Canteen.css";
-import Services from "../../components/Services/Services";
-import fpack from "../../Ascets/fpack.png";
-import { Link } from "react-router-dom";
 
 export default function Canteen() {
+  const [searchValue, setSearchValue] = useState("");
+  const [flag, setFlag] = useState(false);
+  const searchValueChanged = (e) => {
+    setSearchValue(e.target.value);
+  };
+
+  const search = () => {
+    setFlag(true);
+    console.log(searchValue);
+  };
   return (
     <div id="canteen">
-      <Link to="/Cart">
-        <div className="cart">
-          <img src={fpack} alt="food pack icon" />
-        </div>
-      </Link>
-      <Hero />
-      <Popular />
-      <Services />
+      <div className="d-flex mx-5 mt-4 justify-content-lg-end">
+        <input
+          type="search"
+          placeholder="Search"
+          className="mx-lg-2 col-11 me-1 col-lg-3 "
+          value={searchValue}
+          onChange={searchValueChanged}
+        />
+        <button onClick={search} className="col-lg-2 " id="search">
+          <i className="fa fa-search"></i>
+        </button>
+      </div>
+      {flag ? <SearchItems search_value={searchValue} /> : <Popular />}
     </div>
   );
 }

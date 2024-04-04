@@ -40,11 +40,11 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="container pt-5 mt-5" style={{ height: "95vh" }}>
+    <div className="container pt-1 mt-5" id="login" style={{ height: "95vh" }}>
       <div className="custom-container mb-1 mt-5">
-        <div className="heading text-center">Login</div>
+        <div className="heading">Sign In</div>
 
-        <form className="form form-floating ">
+        <form className="form form-floating mt-3 col-10 mx-auto">
           {error ? (
             <div className="alert alert-danger">
               <strong>{error}</strong>
@@ -62,8 +62,8 @@ export default function LoginForm() {
               id="floatingInput"
               placeholder=""
             />
-            <label htmlFor="floatingInput" className="text-black-50">
-              Username
+            <label htmlFor="floatingInput" className="form-label">
+              Roll No.
             </label>
           </div>
           <div className="form-floating">
@@ -77,19 +77,19 @@ export default function LoginForm() {
               id="floatingPassword"
               placeholder=""
             />
-            <label htmlFor="floatingPassword" className="text-black-50">
+            <label htmlFor="floatingPassword" className="form-label">
               Password
             </label>
           </div>
-          <span className="forgot-password">
+          <div className="forgot-password ms-3 mt-3">
             <Link to="/PasswordChange">Forgot Password?</Link>
-          </span>
+          </div>
           <button
-            className="btn btn-primary btn-block login-button"
+            className="login-button btn mx-auto col-12 mt-4"
             type="button"
             onClick={handleSubmit}
           >
-            Login
+            Sign In
           </button>
         </form>
       </div>

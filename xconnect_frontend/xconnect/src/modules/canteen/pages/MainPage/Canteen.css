@@ -2,7 +2,25 @@ body {
     margin: 0;
     padding: 0;
   }
- 
+
+#canteen input[type="search"]{
+  border-radius: 20px;
+  border: none;
+  padding-left: 10px;
+}
+
+#canteen input:focus-visible {
+  outline: none;
+  border: none;
+  box-shadow:0 0 10px 0.2rem rgba(248, 206, 17, 0.806);
+  border-radius: 20px;
+  padding-left: 10px;
+}
+
+#canteen #search{
+  width: auto;
+}
+
 #canteen .cart {
     position: fixed;
     z-index: 2;

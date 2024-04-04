@@ -13,7 +13,7 @@ from .serializer import EventSerializer, SubEventSerializer
 from .signals import college_saved
 from .models import Event, SubEvent, College, Participant
 from .permissions import IsTeacher
-
+import bleach
 
 class EventViewSet(viewsets.ModelViewSet):
     permission_classes = (IsTeacher,)
