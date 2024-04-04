@@ -45,6 +45,9 @@ export default function Navbar() {
       case "/Calendar":
         setNavbarColor("#5CC1A3");
         break
+      case "/Library":
+        setNavbarColor("#1768E3");
+        break;
       default:
         setNavbarColor("");
     }
