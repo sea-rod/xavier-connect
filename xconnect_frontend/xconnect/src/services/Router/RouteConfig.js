@@ -8,7 +8,7 @@ import Canteen from "../../modules/canteen/pages/MainPage/Canteen";
 import CheckOut from "../../modules/canteen/pages/Cart/CheckOut";
 import SignUp from "../../pages/Sign up/SignUp";
 import Admin from "../../modules/canteen/Admin/admin";
-import Calendar from "../../modules/calendar/calendar";
+import Calendar from "../../modules/calendar/Calendar";
 import HelpLine from "../../modules/helpLine/helpline";
 import TimeTable from "../../modules/timetable/timetable";
 export default function AppRoutes() {

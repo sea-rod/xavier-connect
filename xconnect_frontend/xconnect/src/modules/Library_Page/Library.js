@@ -8,7 +8,7 @@ const Library = () => {
   return (
     <div className="container">
       <form>
-        <div className="searchContainer">
+        <div className="searchContainer mt-3">
           <input
             type="text"
             name="SearchBooks"
