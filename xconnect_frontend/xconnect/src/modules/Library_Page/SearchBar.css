@@ -1,4 +1,3 @@
-Library.css
 .searchInput {
     width: 70%;
     box-sizing: border-box;
@@ -74,8 +73,6 @@ Library.css
   }
   
   /* Optional: add hover effect to the dropdown */
-  select:hover {
-    background-color: #f0f0f0;
-  }
+
   
   

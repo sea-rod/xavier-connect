@@ -11,6 +11,7 @@ import Admin from "../../modules/canteen/Admin/admin";
 import Calendar from "../../modules/calendar/Calendar";
 import HelpLine from "../../modules/helpLine/helpline";
 import TimeTable from "../../modules/timetable/timetable";
+import CombinedComponent from "../../modules/Library_Page/Library";
 export default function AppRoutes() {
   return (
     <>
@@ -27,6 +28,7 @@ export default function AppRoutes() {
         <Route path="/HelpLine" element={<HelpLine />} />
         <Route path="/Calendar" element={<Calendar />} />
         <Route path="/TimeTable" element={<TimeTable />} />
+        <Route path="/Library" element={<CombinedComponent />} />
       </Routes>
     </>
   );

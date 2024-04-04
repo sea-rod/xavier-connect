@@ -1,0 +1,25 @@
+/* Dropdown.css */
+.Genre { 
+    width: 53%;
+    height: 86px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    align-content: center;
+        select{
+            font-size: 20px;
+            background-color: #212529;
+            color: #84868B;
+            border: 0px;
+        }
+        
+      }
+      
+
+
+      option{
+        background-color: #212529;
+      }
+  
