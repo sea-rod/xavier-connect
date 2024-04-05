@@ -7,16 +7,16 @@ import Neworders from "../pages/Neworders";
 import Ongoingorders from "../pages/Ongoingorders";
 
 export default function Dashboardroutes() {
-    return (
-        <>
-            <Routes>
-                <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/neworders" element={<Neworders />} />
-                <Route path="/ongoingorders" element={<Ongoingorders />} />
-                <Route path="/cancelledorders" element={<Cancelledorders />} />
-                <Route path="/additems" element={<Additems />} />
-                <Route path="/inventory" element={<Inventory />} />
-            </Routes>
-        </>
-    );
+  return (
+    <div className="d-flex mx-auto flex-column justify-content-center">
+      <Routes>
+        <Route path="dashboard/" element={<Dashboard />} />
+        <Route path="neworders/" element={<Neworders />} />
+        <Route path="ongoingorders/" element={<Ongoingorders />} />
+        <Route path="cancelledorders/" element={<Cancelledorders />} />
+        <Route path="additems/" element={<Additems />} />
+        <Route path="inventory/" element={<Inventory />} />
+      </Routes>
+    </div>
+  );
 }

@@ -2,7 +2,6 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
-    /* overflow-y: scroll; */
     height: 10vw;
     width: auto;
 }

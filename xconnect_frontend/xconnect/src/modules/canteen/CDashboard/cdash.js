@@ -1,20 +1,19 @@
-import React from 'react'
-import Topbar from './shared/Topbar'
-import Sidebar from './shared/Sidebar'
-import Dashboardroutes from './Router/Dashboardroutes'
-import './cdindex.css';
+import React from "react";
+import Topbar from "./shared/Topbar";
+import Sidebar from "./shared/Sidebar";
+import Dashboardroutes from "./Router/Dashboardroutes";
+import "./cdindex.css";
 
-function cdash() {
+function Cdash() {
   return (
     <div>
       <Topbar />
-        <div className="app">
-          <Sidebar>
-            <Dashboardroutes />
-          </Sidebar>
-        </div>
+      <div className="app">
+        <Sidebar />
+        <Dashboardroutes />
+      </div>
     </div>
-  )
+  );
 }
 
-export default cdash;
+export default Cdash;
