@@ -46,6 +46,7 @@ export default function Navbar() {
         setNavbarColor("#5CC1A3");
         break
       case "/Library":
+      case "/ReserveBook":
         setNavbarColor("#1768E3");
         break;
       default:

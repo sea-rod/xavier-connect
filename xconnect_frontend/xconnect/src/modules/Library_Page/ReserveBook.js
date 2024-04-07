@@ -9,18 +9,21 @@ const ReserveBook = () => {
   };
 
   return (
-    <article className="Book1">
-      <div className="Book1-img">
-        <img src="/images/Library/book1.jpg" alt="To Kill a Mockingbird" />
-      </div>
-      <div className="Book1-bodytitle">
-        <h2 className="Book1-title">To Kill a Mockingbird</h2>
+    <div className='container'>
+    <div><h1 className='rb-title mb-3'>RESERVE BOOK</h1></div>
+      <article className="Book1">
+        <div className="Book1-img">
+          <img src="/images/Library/book1.jpg" alt="To Kill a Mockingbird" />
+        </div>
+        <div className="Book1-bodytitle">
+          <h2 className="Book1-title">To Kill a Mockingbird</h2>
         </div>
         <div className='Book1-bodytext'>
-        <p className="Book1-text">Harper Lee</p>
-        <button className="reserve-button" onClick={handleReserve}>Reserve</button>
-      </div>
-    </article>
+          <p className="Book1-text">Harper Lee</p>
+          <button className="reserve-button" onClick={handleReserve}>RESERVE</button>
+        </div>
+      </article>
+    </div>
   );
 };
 

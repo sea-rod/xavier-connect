@@ -1,6 +1,8 @@
 .section-title{
   text-align: center;
   font-weight: 700;
+  font-size: 35px;
+  color: white;
 }
 
 section {
@@ -50,5 +52,10 @@ section {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 20px;
+}
+
+.grid-container a{
+  color: #dee2e6;
+  text-decoration: none;
 }
 

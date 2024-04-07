@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import  { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './SearchBar.css';
 import './CardSection.css';
 import Book1 from './ReserveBook';
@@ -26,21 +26,25 @@ const CombinedComponent = () => {
           </div>
         </form>
       </div>
+
+      <div className='mt-4'>
+        <BooksDropdown />
+      </div>
+
       <div className="top-picks-container">
         <h2 className="section-title mt-3">TOP PICKS</h2>
-        <BooksDropdown />
         {/* TOP PICKS BOOKS SECTION */}
         <section className="grid-container">
-        <Link to="/ReserveBook">
-          <article className="Lcard">
-            <figure className="Lcard-img">
-              <img src="/images/Library/book1.jpg" alt="To Kill a Mockingbird" />
-            </figure>
-            <div className="Lcard-body">
-              <h2 className="Lcard-title">To Kill a Mockingbird</h2>
-              <p className="Lcard-text">Harper Lee</p>
-            </div>
-          </article>
+          <Link to="/ReserveBook">
+            <article className="Lcard">
+              <figure className="Lcard-img">
+                <img src="/images/Library/book1.jpg" alt="To Kill a Mockingbird" />
+              </figure>
+              <div className="Lcard-body">
+                <h2 className="Lcard-title">To Kill a Mockingbird</h2>
+                <p className="Lcard-text">Harper Lee</p>
+              </div>
+            </article>
           </Link>
           <article className="Lcard">
             <figure className="Lcard-img">
