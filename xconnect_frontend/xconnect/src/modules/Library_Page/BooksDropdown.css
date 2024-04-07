@@ -1,14 +1,15 @@
 /* Dropdown.css */
 
 #library-dropdown select {
-  padding: 8px;
   border: none;
   background-color: transparent !important;
   font-weight: 600;
   font-size: 20px;
   color: #A9A9A9;
+  margin-left: 20px;
 }
 
 option {
   background-color: #3d3d3d;
+  padding: 100px;
 }

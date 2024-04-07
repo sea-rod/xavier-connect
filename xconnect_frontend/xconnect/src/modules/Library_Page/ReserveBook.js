@@ -1,8 +1,8 @@
 // Book1.js
 import React from 'react';
-import './Book1.css';
+import './ReserveBook.css';
 
-const Book1 = () => {
+const ReserveBook = () => {
   const handleReserve = () => {
     // Add your reserve functionality here
     console.log('Book reserved!');
@@ -24,4 +24,4 @@ const Book1 = () => {
   );
 };
 
-export default Book1;
+export default ReserveBook;
