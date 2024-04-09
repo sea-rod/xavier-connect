@@ -1,32 +1,14 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import './SearchBar.css';
 import './CardSection.css';
-import Book1 from './ReserveBook';
 // import Newpage from './Newpage';
-import BooksDropdown from './BooksDropdown';
+import BooksDropdown from './shared/BooksDropdown';
+import SearchBar from './shared/SearchBar';
 
 const CombinedComponent = () => {
   return (
     <>
-      <div className="container">
-        <form>
-          <div className="searchContainer">
-            <input
-              type="text"
-              name="SearchBooks"
-              placeholder="Search Books"
-              className="searchInput" // Added className for styling
-            />
-            <button type="submit" className="searchButton">
-              <FontAwesomeIcon icon={faSearch} />
-            </button>
-          </div>
-        </form>
-      </div>
-
+    <SearchBar/>
       <div className='mt-4'>
         <BooksDropdown />
       </div>
@@ -75,7 +57,6 @@ const CombinedComponent = () => {
           </article>
         </section>
       </div>
-      {/* <Book1 /> */}
       {/* <Newpage /> */}
     </>
   );
