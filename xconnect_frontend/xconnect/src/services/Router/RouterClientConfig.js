@@ -13,6 +13,7 @@ import HelpLine from "../../modules/helpLine/helpline";
 import TimeTable from "../../modules/timetable/timetable";
 import CombinedComponent from "../../modules/Library_Page/Library";
 import ReserveBook from "../../modules/Library_Page/ReserveBook";
+import Newpage from "../../modules/Library_Page/Newpage";
 export default function RouterClientConfig() {
   return (
     <>
@@ -31,6 +32,7 @@ export default function RouterClientConfig() {
         <Route path="/TimeTable" element={<TimeTable />} />
         <Route path="/Library" element={<CombinedComponent />} />
         <Route path="/ReserveBook" element={<ReserveBook />} />
+        <Route path="/Newpage" element={<Newpage />} />
       </Routes>
     </>
   );
