@@ -1,21 +1,39 @@
 import Pagehead from "../Components/Pagehead";
 import Inventorycard from "../Cards/Inventory/inventorycard";
+import axiosInstance from "../../../../services/axios";
+import { useEffect, useState } from "react";
 
 const names = [
-    {
-        name:"Inventory"
-    }
-]
+  {
+    name: "Inventory",
+  },
+];
 
 const Inventory = () => {
-    return (
-        <>
-        <Pagehead names={names}/>
-        <div className="inventory-items">
-            <Inventorycard/>   
-        </div>
-        </>
-    );
-}
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axiosInstance
+      .get("canteen/menu/", { params: { all: true } })
+      .then((res) => {
+        console.log(res.data);
+        setData(res.data)
+      });
+  }, []);
+  return (
+    <div className="mx-5">
+      <Pagehead names={names} />
+      <div className="inventory-items">
+        <Inventorycard name={"item"} avail_quantity={"Qauntity available"} />
+        {data.map((item) => (
+          <Inventorycard
+            name={item.item_name}
+            avail_quantity={item.avail_quantity}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default Inventory;

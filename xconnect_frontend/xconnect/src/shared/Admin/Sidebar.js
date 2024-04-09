@@ -2,11 +2,12 @@ import { motion } from "framer-motion";
 import "./Sidebar.css";
 import { FaHome } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import usericon from "../../Ascets/usericon.png";
+import usericon from "../../modules/canteen/Ascets/usericon.png";
+import { useState } from "react";
 
 const routes = [
   {
-    path: "/admin/dashboard/",
+    path: "dashboard/",
     name: "Dashboard",
     icon: <FaHome />,
   },
@@ -37,16 +38,32 @@ const routes = [
   },
 ];
 const Sidebar = ({ children }) => {
+  const [toggle, setToggle] = useState(false);
+  const btn = () => {
+    setToggle(!toggle);
+  };
+
   return (
     <>
       <div className="main-container" id="sidebar">
         {/* <div className="motion-div"></div> */}
 
         <motion.div
-          animate={{ width: "250px" }}
+          animate={toggle ? { width: "0px" } : { width: "250px" }}
           className="sidebar"
-          id="sidebar"
         >
+          <button
+            onClick={btn}
+            className="me-auto"
+            id="togle"
+            style={toggle ? { left: "0px" } : { left: "250px" }}
+          >
+            {toggle ? (
+              <i class="fa fa-caret-right"></i>
+            ) : (
+              <i class="fa fa-caret-left"></i>
+            )}
+          </button>
           <div className="user">
             <div className="user-icon">
               <img src={usericon} id="usericon-sidebar" />
@@ -56,14 +73,13 @@ const Sidebar = ({ children }) => {
               <h6>James Anderson</h6>
             </div>
           </div>
-
           <section className="routes">
             {routes.map((route) => (
               <NavLink to={route.path} key={route.name} className="menu">
-                <div className="icon" id="sidebar">
+                <div className="icon">
                   {route.icon}
                 </div>
-                <div className="link_text" id="sidebar">
+                <div className="link_text">
                   {route.name}
                 </div>
               </NavLink>

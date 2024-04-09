@@ -1,15 +1,16 @@
-import React from 'react'
-import './inventorycard.css';
+import React, { useState,useEffect } from "react";
+import "./inventorycard.css";
 
-const inventorycard = () => {
+const Inventorycard = ({ name, avail_quantity }) => {
   return (
-    <div id='inventorycard'>
-      {/* whatever v use ex p, h5,h6 but this getting margin bottom clashing css properties coz of _reboot.scss  */}
-      <h6 className='inevntory-cardp'>ITEM</h6>
-      <div className=""></div>
-      <p className='inevntory-cardp'>QUANTITY LEFT</p>
+    <div
+      id="inventorycard"
+      className="mx-5 my-0 border border-bottom-1 align-content-center"
+    >
+      <p className="my-auto">{name}</p>
+      <p className="my-auto">{avail_quantity  }</p>
     </div>
-  )
-}
+  );
+};
 
-export default inventorycard
+export default Inventorycard;

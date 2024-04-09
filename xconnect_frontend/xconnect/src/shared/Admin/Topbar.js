@@ -11,7 +11,7 @@ const Topbar = () => {
         justifyContent: "space-around",
         backgroundColor: "#FF7D34",
         height: "50px",
-        zIndex:"1",
+        zIndex:"2",
       }}
     >
       <div>

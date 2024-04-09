@@ -1,15 +1,15 @@
 import React from "react";
-import Topbar from "./shared/Topbar";
-import Sidebar from "./shared/Sidebar";
+import Topbar from "../../../shared/Admin/Topbar";
+import Sidebar from "../../../shared/Admin/Sidebar";
 import Dashboardroutes from "./Router/Dashboardroutes";
 import "./cdindex.css";
 
-function Cdash() {
+function Cdash(props) {
   return (
     <div>
       <Topbar />
       <div className="app">
-        <Sidebar />
+        <Sidebar/>
         <Dashboardroutes />
       </div>
     </div>

@@ -16,6 +16,9 @@ class ListCreateMenu(generics.ListCreateAPIView):
     parser_classes = (MultiPartParser, FormParser)
 
     def get_queryset(self):
+        all = self.request.GET.get("all",None)
+        if self.request.user.is_superuser and all:
+            return super().get_queryset()
         search = self.request.GET.get("search", None)
         popular = self.request.GET.get("popular", None)
 
