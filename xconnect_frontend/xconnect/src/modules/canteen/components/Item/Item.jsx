@@ -51,11 +51,21 @@ const Item = (props) => {
   const addToCart = () => {
     console.log("Adding to cart:", quantity);
     try {
-      addToCartAPICall(props.id, quantity).then((id) => {
-        setItemId(id);
-      });
+      addToCartAPICall(props.id, quantity)
+        .then((id) => {
+          setItemId(id);
+        })
+        .catch((err) => {
+          console.log(err);
+          if (
+            err.response.status === 403 &&
+            !localStorage.getItem("access_token")
+          ) {
+            navigate("/Login");
+          }
+        });
     } catch (err) {
-      console.log(err.response);
+      console.log(err.response.status, "jjj");
       if (err.response.status === 400) {
         setQuantity((prevQuantity) => prevQuantity - 1);
         alert(err.response.data);

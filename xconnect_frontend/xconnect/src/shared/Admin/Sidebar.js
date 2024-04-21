@@ -5,39 +5,39 @@ import { NavLink } from "react-router-dom";
 import usericon from "../../modules/canteen/Ascets/usericon.png";
 import { useState } from "react";
 
-const routes = [
-  {
-    path: "dashboard/",
-    name: "Dashboard",
-    icon: <FaHome />,
-  },
-  {
-    path: "neworders/",
-    name: "NEW ORDERS",
-    icon: <FaHome />,
-  },
-  {
-    path: "ongoingorders/",
-    name: "ONGING ORDERS",
-    icon: <FaHome />,
-  },
-  {
-    path: "cancelledorders/",
-    name: "CANCELLED ORDERS",
-    icon: <FaHome />,
-  },
-  {
-    path: "additems/",
-    name: "ADD ITEMS",
-    icon: <FaHome />,
-  },
-  {
-    path: "inventory/",
-    name: "INVENTORY",
-    icon: <FaHome />,
-  },
-];
-const Sidebar = ({ children }) => {
+// const routes = [
+//   {
+//     path: "dashboard/",
+//     name: "Dashboard",
+//     icon: <FaHome />,
+//   },
+//   {
+//     path: "neworders/",
+//     name: "NEW ORDERS",
+//     icon: <FaHome />,
+//   },
+//   {
+//     path: "ongoingorders/",
+//     name: "ONGING ORDERS",
+//     icon: <FaHome />,
+//   },
+//   {
+//     path: "cancelledorders/",
+//     name: "CANCELLED ORDERS",
+//     icon: <FaHome />,
+//   },
+//   {
+//     path: "additems/",
+//     name: "ADD ITEMS",
+//     icon: <FaHome />,
+//   },
+//   {
+//     path: "inventory/",
+//     name: "INVENTORY",
+//     icon: <FaHome />,
+//   },
+// ];
+const Sidebar = ({ children,routes }) => {
   const [toggle, setToggle] = useState(false);
   const btn = () => {
     setToggle(!toggle);
