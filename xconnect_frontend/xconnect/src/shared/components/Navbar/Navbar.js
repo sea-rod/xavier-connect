@@ -45,10 +45,12 @@ export default function Navbar() {
         setNavbarColor("#5CC1A3");
         break;
       case "/Library":
+      case "/ReserveBook":
+      case "/Newpage":
         setNavbarColor("#1768E3");
         break;
       default:
-        setNavbarColor("");
+        setNavbarColor("#5D9AF8");
     }
   }, [location]);
 
@@ -88,11 +90,9 @@ export default function Navbar() {
   };
 
   return (
-    <nav
-      className="navbar navbar-expand-lg"
-      style={{ backgroundColor: navbarColor, color: navbarTextColor }}
-      data-bs-theme="dark"
-    >
+
+    <nav key={location.pathname} className="navbar navbar-expand-lg" style={{ backgroundImage: `linear-gradient(to right, ${navbarColor}, ${navbarColor})`, backgroundSize: '0% 100%', backgroundRepeat: 'no-repeat', animation: 'fill 2s forwards', color: navbarTextColor }} data-bs-theme="dark">
+
       <div className="container-fluid">
         <Link
           className="navbar-brand navbar-xconnect"
