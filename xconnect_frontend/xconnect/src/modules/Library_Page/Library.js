@@ -11,9 +11,8 @@ const CombinedComponent = () => {
   return (
     <div>
       <SearchBar />
-      <Navbar />
       <CardSection />
-      <Book1 />
+     
       <Newpage/>
     </div>
   );
