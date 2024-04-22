@@ -1,13 +1,10 @@
 import { Routes, Route } from "react-router-dom";
-// import Dashboard from "../../modules/canteen/CDashboard/pages/Dashboard";
-import Cdash from "../../modules/canteen/CDashboard/cdash";
-import { FaHome } from "react-icons/fa";
+import Cdash from "../../modules/canteen/CDashboard/Cdash";
 
 const AdminRoutes = () => {
   return (
     <Routes>
       <Route path="canteen/*" element={<Cdash />} />
-      {/* <Route path="dashboard/" element={<Dashboard />} /> */}
     </Routes>
   );
 };
