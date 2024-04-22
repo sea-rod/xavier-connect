@@ -1,13 +1,7 @@
-.book{
-    display: flex;
-    flex-direction: column;
-}
-
 .Newpage{
     margin-top: 12px;
     display: flex;
-    position: relative;
-    margin-left: 80px;
+    margin-left: 10px;
     border-bottom: 3px solid grey;
     padding-bottom: 16px;
 }
@@ -29,10 +23,12 @@
 }
 
 
-.Newpage-img {
-    width: 15%;
-    img{
-        width: 95%;
-        border-radius: 12px;
-    }
+.Newpage-img img{
+    width: 120px;
+    height: 180px;
+    border-radius: 12px;
+}
+
+#SearchResults button{
+    margin-left: 0px;
 }

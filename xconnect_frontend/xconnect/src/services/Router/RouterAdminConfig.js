@@ -1,10 +1,8 @@
-import React from "react";
-import Topbar from "../../../shared/Admin/Topbar";
-
+import { Routes, Route } from "react-router-dom";
+// import Dashboard from "../../modules/canteen/CDashboard/pages/Dashboard";
+import Cdash from "../../modules/canteen/CDashboard/cdash";
 import { FaHome } from "react-icons/fa";
-import Sidebar from "../../../shared/Admin/Sidebar";
-import Dashboardroutes from "./Router/Dashboardroutes";
-import "./cdindex.css";
+
 const routes = [
   {
     path: "dashboard/",
@@ -37,16 +35,14 @@ const routes = [
     icon: <FaHome />,
   },
 ];
-function Cdash(props) {
-  return (
-    <div>
-      <Topbar />
-      <div className="app">
-        <Sidebar routes={routes}/>
-        <Dashboardroutes />
-      </div>
-    </div>
-  );
-}
 
-export default Cdash;
+const AdminRoutes = () => {
+  return (
+    <Routes>
+      <Route path="canteen/*" element={<Cdash  k={routes}/>} />
+      {/* <Route path="dashboard/" element={<Dashboard />} /> */}
+    </Routes>
+  );
+};
+
+export default AdminRoutes;

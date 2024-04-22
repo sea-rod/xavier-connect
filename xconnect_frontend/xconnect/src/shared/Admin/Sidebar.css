@@ -4,6 +4,20 @@
     box-sizing:content-box;
 }
 
+#togle{
+    position: fixed;
+    left: 250px;
+    z-index: 2;
+    height: 40px;
+    display: inline;
+    transition: 0.5s;
+    border: none;
+    border-radius: 0 7px 7px 0;
+}
+#togle:hover{
+    background-color: rgb(92, 92, 92);
+}
+
 .main-box{
     width: 100%;
     align-items: center;
@@ -19,6 +33,11 @@
     color: #FF7D34;
     /* padding: 10px; */
     height: 100vh;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    z-index: 2;
+    overflow: hidden;
 }
 
 #sidebar .user{

@@ -1,8 +1,7 @@
-// BookGenresDropdown.jsx
 import React from 'react';
-import './BookGenreDropdown.css'; // Import your CSS file
+import './BooksDropdown.css';
 
-const BookGenresDropdown = ({ onSelectGenre }) => {
+const BooksDropdown = ({ onSelectGenre }) => {
   const genres = [
     'Fiction', 'Non-Fiction', 'Science Fiction', 'Fantasy', 'Mystery', 'Other/General'
   ];
@@ -12,7 +11,7 @@ const BookGenresDropdown = ({ onSelectGenre }) => {
   };
 
   return (
-    <div className='Genre'>
+    <div id='library-dropdown'>
     <select onChange={handleGenreSelect}>
       <option value="">Browse by Genre</option>
       {genres.map((genre, index) => (
@@ -23,4 +22,4 @@ const BookGenresDropdown = ({ onSelectGenre }) => {
   );
 };
 
-export default BookGenresDropdown;
+export default BooksDropdown;
