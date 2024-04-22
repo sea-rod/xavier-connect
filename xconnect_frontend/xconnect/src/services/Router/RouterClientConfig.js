@@ -11,7 +11,9 @@ import Admin from "../../modules/canteen/Admin/admin";
 import Calendar from "../../modules/calendar/Calendar";
 import HelpLine from "../../modules/helpLine/helpline";
 import TimeTable from "../../modules/timetable/timetable";
-// import CombinedComponent from "../../modules/Library_Page/Library";
+import CombinedComponent from "../../modules/Library_Page/Library";
+import ReserveBook from "../../modules/Library_Page/ReserveBook";
+import Newpage from "../../modules/Library_Page/Newpage";
 export default function RouterClientConfig() {
   return (
     <>
@@ -28,7 +30,9 @@ export default function RouterClientConfig() {
         <Route path="/HelpLine" element={<HelpLine />} />
         <Route path="/Calendar" element={<Calendar />} />
         <Route path="/TimeTable" element={<TimeTable />} />
-        {/* <Route path="/Library" element={<CombinedComponent />} /> */}
+        <Route path="/Library" element={<CombinedComponent />} />
+        <Route path="/ReserveBook" element={<ReserveBook />} />
+        <Route path="/Newpage" element={<Newpage />} />
       </Routes>
     </>
   );
