@@ -85,7 +85,7 @@ const Menu = () => {
   return (
     <div class="row mt-2 mx-5 d-flex justify-content-between">
       <h1 style={{textAlign:'center'}}>TRENDING ORDERS.</h1>
-      <div id="menu" className="my-2"></div>
+      <div id="menu" className="mb-2"></div>
       {isLoading ? (
         <p>Loading...</p>
       ) : (

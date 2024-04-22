@@ -19,6 +19,8 @@ body {
 
 #canteen #search{
   width: auto;
+  height: auto;
+  border-radius: 30px;
 }
 
 #canteen .cart {
