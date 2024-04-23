@@ -79,14 +79,13 @@ export default function LoginForm() {
               value={formData.password}
               className="form-control input"
               id="floatingPassword"
-              placeholder=""
             />
             <label htmlFor="floatingPassword" className="form-label">
               Password
             </label>
           </div>
           <div className="forgot-password ms-3 mt-3">
-            <Link to="/PasswordChange">Forgot Password?</Link>
+            <Link to="/reset-form">Forgot Password?</Link>
           </div>
           <button
             className="login-button btn mx-auto col-12 mt-4"

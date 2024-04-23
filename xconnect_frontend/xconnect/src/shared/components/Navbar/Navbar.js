@@ -19,6 +19,7 @@ export default function Navbar() {
 
   // To change Navbar color dynamically
   useEffect(() => {
+    console.log(location.pathname);
     switch (location.pathname) {
       case "/":
         setNavbarColor("#5D9AF8");
@@ -33,6 +34,8 @@ export default function Navbar() {
       case "/Login":
       case "/SignUp":
       case "/TimeTable":
+      case "/reset-password/":
+      case "/reset-form":
         setNavbarColor("#EE3A57");
         break;
       case "/Events":
@@ -91,9 +94,18 @@ export default function Navbar() {
   };
 
   return (
-
-    <nav key={location.pathname} className="navbar navbar-expand-lg" style={{ backgroundImage: `linear-gradient(to right, ${navbarColor}, ${navbarColor})`, backgroundSize: '0% 100%', backgroundRepeat: 'no-repeat', animation: 'fill 2s forwards', color: navbarTextColor }} data-bs-theme="dark">
-
+    <nav
+      key={location.pathname}
+      className="navbar navbar-expand-lg"
+      style={{
+        backgroundImage: `linear-gradient(to right, ${navbarColor}, ${navbarColor})`,
+        backgroundSize: "0% 100%",
+        backgroundRepeat: "no-repeat",
+        animation: "fill 2s forwards",
+        color: navbarTextColor,
+      }}
+      data-bs-theme="dark"
+    >
       <div className="container-fluid">
         <Link
           className="navbar-brand navbar-xconnect"
