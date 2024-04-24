@@ -20,13 +20,13 @@ export default function Canteen() {
       <div className="d-flex mx-5 mt-4 justify-content-lg-end">
         <input
           type="search"
-          placeholder="Search"
-          className="mx-lg-2 col-11 me-1 col-lg-3 "
+          placeholder="Delicicous Food Awaits..."
+          className="py-2 px-3 mx-lg-2 col-11 me-1 col-lg-3"
           value={searchValue}
           onChange={searchValueChanged}
         />
         <button onClick={search} className="col-lg-2 " id="search">
-          <i className="fa fa-search"></i>
+          <i className="fa fa-search px-2"></i>
         </button>
       </div>
       {flag ? <SearchItems search_value={searchValue} /> : <Popular />}

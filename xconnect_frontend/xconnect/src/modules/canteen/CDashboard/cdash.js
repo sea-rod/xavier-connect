@@ -1,48 +1,47 @@
 import React from "react";
 import Topbar from "../../../shared/Admin/Topbar";
-
 import { FaHome } from "react-icons/fa";
 import Sidebar from "../../../shared/Admin/Sidebar";
 import Dashboardroutes from "./Router/Dashboardroutes";
 import "./cdindex.css";
 const routes = [
   {
-    path: "dashboard/",
-    name: "Dashboard",
+    path: "/admin/canteen/dashboard/",
+    name: "DASHBOARD",
     icon: <FaHome />,
   },
   {
-    path: "neworders/",
+    path: "/admin/canteen/neworders/",
     name: "NEW ORDERS",
     icon: <FaHome />,
   },
   {
-    path: "ongoingorders/",
+    path: "/admin/canteen/ongoingorders/",
     name: "ONGING ORDERS",
     icon: <FaHome />,
   },
   {
-    path: "cancelledorders/",
+    path: "/admin/canteen/cancelledorders/",
     name: "CANCELLED ORDERS",
     icon: <FaHome />,
   },
   {
-    path: "additems/",
+    path: "/admin/canteen/additems/",
     name: "ADD ITEMS",
     icon: <FaHome />,
   },
   {
-    path: "inventory/",
+    path: "/admin/canteen/inventory/",
     name: "INVENTORY",
     icon: <FaHome />,
   },
 ];
-function Cdash(props) {
+function Cdash() {
   return (
     <div>
-      <Topbar />
+      <Topbar color={"#0000"}/>
       <div className="app">
-        <Sidebar routes={routes}/>
+        <Sidebar color={"#0000"} routes={routes}/>
         <Dashboardroutes />
       </div>
     </div>
