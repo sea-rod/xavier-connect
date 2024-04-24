@@ -1,4 +1,4 @@
-import Pagehead from "../Components/Pagehead";
+import Pagehead from "../Components/pagehead/Pagehead";
 import Inventorycard from "../Cards/Inventory/inventorycard";
 import axiosInstance from "../../../../services/axios";
 import { useEffect, useState } from "react";

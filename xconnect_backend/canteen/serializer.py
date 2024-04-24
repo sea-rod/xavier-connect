@@ -48,9 +48,10 @@ class CartSerializer(serializers.ModelSerializer):
 
 
 class OrderSerializer(serializers.ModelSerializer):
+    cart_id = CartSerializer()
     class Meta:
         model = Order
-        fields = ("user_id", "cart_id", "status")
+        fields = ("id","user_id", "cart_id", "status")
         extra_kwargs = {"cart_id": {"read_only": True}, "user_id": {"read_only": True}}
 
     def create(self, validated_data):

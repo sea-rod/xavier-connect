@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import Additems from "../pages/Additems";
+import Additems from "../Components/addItem/Additems";
 import Cancelledorders from "../pages/Cancelledorders";
 import Dashboard from "../pages/Dashboard";
 import Inventory from "../pages/Inventory";
@@ -10,7 +10,7 @@ export default function Dashboardroutes() {
   return (
     <div className="d-flex mx-auto flex-column justify-content-center">
       <Routes>
-        <Route path="dashboard/" element={<Dashboard />} />
+        <Route path="/" element={<Dashboard />} />
         <Route path="neworders/" element={<Neworders />} />
         <Route path="ongoingorders/" element={<Ongoingorders />} />
         <Route path="cancelledorders/" element={<Cancelledorders />} />

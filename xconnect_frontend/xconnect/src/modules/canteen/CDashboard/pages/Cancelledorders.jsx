@@ -1,4 +1,4 @@
-import Pagehead from "../Components/Pagehead";
+import Pagehead from "../Components/pagehead/Pagehead";
 import Cancelledorder from "../Cards/Cancellorders/cancelledorders";
 // import '../index.css';
 

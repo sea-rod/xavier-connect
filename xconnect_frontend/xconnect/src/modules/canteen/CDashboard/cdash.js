@@ -4,10 +4,11 @@ import Topbar from "../../../shared/Admin/Topbar";
 import { FaHome } from "react-icons/fa";
 import Sidebar from "../../../shared/Admin/Sidebar";
 import Dashboardroutes from "./Router/Dashboardroutes";
+import { ToastContainer } from "react-toastify";
 import "./cdindex.css";
 const routes = [
   {
-    path: "dashboard/",
+    path: "/admin/canteen/",
     name: "Dashboard",
     icon: <FaHome />,
   },
@@ -42,7 +43,16 @@ function Cdash(props) {
     <div>
       <Topbar />
       <div className="app">
-        <Sidebar routes={routes}/>
+        <ToastContainer
+          autoClose={5000}
+          hideProgressBar={false}
+          closeOnClick={true}
+          pauseOnHover={true}
+          draggable={true}
+          progress={undefined}
+          theme="dark"
+        />
+        <Sidebar routes={routes} />
         <Dashboardroutes />
       </div>
     </div>

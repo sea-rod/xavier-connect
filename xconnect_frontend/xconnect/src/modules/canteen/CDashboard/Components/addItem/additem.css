@@ -1,0 +1,6 @@
+#add-item form input{
+    border: solid orange 1px;
+}
+#add-item form input:focus {
+    box-shadow: 0 0 20px 0.25rem rgba(255, 183, 1, 0.565); 
+}
