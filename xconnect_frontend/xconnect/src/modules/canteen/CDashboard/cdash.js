@@ -1,6 +1,5 @@
 import React from "react";
 import Topbar from "../../../shared/Admin/Topbar";
-
 import { FaHome } from "react-icons/fa";
 import Sidebar from "../../../shared/Admin/Sidebar";
 import Dashboardroutes from "./Router/Dashboardroutes";
@@ -37,12 +36,12 @@ const routes = [
     icon: <FaHome />,
   },
 ];
-function Cdash(props) {
+function Cdash() {
   return (
     <div>
-      <Topbar />
+      <Topbar color={"#0000"}/>
       <div className="app">
-        <Sidebar routes={routes}/>
+        <Sidebar color={"#0000"} routes={routes}/>
         <Dashboardroutes />
       </div>
     </div>

@@ -1,43 +1,10 @@
 import { motion } from "framer-motion";
 import "./Sidebar.css";
-import { FaHome } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import usericon from "../../modules/canteen/Ascets/usericon.png";
 import { useState } from "react";
 
-// const routes = [
-//   {
-//     path: "dashboard/",
-//     name: "Dashboard",
-//     icon: <FaHome />,
-//   },
-//   {
-//     path: "neworders/",
-//     name: "NEW ORDERS",
-//     icon: <FaHome />,
-//   },
-//   {
-//     path: "ongoingorders/",
-//     name: "ONGING ORDERS",
-//     icon: <FaHome />,
-//   },
-//   {
-//     path: "cancelledorders/",
-//     name: "CANCELLED ORDERS",
-//     icon: <FaHome />,
-//   },
-//   {
-//     path: "additems/",
-//     name: "ADD ITEMS",
-//     icon: <FaHome />,
-//   },
-//   {
-//     path: "inventory/",
-//     name: "INVENTORY",
-//     icon: <FaHome />,
-//   },
-// ];
-const Sidebar = ({ children,routes }) => {
+const Sidebar = ({ children,routes,color }) => {
   const [toggle, setToggle] = useState(false);
   const btn = () => {
     setToggle(!toggle);
@@ -45,7 +12,7 @@ const Sidebar = ({ children,routes }) => {
 
   return (
     <>
-      <div className="main-container" id="sidebar">
+      <div className="main-container" id="sidebar" style={{backgroundColor:color}}>
         {/* <div className="motion-div"></div> */}
 
         <motion.div
