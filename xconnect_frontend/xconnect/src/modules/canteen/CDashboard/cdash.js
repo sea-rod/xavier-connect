@@ -6,32 +6,32 @@ import Dashboardroutes from "./Router/Dashboardroutes";
 import "./cdindex.css";
 const routes = [
   {
-    path: "dashboard/",
-    name: "Dashboard",
+    path: "/admin/canteen/dashboard/",
+    name: "DASHBOARD",
     icon: <FaHome />,
   },
   {
-    path: "neworders/",
+    path: "/admin/canteen/neworders/",
     name: "NEW ORDERS",
     icon: <FaHome />,
   },
   {
-    path: "ongoingorders/",
+    path: "/admin/canteen/ongoingorders/",
     name: "ONGING ORDERS",
     icon: <FaHome />,
   },
   {
-    path: "cancelledorders/",
+    path: "/admin/canteen/cancelledorders/",
     name: "CANCELLED ORDERS",
     icon: <FaHome />,
   },
   {
-    path: "additems/",
+    path: "/admin/canteen/additems/",
     name: "ADD ITEMS",
     icon: <FaHome />,
   },
   {
-    path: "inventory/",
+    path: "/admin/canteen/inventory/",
     name: "INVENTORY",
     icon: <FaHome />,
   },

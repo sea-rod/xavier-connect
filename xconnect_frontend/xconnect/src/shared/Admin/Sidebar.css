@@ -1,55 +1,53 @@
-#sidebar{
-    margin: 0;
-    padding: 0;
-    box-sizing:content-box;
+#sidebar {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
 }
 
-#togle{
-    position: fixed;
-    left: 250px;
-    z-index: 2;
-    height: 40px;
-    display: inline;
-    transition: 0.5s;
-    border: none;
-    border-radius: 0 7px 7px 0;
-}
-#togle:hover{
-    background-color: rgb(92, 92, 92);
+#togle {
+  position: fixed;
+  left: 250px;
+  z-index: 2;
+  height: 40px;
+  display: inline;
+  transition: 0.5s;
+  border: none;
+  border-radius: 0 7px 7px 0;
 }
 
-.main-box{
-    width: 100%;
-    align-items: center;
+#togle:hover {
+  background-color: rgb(92, 92, 92);
 }
 
-#sidebar .main-container{
-    display: flex;
-    flex-direction: row;
-}       
-
-#sidebar div.sidebar{
-    background: #313343;
-    color: #FF7D34;
-    /* padding: 10px; */
-    height: 100vh;
-    position: fixed;
-    top: 50px;
-    left: 0;
-    z-index: 2;
-    overflow: hidden;
+.main-box {
+  width: 100%;
+  align-items: center;
 }
 
-#sidebar .user{
-    padding: 2vh;
-    display:flex;
-    align-items: center;
-    margin-left: 5px;
-
+#sidebar .main-container {
+  display: flex;
+  flex-direction: row;
 }
 
-#sidebar .user-icon{
-    background-color: aliceblue;
+#sidebar div.sidebar {
+  background: #313343;
+  height: 100vh;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  z-index: 2;
+  overflow: hidden;
+}
+
+#sidebar .user {
+  padding: 2vh;
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+}
+
+#sidebar .user-icon {
+  background-color: aliceblue;
   border-radius: 50%; /* Use 50% to make it circular */
   height: 70px;
   width: 70px;
@@ -58,38 +56,36 @@
   overflow: hidden; /* Ensure the image doesn't overflow */
 }
 
-#usericon-sidebar{
-    max-width: 100%;
-    max-height: 100%;
+#usericon-sidebar {
+  max-width: 100%;
+  max-height: 100%;
 }
 
-#sidebar .user-name h3{
-    font-weight: 90;
+#sidebar .user-name h3 {
+  font-weight: 90;
 }
 
-#sidebar .user-name h4{
-    font-weight: 90;
-    color: aliceblue;
+#sidebar .user-name h4 {
+  font-weight: 90;
+  color: aliceblue;
 }
 
-#sidebar .menu{
-    display: flex;
-    color: #FF7D34;
-    text-decoration: none;
-    padding: 1.7vh;
-    gap: 10px;
-    padding-left: 4vh;
+#sidebar .menu {
+  display: flex;
+  color: #ff7d34;
+  text-decoration: none;
+  padding: 1.7vh;
+  gap: 10px;
 }
 
-#sidebar .menu:hover{
-    border-right: 4px solid #FF7D34;
-    /* background-color: #ff7e344d; */
-    color: #ffff;
-    transition: 0.2sec;
+#sidebar .menu:hover {
+  border-right: 4px solid #ff7d34;
+  color: #ffff;
+  transition: 0.2sec;
 }
 
-#sidebar a.active{
-    background-color: #FF7D34;
-    color: #ffff;
-    transition: 0.1sec;
-}
+/* #sidebar a.active {
+  background-color: #ff7d34;
+  color: #ffff;
+  transition: 1s;
+}  */

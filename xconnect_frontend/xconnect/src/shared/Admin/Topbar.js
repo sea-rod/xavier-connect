@@ -21,7 +21,7 @@ const Topbar = () => {
         return color[key];
       }
     }
-    return "defaultColor"; // return a default color if no match is found
+    return "#5D9AF8"; // return a default color if no match is found
   };
 
   return (
