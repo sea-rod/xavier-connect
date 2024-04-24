@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./Sidebar.css";
@@ -41,7 +41,7 @@ const Sidebar = ({ children, routes }) => {
           </button>
           <div className="user">
             <div className="user-icon">
-              <img src={usericon} id="usericon-sidebar" />
+              <img src={usericon} id="usericon-sidebar" alt="user-icon"/>
             </div>
             <div className="user-name" id="sidebar">
               <h4>ADMIN</h4>

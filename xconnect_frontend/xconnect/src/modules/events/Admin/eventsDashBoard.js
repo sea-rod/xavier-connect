@@ -1,26 +1,27 @@
 import React from "react";
-import Topbar from "../../shared/Admin/Topbar";
-import Sidebar from "../../shared/Admin/Sidebar";
+import Topbar from "../../../shared/Admin/Topbar";
+import Sidebar from "../../../shared/Admin/Sidebar";
 import { FaHome } from "react-icons/fa";
 import EventsRoutes from "./Router/EventsRoutes";
 export default function EventsDash() {
     const routes = [
         {
             path: "/admin/events/eventsdash/",
-            name: "Events Schedule",
+            name: "EVENTS SCHEDULE",
             icon: <FaHome />,
         },
         {
             path: "/admin/events/addevents/",
-            name: "Add New Event",
+            name: "ADD NEW EVENT",
             icon: <FaHome />,
         },
         {
-            path: "/admin/events/addsubevents/",
-            name: "Subevents Description",
+            path: "/admin/events/managesubevents/",
+            name: "MANAGE SUBEVENTS",
             icon: <FaHome />,
         },
     ];
+
     return (
         <>
             <Topbar />
