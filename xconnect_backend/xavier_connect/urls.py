@@ -36,7 +36,11 @@ urlpatterns = [
     path("api/accounts/", include("accounts.urls")),
     path("api/canteen/", include("canteen.urls")),
     path("api/events/", include("events.urls")),
+    path("api/library/", include("library.urls")),
+    path("api/timetable/", include("TimeTable.urls")),
+    path("api/calendar/", include("calendarEvents.urls")),
     path("docs/<str:file_path>/", download_file),
+
 ]
 
 if settings.DEBUG:
