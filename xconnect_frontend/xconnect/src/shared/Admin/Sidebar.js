@@ -36,8 +36,14 @@ import { useState } from "react";
 //     name: "INVENTORY",
 //     icon: <FaHome />,
 //   },
+//     {
+  //     path: "caladdevents/",
+  //     name: "ADD EVENTS",
+  //     icon: <FaHome />,
+  //   },
 // ];
-const Sidebar = ({ children,routes }) => {
+
+  const Sidebar = ({ children,routes }) => {
   const [toggle, setToggle] = useState(false);
   const btn = () => {
     setToggle(!toggle);
