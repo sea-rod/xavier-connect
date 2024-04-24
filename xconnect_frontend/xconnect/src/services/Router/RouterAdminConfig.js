@@ -40,6 +40,7 @@ const AdminRoutes = () => {
   return (
     <Routes>
       <Route path="canteen/*" element={<Cdash  k={routes}/>} />
+      
       {/* <Route path="dashboard/" element={<Dashboard />} /> */}
     </Routes>
   );
