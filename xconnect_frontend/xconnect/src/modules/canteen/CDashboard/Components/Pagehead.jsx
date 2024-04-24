@@ -2,6 +2,7 @@ import React from "react";
 import "./Pagehead.css";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+
 function Pagehead({ names }) {
   const location = useLocation();
   const [currentPage, setCurrentPage] = useState(location.pathname);
