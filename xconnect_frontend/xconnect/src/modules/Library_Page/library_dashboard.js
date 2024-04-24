@@ -1,14 +1,14 @@
 import React from "react";
-//import Topbar from "../../../shared/Admin/Topbar";
-
+import { ToastContainer } from "react-toastify";
 import Topbar from "../../shared/Admin/Topbar";
 import { FaHome } from "react-icons/fa";
 import Sidebar from "../../shared/Admin/Sidebar";
-import library_router from "./Router/library_router";
-import "./cdindex.css";
+import "../canteen/CDashboard/Cdindex.css";
+import LibraryRouter from "./Router/library_router";
+
 const routes = [
   {
-    path: "dashboard/",
+    path: "ldashboard/",
     name: "Dashboard",
     icon: <FaHome />,
   },
@@ -29,16 +29,25 @@ const routes = [
   },
 ];
 
-function library_dashboard(props) {
+function LibraryDashboard(props) {
   return (
     <div>
       <Topbar />
       <div className="app">
-        <Sidebar routes={routes}/>
-        <library_router />
+        <ToastContainer
+          autoClose={5000}
+          hideProgressBar={false}
+          closeOnClick={true}
+          pauseOnHover={true}
+          draggable={true}
+          progress={undefined}
+          theme="dark"
+        />
+        <Sidebar routes={routes} />
+        <LibraryRouter/>
       </div>
     </div>
   );
 }
 
-export default library_dashboard;
+export default LibraryDashboard;

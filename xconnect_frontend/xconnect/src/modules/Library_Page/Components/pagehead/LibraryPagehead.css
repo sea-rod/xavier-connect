@@ -1,0 +1,32 @@
+
+#librarypagehead {
+    display: flex;
+    top: 50px;
+    z-index: 1;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+  
+  #librarypageheadpage-name {
+    
+    font-size: 2vw;
+    width: 70%;
+    color: #ffffff;
+    background-color: #3B3B3B;
+    border-radius: 8px;
+    border: solid 2px #5B4DCA;
+    padding: 1rem; /* Adjust this value as needed */
+    text-align: center;
+    justify-content: space-around;
+    margin-top: 2vh;
+    text-transform: uppercase;
+  }
+  
+  /* Media query for adjusting the card width on smaller screens */
+  @media screen and (max-width: 768px) {
+    .page-name {
+      max-width: none; /* Remove maximum width restriction */
+    }
+  }
+  

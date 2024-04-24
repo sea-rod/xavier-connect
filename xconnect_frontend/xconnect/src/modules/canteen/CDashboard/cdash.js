@@ -5,7 +5,7 @@ import { FaHome } from "react-icons/fa";
 import Sidebar from "../../../shared/Admin/Sidebar";
 import Dashboardroutes from "./Router/Dashboardroutes";
 import { ToastContainer } from "react-toastify";
-import "./cdindex.css";
+import "./Cdindex.css";
 const routes = [
   {
     path: "/admin/canteen/",
@@ -38,7 +38,7 @@ const routes = [
     icon: <FaHome />,
   },
 ];
-function Cdash(props) {
+function Cdash() {
   return (
     <div>
       <Topbar />

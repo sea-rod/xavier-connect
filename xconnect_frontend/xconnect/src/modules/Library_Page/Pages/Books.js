@@ -1,16 +1,9 @@
-import Pagehead from "../../canteen/CDashboard/Components/Pagehead";
+import LibraryPagehead from "../Components/pagehead/LibraryPagehead";
 
-
-const names = [
-    {
-        name:"Add BOOKS"
-    }
-]
-
-function Books() {
-  return (
+  function Books() {
+    return (
     <>
-    <Pagehead names={names}/>
+      <LibraryPagehead name={"BOOKS"}/>
     </>
   )
 }
