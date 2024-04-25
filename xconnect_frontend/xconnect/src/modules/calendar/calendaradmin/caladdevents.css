@@ -35,8 +35,9 @@ input{
         background: none;
         width: 120px;
         height: 45px;
-        border: 1px solid purple;
+        border: 1px solid #A800C2;
         border-radius: 4px;
+        margin-top: 15px;
     }
 }
 

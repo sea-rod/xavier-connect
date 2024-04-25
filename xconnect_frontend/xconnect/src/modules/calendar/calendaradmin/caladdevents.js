@@ -28,7 +28,7 @@ const AddEventForm = () => {
           <input type="text" id="subEvents" name="subEvents" placeholder="No. of Sub-Events"/><br />
         </div>
         <div className="calsubmit">
-          <button type="submit">Submit</button> 
+          <button type="submit">SUBMIT</button> 
         </div>
       </form>
     </div>

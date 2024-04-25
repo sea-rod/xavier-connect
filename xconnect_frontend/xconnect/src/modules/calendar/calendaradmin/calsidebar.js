@@ -21,11 +21,8 @@ const Calsidebar = () => {
           <i className="fa fa-fw fa-calendar-plus"></i> ADD EVENTS
         </Link>
         <Link to="calsubevents">
-          <i className="fa fa-fw fa-calendar-plus"></i> CREATE SUB-EVENTS FORM
+          <i className="fa fa-fw fa-calendar-plus"></i> SUB-EVENTS DESCRIPTION
        </Link>
-        <a href="subeventsdesc">
-          <i className="fa fa-fw fa-calendar-check"></i> SUB-EVENTS DESCRIPTION
-        </a>
       </div>
     </div>
   );
