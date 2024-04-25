@@ -1,0 +1,10 @@
+#subevents-image{
+    background-color: #A800C2;
+}
+
+#subevents-dropdown{
+    margin-left: 15%;
+    border: solid 1px #A800C2;
+    border-radius: 8px;
+    display: inline-block;
+}

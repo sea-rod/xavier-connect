@@ -25,6 +25,7 @@ export default function Navbar() {
         setNavbarColor("#5D9AF8");
         break;
       case "/Canteen":
+      case "/Cart":
         setNavbarColor("#FEAC04");
         break;
       case "/StudentHelp":

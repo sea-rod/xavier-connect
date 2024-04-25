@@ -1,6 +1,5 @@
 import React from "react";
 import Topbar from "../../../shared/Admin/Topbar";
-
 import { FaHome } from "react-icons/fa";
 import Sidebar from "../../../shared/Admin/Sidebar";
 import Dashboardroutes from "./Router/Dashboardroutes";
@@ -8,32 +7,32 @@ import { ToastContainer } from "react-toastify";
 import "./Cdindex.css";
 const routes = [
   {
-    path: "/admin/canteen/",
-    name: "Dashboard",
+    path: "/admin/canteen/dashboard/",
+    name: "DASHBOARD",
     icon: <FaHome />,
   },
   {
-    path: "neworders/",
+    path: "/admin/canteen/neworders/",
     name: "NEW ORDERS",
     icon: <FaHome />,
   },
   {
-    path: "ongoingorders/",
+    path: "/admin/canteen/ongoingorders/",
     name: "ONGING ORDERS",
     icon: <FaHome />,
   },
   {
-    path: "cancelledorders/",
+    path: "/admin/canteen/cancelledorders/",
     name: "CANCELLED ORDERS",
     icon: <FaHome />,
   },
   {
-    path: "additems/",
+    path: "/admin/canteen/additems/",
     name: "ADD ITEMS",
     icon: <FaHome />,
   },
   {
-    path: "inventory/",
+    path: "/admin/canteen/inventory/",
     name: "INVENTORY",
     icon: <FaHome />,
   },
@@ -41,7 +40,7 @@ const routes = [
 function Cdash() {
   return (
     <div>
-      <Topbar />
+      <Topbar color={"#0000"}/>
       <div className="app">
         <ToastContainer
           autoClose={5000}
@@ -52,7 +51,7 @@ function Cdash() {
           progress={undefined}
           theme="dark"
         />
-        <Sidebar routes={routes} />
+        <Sidebar color={"#0000"} routes={routes} />
         <Dashboardroutes />
       </div>
     </div>
