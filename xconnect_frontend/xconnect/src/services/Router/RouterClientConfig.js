@@ -11,7 +11,6 @@ import SignUp from "../../pages/Sign up/SignUp";
 import Calendar from "../../modules/calendar/Calendar";
 import HelpLine from "../../modules/helpLine/helpline";
 import TimeTable from "../../modules/timetable/timetable";
-import CombinedComponent from "../../modules/Library_Page/Library";
 import ReserveBook from "../../modules/Library_Page/ReserveBook";
 import Newpage from "../../modules/Library_Page/Newpage";
 import ResetPassword from "../../pages/ResetPassword/resetPassword";
@@ -32,7 +31,6 @@ export default function RouterClientConfig() {
         <Route path="/HelpLine" element={<HelpLine />} />
         <Route path="/Calendar" element={<Calendar />} />
         <Route path="/TimeTable" element={<TimeTable />} />
-        <Route path="/Library" element={<CombinedComponent />} />
         <Route path="/ReserveBook" element={<ReserveBook />} />
         <Route path="/Newpage" element={<Newpage />} />
         <Route path="/reset-form" element={<ResetPasswordEmail />} />
