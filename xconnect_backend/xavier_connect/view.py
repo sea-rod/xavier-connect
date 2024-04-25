@@ -1,5 +1,5 @@
 from django.http import FileResponse
-from django.shortcuts import get_object_or_404, HttpResponse,redirect
+from django.shortcuts import get_object_or_404, HttpResponse, redirect
 from django.conf import settings
 import os
 
@@ -12,4 +12,4 @@ def download_file(request, file_path):
         response["Content-Disposition"] = 'attachment; filename="' + file_path + '"'
         return response
     else:
-        return redirect("http://127.0.0.1:3000/")
+        return redirect("https://xconnect-dprp.onrender.com")

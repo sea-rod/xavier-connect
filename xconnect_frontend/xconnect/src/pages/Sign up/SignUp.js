@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 // import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import axiosInstance from "../../services/axios";
 import "./SignUp.css";
 
@@ -41,9 +42,15 @@ export default function SignUp() {
       .post("accounts/signup/", data)
       .then((res) => {
         console.log(res.data);
+        toast.success("Signup Successful");
       })
       .catch((err) => {
         console.log("failed", err);
+        if (err.response.data?.class_stream) {
+          toast.error("All fields are required");
+        } else {
+          toast.error("Error" + String(err));
+        }
       });
   };
   return (
@@ -150,6 +157,7 @@ export default function SignUp() {
                   <option value="FY">FY</option>
                   <option value="SY">SY</option>
                   <option value="TY">TY</option>
+                  <option value="NA">NA</option>
                 </select>
               </div>
               <div className="dropdown mt-3">
@@ -161,9 +169,11 @@ export default function SignUp() {
                   onChange={handleChange}
                 >
                   <option value="">Select Stream</option>
-                  <option value="BCA">BCA</option>
+                  <option value="B.C.A">B.C.A</option>
                   <option value="BBA">BBA</option>
-                  <option value="B.Sc">B.Sc</option>
+                  <option value="B.sc">B.Sc</option>
+                  <option value="B.com">B.com</option>
+                  <option value="BA">BA</option>
                 </select>
               </div>
             </div>
