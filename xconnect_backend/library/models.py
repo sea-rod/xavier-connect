@@ -17,7 +17,7 @@ class Books(models.Model):
     genre = models.ManyToManyField(Genre)    
     available_copies = models.IntegerField(default=1)
     total_copies = models.IntegerField(default = 1)
-    image = models.ImageField(upload_to="media/library",default="media/library/default.png")
+    image = models.ImageField(upload_to="media/library",default="default/bookDefault.jpg")
 
     def save(self, *args, **kwargs):
             self.available_copies = self.total_copies
