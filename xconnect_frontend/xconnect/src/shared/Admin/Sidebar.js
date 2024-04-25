@@ -71,9 +71,6 @@ const Sidebar = ({ children, routes }) => {
           </section>
         </motion.div>
       </div>
-      <main className="main-box" id="sidebar">
-        {children}
-      </main>
     </>
   );
 };

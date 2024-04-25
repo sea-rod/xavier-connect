@@ -49,6 +49,9 @@ INSTALLED_APPS = [
     "accounts",
     "canteen",
     "events",
+    "library",
+    "TimeTable",
+    "calendarEvents",
 ]
 
 MIDDLEWARE = [
@@ -177,7 +180,7 @@ SIMPLE_JWT = {
     "TOKEN_USER_CLASS": "rest_framework_simplejwt.models.TokenUser",
     "JTI_CLAIM": "jti",
     "SLIDING_TOKEN_REFRESH_EXP_CLAIM": "refresh_exp",
-    "SLIDING_TOKEN_LIFETIME": timedelta(minutes=5),
+    "SLIDING_TOKEN_LIFETIME": timedelta(minutes=15),
     "SLIDING_TOKEN_REFRESH_LIFETIME": timedelta(days=1),
     "TOKEN_OBTAIN_SERIALIZER": "rest_framework_simplejwt.serializers.TokenObtainPairSerializer",
     "TOKEN_REFRESH_SERIALIZER": "rest_framework_simplejwt.serializers.TokenRefreshSerializer",
@@ -195,6 +198,8 @@ EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD")
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
+RAZOR_KEY_ID = env.str("RAZOR_KEY_ID")
+RAZOR_KEY_SECRET = env.str("RAZOR_KEY_SECRET")
 
 CORS_ORIGIN_WHITELIST = (
     "http://localhost:3000",

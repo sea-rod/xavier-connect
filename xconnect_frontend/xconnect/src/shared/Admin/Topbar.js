@@ -28,7 +28,7 @@ const Topbar = () => {
     <div
       style={{
         display: "flex",
-        position: "sticky",
+        position: "fixed",
         top: 0,
         left: 0,
         justifyContent: "space-around",
