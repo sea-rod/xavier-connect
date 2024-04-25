@@ -33,7 +33,8 @@ const Topbar = () => {
         left: 0,
         justifyContent: "space-around",
         height: "50px",
-        zIndex:"2",
+        zIndex: "2",
+        width: "100%",
         backgroundColor: getColor(currentPage),
       }}
     >
