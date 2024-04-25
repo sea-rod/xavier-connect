@@ -2,6 +2,8 @@ import React from "react";
 import { useState } from "react";
 import axiosInstance from "../../services/axios";
 import { Link, useNavigate } from "react-router-dom";
+import {  toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./loginForm.css";
 
 export default function LoginForm() {
@@ -30,8 +32,9 @@ export default function LoginForm() {
         localStorage.setItem("refresh_token", res.data.refresh);
         axiosInstance.defaults.headers["Authorization"] =
           "Bearer " + localStorage.getItem("access_token");
-        navigate("/");
+        navigate(-1);
         let event = new Event("addedToken");
+        toast.success("Login Successful !");
         window.dispatchEvent(event);
       })
       .catch((error) => {
@@ -41,6 +44,7 @@ export default function LoginForm() {
 
   return (
     <div className="container pt-1 mt-5" id="login" style={{ height: "95vh" }}>
+      
       <div className="custom-container mb-1 mt-5">
         <div className="heading">Sign In</div>
 
@@ -75,14 +79,13 @@ export default function LoginForm() {
               value={formData.password}
               className="form-control input"
               id="floatingPassword"
-              placeholder=""
             />
             <label htmlFor="floatingPassword" className="form-label">
               Password
             </label>
           </div>
           <div className="forgot-password ms-3 mt-3">
-            <Link to="/PasswordChange">Forgot Password?</Link>
+            <Link to="/reset-form">Forgot Password?</Link>
           </div>
           <button
             className="login-button btn mx-auto col-12 mt-4"
