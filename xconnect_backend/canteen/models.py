@@ -40,3 +40,11 @@ class Order(models.Model):
     user_id = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     cart_id = models.ForeignKey(Cart, on_delete=models.CASCADE)
     status = models.CharField(max_length=15, choices=STATUS_CHOICE, default="preparing")
+    paid = models.BooleanField(default=False)
+
+
+class Payment(models.Model):
+    order = models.OneToOneField(Order, on_delete=models.CASCADE)
+    pay_order_id = models.CharField(max_length=255, null=True)
+    payment_id = models.CharField(max_length=255, null=True)
+    signature = models.CharField(max_length=500, null=True)

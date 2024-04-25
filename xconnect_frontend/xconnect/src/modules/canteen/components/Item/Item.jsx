@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import SearchCard from "../SearchCard/SearchCard";
 import "./Item.css";
 import { addToCartAPICall, inc_qauntity, desc_qauntity } from "./utils";
+import { Bounce, toast } from "react-toastify";
 
 const Item = (props) => {
   const navigate = useNavigate();
@@ -57,10 +58,18 @@ const Item = (props) => {
         })
         .catch((err) => {
           console.log(err);
+          if (err.response.status === 400) {
+            setQuantity((prevQuantity) => prevQuantity - 1);
+            toast.error(String(err.response?.data) 
+             );
+          } else if (err.response.data) {
+            setQuantity("Add");
+          }
           if (
             err.response.status === 403 &&
             !localStorage.getItem("access_token")
           ) {
+            toast.error("You need Login First !");
             navigate("/Login");
           }
         });
@@ -76,6 +85,7 @@ const Item = (props) => {
         err.response.status === 403 &&
         !localStorage.getItem("access_token")
       ) {
+        console.log("k");
         navigate("/Login");
       }
     }
