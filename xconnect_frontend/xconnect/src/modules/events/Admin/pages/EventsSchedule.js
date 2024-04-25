@@ -1,5 +1,5 @@
 import React from "react";
-import Pagehead from "../../../canteen/CDashboard/Components/Pagehead";
+import Pagehead from "../../../canteen/CDashboard/Components/pagehead/Pagehead";
 import "./EventsSchedule.css";
 
 export default function EventsSchedule(){

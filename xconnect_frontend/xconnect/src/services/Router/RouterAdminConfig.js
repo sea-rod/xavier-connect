@@ -1,9 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import Cdash from "../../modules/canteen/CDashboard/cdash";
 import EventsDash from "../../modules/events/Admin/eventsDashBoard";
-
-import Cdash from "../../modules/canteen/CDashboard/cdash";
 import LibraryDashboard from "../../modules/Library_Page/library_dashboard";
+
 const AdminRoutes = () => {
   return (
     <Routes>

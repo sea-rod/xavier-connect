@@ -1,0 +1,30 @@
+#booksinventory {
+    display: flex;
+    flex-direction: column;
+    top: 50px;
+    z-index: 1;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+#booksinventory-name{
+    font-size: 20px;
+    width: 85%;
+    color: #ffffff;
+    background-color: #3B3B3B;
+    border-radius: 8px;
+    border: solid 2px rgb(23, 104, 227);
+    padding: 1rem; /* Adjust this value as needed */
+    margin-top: 2vh;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+    .page-name {
+      max-width: none; /* Remove maximum width restriction */
+    }
+}
+

@@ -12,7 +12,7 @@ const data = [
 
 const LibraryLinechart = () => {
   return (
-    <div style={{width: '90vh', height: '47vh', margin: '2rem', backgroundColor: '#fff', borderRadius: '10px', padding: '10px' }}>
+    <div style={{width: '90vh', height: '47vh', margin: '2rem', backgroundColor: '#fff', borderRadius: '10px', padding: '10px', border: 'solid 4px rgb(23, 104, 227)'  }}>
     <ResponsiveContainer width="100%" height="100%">
       <LineChart
           width={500}
@@ -31,7 +31,7 @@ const LibraryLinechart = () => {
           <Tooltip />
           <Legend />
           {/* <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} /> */}
-          <Line type="monotone" dataKey="value" stroke="#5B4DCA" activeDot={{ r: 8 }}/>
+          <Line type="monotone" dataKey="value" stroke='rgb(23, 104, 227)' activeDot={{ r: 8 }}/>
         </LineChart>
     </ResponsiveContainer>
     </div>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Pagehead from "../../../canteen/CDashboard/Components/Pagehead";
+import Pagehead from "../../../canteen/CDashboard/Components/pagehead/Pagehead";
 import { Link } from "react-router-dom";
 import "./ManageSubevents.css"
 

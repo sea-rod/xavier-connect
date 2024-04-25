@@ -66,7 +66,7 @@ class LibraryPiechart extends PureComponent {
 
   render() {
     return (
-      <div style={{ width: '90vh', height: '57vh', margin: '2rem', backgroundColor: '#3B3B3B',border: 'solid 2px #5B4DCA' , borderRadius: '10px', padding: '10px', textAlign:'center' }}>
+      <div style={{ width: '90vh', height: '57vh', margin: '2rem', backgroundColor: '#3B3B3B',border: 'solid 2px rgb(23, 104, 227)' , borderRadius: '10px', padding: '10px', textAlign:'center' }}>
         <ResponsiveContainer width="100%" height="100%" backgroundColor="white">
         <h3>Total Books Report</h3>
           <PieChart width={400} height={400}>
