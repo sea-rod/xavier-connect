@@ -5,13 +5,14 @@ const Topbar = () => {
     <div
       style={{
         display: "flex",
-        position: "sticky",
+        position: "fixed",
         top: 0,
         left: 0,
         justifyContent: "space-around",
         backgroundColor: "#FF7D34",
+        width:"100%",
         height: "50px",
-        zIndex:"2",
+        zIndex: "10",
       }}
     >
       <div>

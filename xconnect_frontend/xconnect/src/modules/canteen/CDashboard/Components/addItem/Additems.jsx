@@ -3,11 +3,6 @@ import Pagehead from "../pagehead/Pagehead";
 import axiosInstance from "../../../../../services/axios";
 import { toast } from "react-toastify";
 import "./additem.css";
-const names = [
-  {
-    name: "Add items",
-  },
-];
 
 const Additems = () => {
   const initialFormData = Object.freeze({
@@ -74,7 +69,7 @@ const Additems = () => {
 
   return (
     <>
-      <Pagehead names={names} />
+      <Pagehead names="Add items" />
       <div className="container px-5" id="add-item">
         <form action="" onSubmit={handleSubmit}>
           <div class="mb-3">
