@@ -9,6 +9,7 @@ import Order from "../../modules/canteen/pages/Order/Order";
 import CheckOut from "../../modules/canteen/pages/Cart/CheckOut";
 import SignUp from "../../pages/Sign up/SignUp";
 import Calendar from "../../modules/calendar/Calendar";
+import Announcement from "../../modules/calendar/AnnoucementDetails";
 import HelpLine from "../../modules/helpLine/helpline";
 import TimeTable from "../../modules/timetable/TTGenerator";
 import CombinedComponent from "../../modules/Library_Page/Library";
@@ -31,6 +32,7 @@ export default function RouterClientConfig() {
         <Route path="/cart" element={<CheckOut />} />
         <Route path="/helpLine" element={<HelpLine />} />
         <Route path="/calendar" element={<Calendar />} />
+        <Route path="/announcement" element={<Announcement />} />
         <Route path="/timeTable" element={<TimeTable />} />
         <Route path="/library" element={<CombinedComponent />} />
         <Route path="/reserveBook" element={<ReserveBook />} />

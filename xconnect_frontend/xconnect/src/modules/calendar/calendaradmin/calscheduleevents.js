@@ -1,37 +1,53 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./calscheduleevents.css";
+import axiosInstance from "../../../services/axios";
+import { useNavigate } from "react-router-dom";
 
 const ScheduleEventForm = () => {
-  const handleSubmit = (event) => {
-    event.preventDefault(); 
+  const [announcementData, setAnnouncementData] = useState([]);
+  const navigate = useNavigate();
+
+  const fetchData = () => {
+    axiosInstance.get("calendar/event/")
+      .then((res) => {
+        console.log(res.data);
+        const updatedData = res.data.map((item) => ({
+          ...item,
+          dayOfWeek: getDayOfWeek(item.date),
+          dayOfMonth: item.date.split("-")[2]
+        }));
+        setAnnouncementData(updatedData);
+      })
+      .catch((err) => {
+        if (err.response.status === 403) {
+          navigate("/login");
+        }
+      });
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const getDayOfWeek = (dateString) => {
+    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const date = new Date(dateString);
+    return days[date.getDay()];
   };
 
   return (
     <div className="calbody">
       <div className="calheading">
-      <h2>EVENT SCHEDULE</h2>
+        <h2>ANNOUNCEMENT</h2>
       </div>
+
       <div className="calscheduleevents">
-        <div className="SEB">
-        <p>TECHLIPSE</p>
-        <p>BCA Department</p>
-        <p>29-03-2024</p>
-        </div>
-        <div className="SEB">
-        <p>MEDIASCOPE</p>
-        <p>Mass Comm. Department</p>
-        <p>20-11-2023</p>
-        </div>
-        <div className="SEB">
-        <p>PROTEUS</p>
-        <p>Bsc. Department</p>
-        <p>14-02-2024</p>
-        </div>
-        <div className="SEB">
-        <p>ARENA</p>
-        <p>BCom. Department</p>
-        <p>11-12-2023</p>
-        </div>
+        {announcementData.map((event) => (
+          <div className="SEB" key={event.id}>
+            <p>{event.name}</p>
+            <p>{event.date}</p>
+          </div>
+        ))}
       </div>
     </div>
   );

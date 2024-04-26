@@ -15,14 +15,12 @@ const Calsidebar = () => {
         </div>
 
         <Link to="calscheduleevents">
-          <i className="fa fa-fw fa-calendar-alt"></i> EVENT SCHEDULE
+          <i className="fa fa-fw fa-calendar-alt"></i> ANNOUNCEMENT
         </Link>
         <Link to="caladdevents">
-          <i className="fa fa-fw fa-calendar-plus"></i> ADD EVENTS
+          <i className="fa fa-fw fa-calendar-plus"></i> ADD ANNOUNCEMENT
         </Link>
-        <Link to="calsubevents">
-          <i className="fa fa-fw fa-calendar-plus"></i> SUB-EVENTS DESCRIPTION
-       </Link>
+        
       </div>
     </div>
   );
