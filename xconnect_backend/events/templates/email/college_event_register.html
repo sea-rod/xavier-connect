@@ -4,12 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>College Event Invitation</title>
+    <style>
+        body {
+            font-family: 'Chakra Petch', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .container {
+          margin: 40px;
+          background-color: #222222;
+          padding: 10px 20px;
+          border-radius: 20px;
+          text-align: justify;
+        }
+
+        h1 {
+            margin-top: 40px;
+        }
+
+        p {
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>hi {{college}}</h1>
-    <p>To register  <a href="{{register_url}}">click here </a></p>
+    <div class="container">
+        <h1>College Event Invitation</h1>
+        <p>Hello {{college}},</p>
+        <p>We are thrilled to invite your college to our upcoming event!</p>
+        <p>This event promises to be a memorable experience filled with engaging activities and valuable insights.</p>
+        <p>We would be honored to have your college's participation. Please click the button below to register:</p>
+        <a href="{{register_url}}" class="btn">Register Now</a>
+        <p>If you have any questions or require further information, please feel free to contact us.</p>
+        <p>We eagerly anticipate your college's attendance and participation in our event!</p>
+    </div>
 </body>
 
 </html>
