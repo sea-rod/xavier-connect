@@ -1,72 +1,53 @@
-import React from 'react';
+import React, { useState,useEffect  } from 'react';
 import './Newpage.css';
 import SearchBar from './shared/SearchBar';
 import BooksDropdown from './shared/BooksDropdown';
+import { Link ,useLocation} from 'react-router-dom';
+
+
 const Newpage = () => {
-  const handleReserve = () => {
-    // Add your reserve functionality here
-    console.log('Book reserved!');
+  const [bookData, setBookData] = useState([]);
+  const location = useLocation();
+  const state = location.state;
+
+  const handleDataChange = () => {
+    setBookData(state.bookData);
+  };
+
+  useEffect(() => {
+    handleDataChange();
+  }, [state]);
+
+  const handleGenreSelection = (genre) => {
+    setBookData(genre);
+  };
+
+  const handleKeysearch = (genre) => {
+    setBookData(genre);
   };
 
   return (
     <>
-      <SearchBar />
+      <SearchBar onKeysearched={handleKeysearch}/>
       <div className='mt-4'>
-        <BooksDropdown />
+        <BooksDropdown onGenreSelected={handleGenreSelection} />
       </div>
       <div id='SearchResults' className='container'>
         <div className="book">
-          <div className="Newpage">
-            <div className="Newpage-img">
-              <img src="/images/Library/book1.jpg" alt="To Kill a Mockingbird" />
-            </div>
-            <div className='newtext'>
-              <h2 className="Newpage-title">To Kill a Mockingbird<p>Harper Lee</p></h2>
-              <button className="reserve-button" onClick={handleReserve}>Reserve</button>
-            </div>
-          </div>
-
-          <div className="Newpage">
-            <div className="Newpage-img">
-              <img src="/images/Library/book2.jpg" alt="1984" />
-            </div>
-            <div className='newtext'>
-              <h2 className="Newpage-title">1984<p>George Orwell</p></h2>
-              <button className="reserve-button" onClick={handleReserve}>Reserve</button>
-            </div>
-          </div>
-
-          <div className="Newpage">
-            <div className="Newpage-img">
-              <img src="/images/Library/book2.jpg" alt="1984" />
-            </div>
-            <div className='newtext'>
-              <h2 className="Newpage-title">1984<p>George Orwell</p></h2>
-              <button className="reserve-button" onClick={handleReserve}>Reserve</button>
-            </div>
-          </div>
-
-          <div className="Newpage">
-            <div className="Newpage-img">
-              <img src="/images/Library/book2.jpg" alt="1984" />
-            </div>
-            <div className='newtext'>
-              <h2 className="Newpage-title">1984<p>George Orwell</p></h2>
-              <button className="reserve-button" onClick={handleReserve}>Reserve</button>
-            </div>
-          </div>
-
-          <div className="Newpage">
-            <div className="Newpage-img">
-              <img src="/images/Library/book2.jpg" alt="1984" />
-            </div>
-            <div className='newtext'>
-              <h2 className="Newpage-title">1984<p>George Orwell</p></h2>
-              <button className="reserve-button" onClick={handleReserve}>Reserve</button>
-            </div>
-          </div>
-
-          {/* Add more books similarly */}
+          
+          {bookData.map((book) => (
+            <Link key={book.id} to='/ReserveBook' state={book}  >
+              
+              <div className="Newpage">
+                <div className="Newpage-img">
+                  <img src={book.image} alt={book.name}/>
+                </div>
+                <div className='newtext'>
+                  <h2 className="Newpage-title">{book.name}<p>{book.author}</p></h2>
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </>

@@ -2,17 +2,21 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import SubEventCard from "../components/SubEventCard";
 import axiosInstance from "../../../services/axios";
+import { baseURL } from "../../../services/axios";
 import "./SubEvents.css";
 
 // Have to get subevent-img class here in every img tag
-export default function SubEvents() {
+export default function   SubEvents() {
   const location = useLocation();
 
   const [subEventData, setSubEventData] = useState([]);
+  const [id, setId] = useState();
+  const [broch, setBroch] = useState();
 
   console.log(location.state);
   useEffect(() => {
     console.log(location.state.url);
+    setBroch(location.state.broch)
     let url = location.state.url;
     url = url.split("/");
     console.log(url);
@@ -20,6 +24,7 @@ export default function SubEvents() {
     for (let i = 4; i < url.length - 1; i++) {
       urlPath += url[i] + "/";
     }
+    setId(url[url.length-2])
     console.log(urlPath);
 
     axiosInstance
@@ -51,12 +56,12 @@ export default function SubEvents() {
         <div class="container pb-5">
           <div class="row"></div>
           <div class="mt-5">
-            <a href="http://127.0.0.1:8000/api/events/register/1/">
+            <a href={`${baseURL}events/register/${id}`}>
               <button class="Btn mb-3">
                 <strong>REGISTER</strong>
               </button>
             </a>
-            <a href="./techlipse_brochure.pdf" target="_blank">
+            <a href={`${broch}/`} target="_blank">
               <button class="Btn">
                 <strong>BROCHURE</strong>
               </button>

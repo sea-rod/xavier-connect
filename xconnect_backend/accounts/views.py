@@ -6,6 +6,9 @@ from rest_framework.request import Request
 from rest_framework import status
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from .models import ClassStream, Stream, Class
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
 from .permissions import IsUser, EditOnlyByAdmin
 from .serializer import (
     CustomUserSerializer,
@@ -98,3 +101,15 @@ class ClassStreamDestroyAPI(generics.DestroyAPIView):
     serializer_class = ClassStreamSerializer
     queryset = ClassStream.objects.all()
     permission_classes = (IsAdminUser,)
+
+
+class CheckUserGroupAPIView(APIView):
+    def get(self, request):
+        user = self.request.user
+        group_name = None
+        if user.groups == "null":
+            group_name = user.group.name
+        flag = user.is_superuser
+        return Response(
+            {"group": group_name, "is_superuser": flag}, status=status.HTTP_200_OK
+        )
