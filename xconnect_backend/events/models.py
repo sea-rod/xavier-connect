@@ -18,7 +18,7 @@ class SubEvent(models.Model):
     )
     name = models.CharField(max_length=255)
     no_of_participants = models.IntegerField()
-    img = models.ImageField(default="media/default.png", upload_to="media/events")
+    img = models.ImageField(default="default/default.png", upload_to="media/events")
     desc = models.TextField()
     rules_n_judging = models.TextField()
 

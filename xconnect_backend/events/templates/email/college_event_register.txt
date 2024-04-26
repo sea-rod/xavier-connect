@@ -1,1 +1,2 @@
+We are thrilled to invite your college to our upcoming event!
 click here to register {{register_url}}

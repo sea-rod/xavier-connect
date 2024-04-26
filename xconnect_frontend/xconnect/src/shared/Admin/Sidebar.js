@@ -5,45 +5,7 @@ import { NavLink } from "react-router-dom";
 import usericon from "../../modules/canteen/Ascets/usericon.png";
 import { useState } from "react";
 
-// const routes = [
-//   {
-//     path: "dashboard/",
-//     name: "Dashboard",
-//     icon: <FaHome />,
-//   },
-//   {
-//     path: "neworders/",
-//     name: "NEW ORDERS",
-//     icon: <FaHome />,
-//   },
-//   {
-//     path: "ongoingorders/",
-//     name: "ONGING ORDERS",
-//     icon: <FaHome />,
-//   },
-//   {
-//     path: "cancelledorders/",
-//     name: "CANCELLED ORDERS",
-//     icon: <FaHome />,
-//   },
-//   {
-//     path: "additems/",
-//     name: "ADD ITEMS",
-//     icon: <FaHome />,
-//   },
-//   {
-//     path: "inventory/",
-//     name: "INVENTORY",
-//     icon: <FaHome />,
-//   },
-//     {
-  //     path: "caladdevents/",
-  //     name: "ADD EVENTS",
-  //     icon: <FaHome />,
-  //   },
-// ];
-
-  const Sidebar = ({ children,routes }) => {
+const Sidebar = ({ routes }) => {
   const [toggle, setToggle] = useState(false);
   const btn = () => {
     setToggle(!toggle);
@@ -82,20 +44,13 @@ import { useState } from "react";
           <section className="routes">
             {routes.map((route) => (
               <NavLink to={route.path} key={route.name} className="menu">
-                <div className="icon">
-                  {route.icon}
-                </div>
-                <div className="link_text">
-                  {route.name}
-                </div>
+                <div className="icon">{route.icon}</div>
+                <div className="link_text">{route.name}</div>
               </NavLink>
             ))}
           </section>
         </motion.div>
       </div>
-      <main className="main-box" id="sidebar">
-        {children}
-      </main>
     </>
   );
 };

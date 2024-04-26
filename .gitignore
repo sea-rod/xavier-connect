@@ -1,9 +1,8 @@
 __pycache__
-db.sqlite3
 .vscode
 media/
 docs
-
+staticfiles
 ### react
 
 
