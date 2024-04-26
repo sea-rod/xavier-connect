@@ -1,0 +1,71 @@
+#bookreservarioncard-card.bookreservarioncard{
+    color: #ffff;
+    border: 2px solid rgb(23, 104, 227);
+    width: fit-content;
+    height: fit-content;
+    border-radius: 10px;
+    background-color: #ffffff20;
+    /* overflow: hidden; */
+  }
+  
+  #top-section.bookreservarioncard{
+    align-items: center;
+    background-color: rgb(23, 104, 227);
+    border-radius: 5px 5px 0px 0px;
+    min-width: 65vh;
+    height: 12vh;
+    padding: 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: hidden;
+    margin: auto;
+  } 
+  
+  #top-left.bookreservarioncard{
+    display: flex;
+  }
+  #top-right.bookreservarioncard{   
+    margin-top: auto;
+  }
+
+  #customer-name-time.bookreservarioncard{
+    margin-left: 10px;
+  }
+  
+  #middle-section.bookreservarioncard{
+    display: flex;
+    background-color: #ffffff20;
+    min-width: 55vh;
+    height: fit-content;
+    padding: 0.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 0px 0px 5px 5px;
+  }
+  
+  #middle-left.bookreservarioncard, #middle-middle.bookreservarioncard, #middle-right.bookreservarioncard{
+    padding: 10px;
+  }
+  
+   #bottom-right.bookreservarioncard{
+    flex-wrap: nowrap;
+   }
+
+   #bookstatus-dropdown{
+    border: solid 1px rgb(23, 104, 227);
+    border-radius: 8px;
+    display: inline-block;
+}
+
+/* #reservvestatus-dropdown {
+    z-index: 1000; 
+  } */
+  
+
+  @media (max-width: 600px) {
+      
+  }

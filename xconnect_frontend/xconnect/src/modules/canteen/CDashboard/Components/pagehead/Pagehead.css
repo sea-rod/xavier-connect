@@ -1,4 +1,3 @@
-
 #pagehead {
     display: flex;
     top: 50px;
@@ -15,7 +14,7 @@
     color: #ffffff;
     background-color: #3B3B3B;
     border-radius: 8px;
-    border: solid 2px #FF7D34;
+    /* border: solid 2px #FF7D34; */
     padding: 1rem; /* Adjust this value as needed */
     text-align: center;
     justify-content: space-around;

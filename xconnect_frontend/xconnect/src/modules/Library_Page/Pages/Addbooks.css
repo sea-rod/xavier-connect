@@ -1,0 +1,44 @@
+#mainaddbooksform {
+    display: flex;
+    flex-direction: column;
+    top: 50px;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+  #addbooksform {
+    width: 70%;
+    color: #ffffff;
+    background-color: #3b3b3b;
+    border-radius: 8px;
+    border: solid 2px #3b3b3b;
+    padding: 1rem; /* Adjust this value as needed */
+    margin-top: 2vh;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+  }
+  
+  #addbook-btn {
+    display: block;
+    margin: 0 auto;
+    background-color: rgb(23, 104, 227);
+    font-weight: 700;
+  }
+  
+  #newbook-image{
+    background-color: rgb(23, 104, 227);
+  }
+
+  #uploadbookimagecontainer {
+    width: 70%;
+    color: #ffffff;
+    background-color: #3b3b3b;
+    border-radius: 8px;
+    border: solid 2px #3b3b3b;
+    padding: 1rem; /* Adjust this value as needed */
+    margin-top: 2vh;
+    display: flex;
+    justify-content: space-around;
+    font-weight: 700;
+  }

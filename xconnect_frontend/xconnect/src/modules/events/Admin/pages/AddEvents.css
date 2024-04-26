@@ -1,0 +1,31 @@
+#maineventform {
+  display: flex;
+  flex-direction: column;
+  top: 50px;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+#addeventsform {
+  width: 70%;
+  color: #ffffff;
+  background-color: #3b3b3b;
+  border-radius: 8px;
+  border: solid 2px #3b3b3b;
+  padding: 1rem; /* Adjust this value as needed */
+  margin-top: 2vh;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+}
+
+#addevent-btn {
+  display: block;
+  margin: 0 auto;
+  background-color: #a800c2;
+  font-weight: 700;
+}
+
+.quill svg{
+  filter: white;
+}

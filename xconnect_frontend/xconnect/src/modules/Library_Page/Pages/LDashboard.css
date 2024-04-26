@@ -1,0 +1,9 @@
+@media screen and (max-width: 600px) {
+    #libo1 {
+      width: 100%;
+      padding: 10px;
+      flex-wrap: wrap;
+      flex-direction: column;
+      flex-flow: column;
+    }
+}
