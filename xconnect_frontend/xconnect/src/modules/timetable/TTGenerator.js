@@ -1,6 +1,7 @@
 // src/components/TimetableGenerator.js
 
 import React, { useState } from 'react';
+import "./TimeTable.css"
 
 const TimetableGenerator = () => {
   const [stream, setStream] = useState('');
@@ -83,9 +84,9 @@ const TimetableGenerator = () => {
 
   return (
     <div className="container mt-4">
-      <h2>Timetable Generator</h2>
+      <h2 style={{textAlign:'center'}}>TIMETABLE GENERATOR</h2>
       <form onSubmit={handleSubmit}>
-        <div className="mb-3">
+        <div className="mb-3 mt-3">
           <label htmlFor="stream" className="form-label">Stream</label>
           <input
             type="text"
@@ -107,7 +108,7 @@ const TimetableGenerator = () => {
               onChange={(e) => setClasses(e.target.value)}
             />
             <button
-              className="btn btn-primary"
+              className="btn tt-btn"
               type="button"
               onClick={handleAddClass}
             >
@@ -126,7 +127,7 @@ const TimetableGenerator = () => {
               onChange={(e) => setTeachers(e.target.value)}
             />
             <button
-              className="btn btn-primary"
+              className="btn tt-btn"
               type="button"
               onClick={handleAddTeacher}
             >
@@ -134,10 +135,10 @@ const TimetableGenerator = () => {
             </button>
           </div>
         </div>
-        <button type="button" className="btn btn-primary" onClick={handleAddStream}>
+        <button type="button" className="mx-1 btn tt-btn" onClick={handleAddStream}>
           Add Stream
         </button>
-        <button type="submit" className="btn btn-primary">Generate Timetable</button>
+        <button type="submit" className="mx-1 btn tt-btn">Generate Timetable</button>
       </form>
       {streamList.length > 0 && (
         <div className="mt-4">
