@@ -40,7 +40,7 @@ urlpatterns = [
     path("api/library/", include("library.urls")),
     path("api/timetable/", include("TimeTable.urls")),
     path("api/calendar/", include("calendarEvents.urls")),
-    path("media/docs/<str:file_path>/", download_file),
+    # path("media/docs/<str:file_path>/", download_file),
 ]
 
-# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -10,7 +10,7 @@ const CartBar = (props) => {
           className="d-flex justify-content-between px-3 align-items-end"
         >
           <p className="my-1">{props.item_count} Item Added</p>
-          <Link to="/Cart" className="my-1">
+          <Link to="/cart" className="my-1">
             View Cart
             <i className="fa fa-chevron-right ms-1"></i>
           </Link>

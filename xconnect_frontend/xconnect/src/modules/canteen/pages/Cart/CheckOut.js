@@ -57,7 +57,7 @@ export default function CheckOut() {
           </div>
         </div>
       </div>
-      <Link className="order-btn m-0 p-0" to="/Order">
+      <Link className="order-btn m-0 p-0" to="/order">
         <button className="order-btn col-12">Pay | Rs {cartData.total}/-</button>
       </Link>
     </div>
