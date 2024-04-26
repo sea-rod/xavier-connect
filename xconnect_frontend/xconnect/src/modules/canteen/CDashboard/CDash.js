@@ -43,7 +43,7 @@ function Cdash(props) {
   const navigate = useNavigate();
   useEffect(() => {
     axiosInstance.get("accounts/user-group/").then((res) => {
-      if (res.data.is_superuser || res.data.group == "canteen_staff") {
+      if (!(res.data.is_superuser || res.data.group == "canteen_staff")) {
         navigate("/login");
       }
     });

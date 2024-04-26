@@ -12,10 +12,12 @@ const AdminRoutes = () => {
     }
     axiosInstance.get("accounts/user-group/").then((res) => {
       if (
-        !res.data.is_superuser ||
-        res.data.group != "canteen_staff" ||
-        res.data.group != "library_staff" ||
-        res.data.group != "teacher"
+        !(
+          res.data.is_superuser ||
+          res.data.group == "canteen_staff" ||
+          res.data.group == "library_staff" ||
+          res.data.group == "teacher"
+        )
       ) {
         navigate("/login");
       }
