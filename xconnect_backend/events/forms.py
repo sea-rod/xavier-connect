@@ -41,7 +41,7 @@ class CollegeRegisterForm(forms.ModelForm):
         widget=forms.TextInput(
             attrs={
                 "class": "form-control",
-                "placeholder": "Email",
+                "placeholder": "Student leader email",
             }
         )
     )

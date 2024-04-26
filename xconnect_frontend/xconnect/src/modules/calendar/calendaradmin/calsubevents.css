@@ -1,0 +1,23 @@
+        .upload{
+       float: right;
+        border-radius:10px ;
+        padding: 8px;
+        height: 55px;
+        background-color: #3B3B3B;
+        }
+
+button.upload{
+    background-color: #A800C2;
+    border-radius: 4px;
+    border: 0px;
+    padding: 5px 24px;
+    height: 40px;
+}
+
+.upload-text {
+    float: left;
+    padding: 6px 8px;
+    color: #757575;
+    font-weight: 600;
+  }
+  

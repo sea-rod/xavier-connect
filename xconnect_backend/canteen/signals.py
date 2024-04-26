@@ -1,7 +1,7 @@
 from django.dispatch import receiver
 from django.db.models.signals import post_save, pre_delete
 from django.db.models import Q, Sum
-from .models import Items, Cart, Menu
+from .models import Items, Cart, Menu, Order
 
 
 @receiver(post_save, sender=Items)
@@ -22,3 +22,13 @@ def menu_update(sender, instance, **kwargs):
     menu = Menu.objects.get(pk=item.menu_id.pk)
     menu.avail_quantity += item.quantity
     menu.save()
+
+
+@receiver(pre_delete, sender=Order)
+def order_delete(sender, instance, **kwargs):
+    cart_id = instance.cart_id
+    items = Items.objects.filter(cart_id=cart_id)
+    for item in items:
+        menu = Menu.objects.select_for_update().get(pk=item.menu_id.id)
+        menu.avail_quantity += item.quantity
+        menu.save()
