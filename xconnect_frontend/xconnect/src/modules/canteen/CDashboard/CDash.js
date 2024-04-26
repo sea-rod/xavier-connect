@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Topbar from "../../../shared/Admin/Topbar";
 import { FaHome } from "react-icons/fa";
 import Sidebar from "../../../shared/Admin/Sidebar";
 import Dashboardroutes from "./Router/Dashboardroutes";
+import { useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import "./Cdindex.css";
+import "./cdindex.css";
+import axiosInstance from "../../../services/axios";
 const routes = [
   {
     path: "/admin/canteen/dashboard/",
@@ -37,7 +39,16 @@ const routes = [
     icon: <FaHome />,
   },
 ];
-function Cdash() {
+function Cdash(props) {
+  const navigate = useNavigate();
+  useEffect(() => {
+    axiosInstance.get("accounts/user-group/").then((res) => {
+      if (!(res.data.is_superuser || res.data.group == "canteen_staff")) {
+        navigate("/login");
+      }
+    });
+  }, []);
+
   return (
     <div>
       <Topbar color={"#0000"}/>
