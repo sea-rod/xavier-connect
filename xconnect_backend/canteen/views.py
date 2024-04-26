@@ -1,12 +1,22 @@
 from rest_framework import generics
+from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.response import Response
 from rest_framework import status
 from django.db.models import Count, Sum, Q
-from .models import Menu, Cart, Items, Order
+import razorpay
+from django.conf import settings
+from .models import Menu, Cart, Items, Order,Payment
 from .permissions import IsCanteenStaff, IsUser, IsCartUser
-from .serializer import MenuSerializer, ItemSerializer, CartSerializer, OrderSerializer
+from .serializer import (
+    MenuSerializer,
+    ItemSerializer,
+    CartSerializer,
+    OrderSerializer,
+    PaymentClientSerializer,
+    PaymentSerializer,
+)
 
 
 class ListCreateMenu(generics.ListCreateAPIView):
@@ -16,7 +26,7 @@ class ListCreateMenu(generics.ListCreateAPIView):
     parser_classes = (MultiPartParser, FormParser)
 
     def get_queryset(self):
-        all = self.request.GET.get("all",None)
+        all = self.request.GET.get("all", None)
         if self.request.user.is_superuser and all:
             return super().get_queryset()
         search = self.request.GET.get("search", None)
@@ -76,5 +86,53 @@ class OrderCreate(generics.ListCreateAPIView):
     serializer_class = OrderSerializer
     queryset = Order.objects.all()
 
+    def post(self, request, *args, **kwargs):
+        try:
+            cart = Cart.objects.get(user_id=request.user)
+            razorpay_client = razorpay.Client(
+                auth=(settings.RAZOR_KEY_ID, settings.RAZOR_KEY_SECRET)
+            )
+            amount = int(cart.total) * 100
+            currency = "INR"
+            razorpay_order = razorpay_client.order.create(
+                dict(amount=amount, currency=currency)
+            )
+            razorpay_order_id = razorpay_order["id"]
+            # You may want to specify a valid URL here
+
+            # Serialize the data
+            serializer = PaymentClientSerializer(
+                data={
+                    "razorpay_order_id": razorpay_order_id,
+                    "razorpay_merchant_key": settings.RAZOR_KEY_ID,
+                    "razorpay_amount": amount,
+                    "currency": currency,
+                }
+            )
+            serializer.is_valid(raise_exception=True)
+
+            # Return the serialized data along with the default serializer data
+            return Response(
+                {
+                    "order": super().post(request, *args, **kwargs).data,
+                    "payment": serializer.data,
+                },
+                status=status.HTTP_200_OK,
+            )
+        except Cart.DoesNotExist:
+            return Response(
+                {"error": "Cart not found"}, status=status.HTTP_404_NOT_FOUND
+            )
+
     def perform_create(self, serializer):
-        serializer.save(user_id=self.request.user)
+        serializer.save(user_id=self.request.user)  
+
+
+class PaymentClient(generics.CreateAPIView):
+    serializer_class = PaymentSerializer
+    queryset = Payment.objects.all()
+
+    def perform_create(self, serializer):
+        cart_id = Cart.objects.get(user_id=self.request.user)
+        order = Order.objects.get(cart_id=cart_id)
+        serializer.save(order=order)

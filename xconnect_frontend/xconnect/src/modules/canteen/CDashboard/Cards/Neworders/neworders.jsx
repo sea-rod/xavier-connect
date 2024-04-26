@@ -1,7 +1,7 @@
 import "./neworders.css";
 import circleacrdimage from "../../../Ascets/circleincard.png";
 
-function neworders(props) {
+function Neworder(props) {
   return (
     <div id="neworders-card" className="neworders">
       <div id="top-section" className="neworders">
@@ -61,4 +61,4 @@ function neworders(props) {
   );
 }
 
-export default neworders;
+export default Neworder;

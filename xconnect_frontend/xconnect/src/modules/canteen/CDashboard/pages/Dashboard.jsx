@@ -1,21 +1,25 @@
 import Pagehead from "../Components/pagehead/Pagehead";
 import Barchart from "../Charts/Barchart";
 import Linechart from "../Charts/Linechart";
-import Neworders from "../Cards/Neworders/neworders";
+import { useState, useEffect } from "react";
+import Neworder from "../Cards/Neworders/neworders";
 import Cancelledorders from "../Cards/Cancellorders/cancelledorders";
+import axiosInstance from "../../../../services/axios";
 import "./dashboard.css";
 // import '../index.css';
 
-const names = [
-  {
-    name: "Dashboard",
-  },
-];
-
 const Dashboard = () => {
+  const [orderData, setOrderData] = useState([]);
+  useEffect(() => {
+    axiosInstance.get("canteen/order/").then((res) => {
+      console.log(res.data);
+      setOrderData(res.data);
+    });
+  }, []);
+
   return (
     <>
-      <Pagehead names={names} />
+      <Pagehead names="Dashboard" />
       <div className="scroll-container-insideadmin">
         <div
           id="chart-containers"
@@ -32,17 +36,16 @@ const Dashboard = () => {
           style={{ margin: "2rem" }}
         >
           <div id="neworder-cards-dashboard">
-            <div className="container-for-cards">
-              <Neworders />
-            </div>
-            <div className="container-for-cards">
-              <Neworders />
-            </div>
-          </div>
-          <div id="cancell-cards-dashboard">
-            <div className="container-for-cards">
-              <Cancelledorders />
-            </div>
+            {orderData.map((item) => (
+              <div className="container-for-cards">
+                <Neworder
+                  key={item.id}
+                  id={item.id}
+                  total={item.cart_id?.total}
+                  orderItems={item.cart_id?.menu_items}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>

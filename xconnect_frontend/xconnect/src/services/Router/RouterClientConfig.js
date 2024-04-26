@@ -5,11 +5,12 @@ import Events from "../../modules/events/pages/Events";
 import Library from "../../modules/Library_Page/Library";
 import SubEvents from "../../modules/events/pages/SubEvents";
 import Canteen from "../../modules/canteen/pages/MainPage/Canteen";
+import Order from "../../modules/canteen/pages/Order/Order";
 import CheckOut from "../../modules/canteen/pages/Cart/CheckOut";
 import SignUp from "../../pages/Sign up/SignUp";
 import Calendar from "../../modules/calendar/Calendar";
 import HelpLine from "../../modules/helpLine/helpline";
-import TimeTable from "../../modules/timetable/timetable";
+import TimeTable from "../../modules/timetable/TTGenerator";
 import CombinedComponent from "../../modules/Library_Page/Library";
 import ReserveBook from "../../modules/Library_Page/ReserveBook";
 import Newpage from "../../modules/Library_Page/Newpage";
@@ -26,6 +27,7 @@ export default function RouterClientConfig() {
         <Route path="/SubEvents" element={<SubEvents />} />
         <Route path="/Library" element={<Library />} />
         <Route path="/Canteen" element={<Canteen />} />
+        <Route path="/Order" element={<Order />} />
         <Route path="/Cart" element={<CheckOut />} />
         <Route path="/HelpLine" element={<HelpLine />} />
         <Route path="/Calendar" element={<Calendar />} />
@@ -34,7 +36,7 @@ export default function RouterClientConfig() {
         <Route path="/ReserveBook" element={<ReserveBook />} />
         <Route path="/Newpage" element={<Newpage />} />
         <Route path="/reset-form" element={<ResetPasswordEmail />} />
-        <Route path="/reset-password" element={<ResetPassword />}/>
+        <Route path="/reset-password" element={<ResetPassword />} />
       </Routes>
     </>
   );

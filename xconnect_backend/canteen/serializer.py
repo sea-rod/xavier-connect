@@ -1,7 +1,9 @@
 from django.db import transaction
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
-from .models import Menu, Items, Cart, Order
+import razorpay
+from django.conf import settings
+from .models import Menu, Items, Cart, Order, Payment
 
 
 class MenuSerializer(serializers.ModelSerializer):
@@ -48,14 +50,21 @@ class CartSerializer(serializers.ModelSerializer):
 
 
 class OrderSerializer(serializers.ModelSerializer):
-    cart_id = CartSerializer()
+    cart_id = CartSerializer(read_only=True)
+
     class Meta:
         model = Order
-        fields = ("id","user_id", "cart_id", "status")
+        fields = (
+            "id",
+            "user_id",
+            "cart_id",
+            "status",
+        )
         extra_kwargs = {"cart_id": {"read_only": True}, "user_id": {"read_only": True}}
 
     def create(self, validated_data):
         try:
+            print(validated_data["user_id"])
             with transaction.atomic():
                 cart = Cart.objects.select_for_update().get(
                     user_id=validated_data["user_id"]
@@ -66,7 +75,7 @@ class OrderSerializer(serializers.ModelSerializer):
                     raise ValidationError("Cart is Empty")
                 in_stock = set()
                 for item in items:
-                    menu = item.menu_id
+                    menu = Menu.objects.select_for_update().get(pk=item.menu_id.id)
                     if menu.avail_quantity >= item.quantity:
                         menu.avail_quantity -= item.quantity
                         in_stock.add(menu)
@@ -75,9 +84,52 @@ class OrderSerializer(serializers.ModelSerializer):
                         raise ValidationError(f"{menu.item_name} is out of stock")
                 for menu in in_stock:
                     menu.save()
-                cart.user_id = None
-                cart.save()
-                Cart.objects.create(user_id=validated_data["user_id"])
+                Order.objects.create(**validated_data)
                 return "Checkout successful"
         except Cart.DoesNotExist as e:
             raise ValidationError("Cart does not exist", e)
+
+
+class PaymentClientSerializer(serializers.Serializer):
+    razorpay_order_id = serializers.CharField()
+    razorpay_merchant_key = serializers.CharField()
+    razorpay_amount = serializers.DecimalField(max_digits=20, decimal_places=2)
+    currency = serializers.CharField()
+
+
+class PaymentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Payment
+        fields = ("order", "pay_order_id", "payment_id", "signature")
+        extra_kwargs = {"order": {"read_only": True}}
+
+    def create(self, validated_data):
+        try:
+            print(validated_data)
+            razorpay_client = razorpay.Client(
+                auth=(settings.RAZOR_KEY_ID, settings.RAZOR_KEY_SECRET)
+            )
+            params_dict = {
+                "razorpay_order_id": validated_data.get("pay_order_id"),
+                "razorpay_payment_id": validated_data.get("payment_id"),
+                "razorpay_signature": validated_data.get("signature"),
+            }
+
+            print(params_dict)
+            result = razorpay_client.utility.verify_payment_signature(params_dict)
+            print(validated_data["order"])
+            if result is not None:
+                with transaction.atomic():
+
+                    Payment.objects.create(
+                        **validated_data,
+                    )
+                    cart_id = validated_data["order"].cart_id
+                    user_id = cart_id.user_id
+                    cart_id.user_id = None
+                    cart_id.save()
+                    Cart.objects.create(user_id=user_id)
+        except Exception as e:
+            print(e)
+            raise ValidationError(str(e))
+        return "payment sucessful"
