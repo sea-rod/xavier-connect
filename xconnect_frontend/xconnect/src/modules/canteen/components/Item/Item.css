@@ -1,4 +1,7 @@
- #canteen img {
+:root{
+  --toastify-color-progress-dark: #eaad03;
+}
+#canteen img {
   height: 25vh;
   border-radius: 10px;
   object-fit: cover;

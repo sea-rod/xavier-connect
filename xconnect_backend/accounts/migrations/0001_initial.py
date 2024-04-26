@@ -8,6 +8,8 @@ def create_default_groups(apps, schema_editor):
     Group.objects.get_or_create(name="student")
     Group.objects.get_or_create(name="teacher")
     Group.objects.get_or_create(name="canteen_staff")
+    Group.objects.get_or_create(name="library_staff")
+
     # Add more groups as needed
 
 
