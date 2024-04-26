@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import "./Sidebar.css";
 import usericon from "../../modules/canteen/Ascets/usericon.png";
 
-const Sidebar = ({ children, routes }) => {
+const Sidebar = ({ routes }) => {
   const [toggle, setToggle] = useState(false);
   const location = useLocation();
   const btn = () => {

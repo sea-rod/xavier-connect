@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 export default function Cards() {
 
   const imageData = [
-    { id: 1, imagePath: 'images/canteen1.jpg', cardTitle: 'Canteen', cardDescription: 'With supporting text below as a natural lead-in to additional content.', pagePath: "/Canteen" },
-    { id: 2, imagePath: 'images/library1.jpg', cardTitle: 'Library', cardDescription: 'With supporting text below as a natural lead-in to additional content.', pagePath: "/Library" },
-    { id: 3, imagePath: 'images/calendar3.jpg', cardTitle: 'Calendar', cardDescription: 'With supporting text below as a natural lead-in to additional content.' , pagePath: "/Calendar"},
-    { id: 4, imagePath: 'images/stuhelp1.jpg', cardTitle: 'Student Helpline', cardDescription: 'With supporting text below as a natural lead-in to additional content.' ,pagePath: "/Helpline"},
+    { id: 1, imagePath: process.env.PUBLIC_URL+'/images/canteen1.jpg', cardTitle: 'Canteen', cardDescription: 'With supporting text below as a natural lead-in to additional content.', pagePath: "/canteen" },
+    { id: 2, imagePath: process.env.PUBLIC_URL+'/images/library1.jpg', cardTitle: 'Library', cardDescription: 'With supporting text below as a natural lead-in to additional content.', pagePath: "/library" },
+    { id: 3, imagePath: process.env.PUBLIC_URL+'/images/calendar3.jpg', cardTitle: 'Calendar', cardDescription: 'With supporting text below as a natural lead-in to additional content.' , pagePath: "/calendar"},
+    { id: 4, imagePath: process.env.PUBLIC_URL+'/images/stuhelp1.jpg', cardTitle: 'Student Helpline', cardDescription: 'With supporting text below as a natural lead-in to additional content.' ,pagePath: "/helpline"},
   ];
 
   return (

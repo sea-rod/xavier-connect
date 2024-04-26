@@ -1,6 +1,11 @@
 import React from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 const EventCard = (props) => {
+  useEffect(() => {
+    
+   console.log(props.brochure)
+  }, []);
   return (
     <div className="col-md-6">
       <div className="row g-0 border border-warning rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative bg-body">
@@ -12,7 +17,7 @@ const EventCard = (props) => {
           <p className="mt-2 card-text mb-auto event-info">{props.desc}</p>
           <Link
             to="/SubEvents"
-            state={{ url: props.url }}
+            state={{ url: props.url, broch: props.brochure }}
             className="icon-link gap-1 icon-link-hover stretched-link mt-2"
           >
             Events List

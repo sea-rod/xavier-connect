@@ -11,3 +11,4 @@ class StreamAdmin(admin.ModelAdmin):
 admin.site.register(CustomUser)
 admin.site.register(Class)
 admin.site.register(Stream,StreamAdmin)
+admin.site.register(ClassStream)

@@ -48,10 +48,11 @@ export default function Order() {
 
   const razorPay = () => {
     console.log("kk");
+    toast.info("Please Wait !");
     axiosInstance
       .post("canteen/order/")
       .then((response) => {
-        console.log(response.data);
+        console.log(response.data.order.id, "before");
         var order_id = response.data.payment.razorpay_order_id;
 
         // handle payment
@@ -83,20 +84,30 @@ export default function Order() {
           },
         };
 
+        function deleteOrder() {
+          axiosInstance
+            .delete(`canteen/${response.data.order.id}/order-delete/`)
+            .then((res) => {
+              console.log(res);
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        }
+
         const rzp1 = new Razorpay(options);
         rzp1.on("payment.failed", function (response) {
-          alert(response.error.code);
           alert(response.error.description);
-          alert(response.error.source);
-          alert(response.error.step);
-          alert(response.error.reason);
-          alert(response.error.metadata.order_id);
-          alert(response.error.metadata.payment_id);
+          console.log(response.error.description);
+          deleteOrder();
         });
         rzp1.open();
       })
       .catch((err) => {
         console.log(err);
+        if (err.response.data) {
+          toast.error(String(err.response.data));
+        }
       });
   };
   return (
@@ -105,7 +116,7 @@ export default function Order() {
       id="canteen-cart"
     >
       <div>
-        <h1 className="text-center">Your Order</h1>
+        <h1 className="text-center">Place Your Order</h1>
         <div className="py-2">
           {itemData.map((item) => (
             <OrderItem
