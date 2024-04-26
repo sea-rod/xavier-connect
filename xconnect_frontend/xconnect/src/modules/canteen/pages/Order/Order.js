@@ -116,7 +116,7 @@ export default function Order() {
       id="canteen-cart"
     >
       <div>
-        <h1 className="text-center">Your Order</h1>
+        <h1 className="text-center">Place Your Order</h1>
         <div className="py-2">
           {itemData.map((item) => (
             <OrderItem
