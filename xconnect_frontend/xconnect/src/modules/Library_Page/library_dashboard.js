@@ -6,7 +6,7 @@ import { PiBooks } from "react-icons/pi";
 import { LuBookLock } from "react-icons/lu";
 import { BiBookAdd } from "react-icons/bi";
 import Sidebar from "../../shared/Admin/Sidebar";
-import "../canteen/CDashboard/Cdindex.css";
+import "../canteen/CDashboard/cdindex.css";
 import LibraryRouter from "./Router/library_router";
 
 const routes = [
