@@ -16,6 +16,7 @@ import ReserveBook from "../../modules/Library_Page/ReserveBook";
 import Newpage from "../../modules/Library_Page/Newpage";
 import ResetPassword from "../../pages/ResetPassword/resetPassword";
 import ResetPasswordEmail from "../../pages/ResetPassword/resetPassowordEmail";
+import Details from "../../modules/calendar/AnnoucementDetails";
 export default function RouterClientConfig() {
   return (
     <>
@@ -37,6 +38,7 @@ export default function RouterClientConfig() {
         <Route path="/newpage" element={<Newpage />} />
         <Route path="/reset-form" element={<ResetPasswordEmail />} />
         <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/calendar-details" element={<Details />} />
       </Routes>
     </>
   );

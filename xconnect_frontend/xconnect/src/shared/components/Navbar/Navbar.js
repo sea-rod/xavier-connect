@@ -55,6 +55,8 @@ export default function Navbar() {
       case "/newpage":
         setNavbarColor("#1768E3");
         break;
+      case "/calendardetails":
+        setNavbarColor("#63E6BE");
       default:
         setNavbarColor("#5D9AF8");
     }
