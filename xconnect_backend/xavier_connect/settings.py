@@ -31,7 +31,7 @@ SECRET_KEY = env.str("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG")
 
-ALLOWED_HOSTS = ["pythonanywhere.com", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = [".pythonanywhere.com", "localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -212,7 +212,8 @@ CORS_ORIGIN_WHITELIST = (
     "http://127.0.0.1:8000",
 )
 
-DOCS_ROOT = "docs/"
+DOCS_ROOT = "media/docs/"
 
 MEDIA_URL = "/media/"
-MEDIA_ROOT = "/home/xconnect/xavier-connect/xconnect_backend"
+# MEDIA_ROOT = BASE_DIR/"media"
+MEDIA_ROOT = "/home/xconnect/xavier-connect/xconnect_backend/media"
