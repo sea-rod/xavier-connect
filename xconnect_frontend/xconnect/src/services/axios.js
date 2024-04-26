@@ -3,8 +3,6 @@ import axios from "axios";
 export const baseURL = "https://xconnect.pythonanywhere.com/api/";
 // export const baseURL = "http://127.0.0.1:8000/api/";
 
-
-
 const axiosInstance = axios.create({
   baseURL: baseURL,
   timeout: 10000,

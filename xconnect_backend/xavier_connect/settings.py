@@ -215,5 +215,5 @@ CORS_ORIGIN_WHITELIST = (
 DOCS_ROOT = "media/docs/"
 
 MEDIA_URL = "/media/"
-# MEDIA_ROOT = BASE_DIR/"media"
+# MEDIA_ROOT = BASE_DIR/"media/"
 MEDIA_ROOT = "/home/xconnect/xavier-connect/xconnect_backend/media"

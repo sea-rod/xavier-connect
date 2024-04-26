@@ -84,8 +84,8 @@ class OrderSerializer(serializers.ModelSerializer):
                         raise ValidationError(f"{menu.item_name} is out of stock")
                 for menu in in_stock:
                     menu.save()
-                Order.objects.create(**validated_data)
-                return "Checkout successful"
+                order = Order.objects.create(**validated_data)
+                return order
         except Cart.DoesNotExist as e:
             raise ValidationError("Cart does not exist", e)
 

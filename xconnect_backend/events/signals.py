@@ -39,7 +39,7 @@ def send_event_register_email(sender, instance, token, *args, **kwargs):
 
     msg = EmailMultiAlternatives(
         # title:
-        "Password Reset for {title}".format(title="Xconnect"),
+        "Xconnect",
         # message:
         email_plaintext_message,
         # from:
