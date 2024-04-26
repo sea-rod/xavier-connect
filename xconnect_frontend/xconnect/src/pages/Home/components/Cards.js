@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 export default function Cards() {
 
   const imageData = [
-    { id: 1, imagePath: process.env.PUBLIC_URL+'/images/canteen1.jpg', cardTitle: 'Canteen', cardDescription: 'With supporting text below as a natural lead-in to additional content.', pagePath: "/Canteen" },
-    { id: 2, imagePath: process.env.PUBLIC_URL+'/images/library1.jpg', cardTitle: 'Library', cardDescription: 'With supporting text below as a natural lead-in to additional content.', pagePath: "/Library" },
-    { id: 3, imagePath: process.env.PUBLIC_URL+'/images/calendar3.jpg', cardTitle: 'Calendar', cardDescription: 'With supporting text below as a natural lead-in to additional content.' , pagePath: "/Calendar"},
-    { id: 4, imagePath: process.env.PUBLIC_URL+'/images/stuhelp1.jpg', cardTitle: 'Student Helpline', cardDescription: 'With supporting text below as a natural lead-in to additional content.' ,pagePath: "/Helpline"},
+    { id: 1, imagePath: process.env.PUBLIC_URL+'/images/canteen1.jpg', cardTitle: 'Canteen', cardDescription: 'Streamlining food ordering and transactions for campus dining.', pagePath: "/Canteen" },
+    { id: 2, imagePath: process.env.PUBLIC_URL+'/images/library1.jpg', cardTitle: 'Library', cardDescription: ' A centralized repository of resources, offering curated content and services to fulfill diverse informational needs.', pagePath: "/Library" },
+    { id: 3, imagePath: process.env.PUBLIC_URL+'/images/calendar3.jpg', cardTitle: 'Calendar', cardDescription: 'Calendar tool for scheduling and managing events.' , pagePath: "/Calendar"},
+    { id: 4, imagePath: process.env.PUBLIC_URL+'/images/stuhelp1.jpg', cardTitle: 'Student Helpline', cardDescription: 'Your academic lifeline for assistance and support.' ,pagePath: "/Helpline"},
   ];
 
   return (
