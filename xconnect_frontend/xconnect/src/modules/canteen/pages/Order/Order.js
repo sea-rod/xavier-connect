@@ -28,7 +28,6 @@ export default function Order() {
     });
   }, []);
 
-  const [data, setData] = useState("");
   const complete_order = (paymentID, orderID, signature) => {
     console.log(paymentID, orderID, signature);
     axiosInstance
