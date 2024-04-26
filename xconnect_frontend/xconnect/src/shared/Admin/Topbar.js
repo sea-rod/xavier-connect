@@ -35,7 +35,8 @@ const Topbar = () => {
         backgroundColor: "#FF7D34",
         width:"100%",
         height: "50px",
-        zIndex: "10",
+        zIndex: "2",
+        width: "100%",
         backgroundColor: getColor(currentPage),
       }}
     >

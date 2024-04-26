@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Item from "../Item/Item";
 import CartBar from "../CartBar/CartBar";
+import { Link } from "react-router-dom";
 import axiosInstance from "../../../../services/axios";
 import "./Menu.css";
 
@@ -102,6 +103,12 @@ const Menu = () => {
           />
         ))
       )}
+      <hr />
+      <Link to="/order-list" style={{textDecoration:"none"}}>
+      <button className="mx-auto mt-3" style={{ display: "block" }}>
+        View Orders
+      </button>
+      </Link>
       <h1>Menu</h1>
       {isLoading ? (
         <p>Loading...</p>

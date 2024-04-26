@@ -6,14 +6,15 @@ import axiosInstance from "../../../../services/axios";
 // import Neworder from "../components/cards/neworders";
 // import '../index.css';
 
-
 const Neworders = () => {
   const [orderData, setOrderData] = useState([]);
   useEffect(() => {
-    axiosInstance.get("canteen/order/").then((res) => {
-      console.log(res.data);
-      setOrderData(res.data);
-    });
+    axiosInstance
+      .get("canteen/order/", { params: { all: true } })
+      .then((res) => {
+        console.log(res.data);
+        setOrderData(res.data);
+      });
   }, []);
   return (
     <>

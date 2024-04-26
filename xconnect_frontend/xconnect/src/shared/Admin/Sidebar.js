@@ -50,7 +50,19 @@ const Sidebar = ({ routes }) => {
           </div>
           <section className="routes">
             {routes.map((route) => (
-              <NavLink to={route.path} key={route.name} className="menu">
+              <NavLink
+                to={route.path}
+                key={route.name}
+                className="menu"
+                style={{
+                  backgroundColor:
+                    location.pathname === route.path  
+                      ? getColor(location.pathname.split('/').slice(0,3).join("/")) // Set background color dynamically for active link
+                      : "transparent", // Set background color to transparent for inactive links
+                  color: "#ffff",
+                  transition: "1s",
+                }}
+              >
                 <div className="icon">{route.icon}</div>
                 <div className="link_text">{route.name}</div>
               </NavLink>

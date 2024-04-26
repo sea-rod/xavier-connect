@@ -9,32 +9,32 @@ import "./cdindex.css";
 import axiosInstance from "../../../services/axios";
 const routes = [
   {
-    path: "/admin/canteen/dashboard/",
-    name: "DASHBOARD",
+    path: "/admin/canteen/",
+    name: "Dashboard",
     icon: <FaHome />,
   },
   {
-    path: "/admin/canteen/neworders/",
+    path: "neworders/",
     name: "NEW ORDERS",
     icon: <FaHome />,
   },
   {
-    path: "/admin/canteen/ongoingorders/",
+    path: "ongoingorders/",
     name: "ONGING ORDERS",
     icon: <FaHome />,
   },
   {
-    path: "/admin/canteen/cancelledorders/",
+    path: "cancelledorders/",
     name: "CANCELLED ORDERS",
     icon: <FaHome />,
   },
   {
-    path: "/admin/canteen/additems/",
+    path: "additems/",
     name: "ADD ITEMS",
     icon: <FaHome />,
   },
   {
-    path: "/admin/canteen/inventory/",
+    path: "inventory/",
     name: "INVENTORY",
     icon: <FaHome />,
   },
@@ -51,7 +51,7 @@ function Cdash(props) {
 
   return (
     <div>
-      <Topbar color={"#0000"}/>
+      <Topbar />
       <div className="app">
         <ToastContainer
           autoClose={5000}
@@ -62,7 +62,7 @@ function Cdash(props) {
           progress={undefined}
           theme="dark"
         />
-        <Sidebar color={"#0000"} routes={routes} />
+        <Sidebar routes={routes} />
         <Dashboardroutes />
       </div>
     </div>

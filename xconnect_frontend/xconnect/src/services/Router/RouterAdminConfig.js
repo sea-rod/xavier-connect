@@ -1,10 +1,9 @@
 import { Routes, Route } from "react-router-dom";
-import axiosInstance from "../axios";
 import Cdash from "../../modules/canteen/CDashboard/CDash";
+import EventsDash from "../../modules/events/Admin/eventsDashBoard";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import EventsDash from "../../modules/events/Admin/eventsDashBoard";
-import LibraryDashboard from "../../modules/Library_Page/library_dashboard";
+import axiosInstance from "../axios";
 
 const AdminRoutes = () => {
   const navigate = useNavigate();
