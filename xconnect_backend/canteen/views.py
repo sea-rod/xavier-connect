@@ -1,13 +1,12 @@
 from rest_framework import generics
-from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.response import Response
 from rest_framework import status
-from django.db.models import Count, Sum, Q
+from django.db.models import Sum
 import razorpay
 from django.conf import settings
-from .models import Menu, Cart, Items, Order,Payment
+from .models import Menu, Cart, Items, Order, Payment
 from .permissions import IsCanteenStaff, IsUser, IsCartUser
 from .serializer import (
     MenuSerializer,
@@ -125,7 +124,7 @@ class OrderCreate(generics.ListCreateAPIView):
             )
 
     def perform_create(self, serializer):
-        serializer.save(user_id=self.request.user)  
+        serializer.save(user_id=self.request.user)
 
 
 class PaymentClient(generics.CreateAPIView):
@@ -136,3 +135,9 @@ class PaymentClient(generics.CreateAPIView):
         cart_id = Cart.objects.get(user_id=self.request.user)
         order = Order.objects.get(cart_id=cart_id)
         serializer.save(order=order)
+
+
+class OrderDelete(generics.DestroyAPIView):
+    serializer_class = OrderSerializer
+    permission_classes = (IsAuthenticated, IsUser)
+    queryset = Order.objects.all()

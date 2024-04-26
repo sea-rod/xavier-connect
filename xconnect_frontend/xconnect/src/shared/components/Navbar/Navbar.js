@@ -24,32 +24,34 @@ export default function Navbar() {
       case "/":
         setNavbarColor("#5D9AF8");
         break;
-      case "/Canteen":
+      case "/canteen":
+      case "/order":
+      case "/cart":
         setNavbarColor("#FEAC04");
         break;
-      case "/StudentHelp":
+      case "/studentHelp":
         setNavbarColor("#AED6F1");
         break;
-      case "/Login":
-      case "/SignUp":
-      case "/TimeTable":
+      case "/login":
+      case "/signUp":
+      case "/timeTable":
       case "/reset-password/":
       case "/reset-form":
         setNavbarColor("#EE3A57");
         break;
-      case "/Events":
-      case "/SubEvents":
+      case "/events":
+      case "/subEvents":
         setNavbarColor("#FFF500");
         break;
-      case "/HelpLine":
+      case "/helpLine":
         setNavbarColor("#ADD8E6");
         break;
-      case "/Calendar":
+      case "/calendar":
         setNavbarColor("#5CC1A3");
         break;
-      case "/Library":
-      case "/ReserveBook":
-      case "/Newpage":
+      case "/library":
+      case "/reserveBook":
+      case "/newpage":
         setNavbarColor("#1768E3");
         break;
       default:
@@ -58,18 +60,18 @@ export default function Navbar() {
   }, [location]);
 
   // To change Navbar Text Color dynamimcally.
-  useEffect(() => {
-    switch (location.pathname) {
-      case "/Events":
-      case "/SubEvents":
-      case "/HelpLine":
-      case "/Calendar":
-        setNavbarTextColor("black");
-        break;
-      default:
-        setNavbarTextColor("");
-    }
-  }, [location]);
+  // useEffect(() => {
+  //   switch (location.pathname) {
+  //     case "/events":
+  //     case "/subEvents":
+  //     case "/helpLine":
+  //     case "/calendar":
+  //       setNavbarTextColor("black");
+  //       break;
+  //     default:
+  //       setNavbarTextColor("");
+  //   }
+  // }, [location]);
 
   // Collapsing Navbar
   const collapseNavbar = () => {
@@ -131,7 +133,7 @@ export default function Navbar() {
             <Link
               className="nav-link active"
               aria-current="page"
-              to="/Events"
+              to="/events"
               style={{ color: navbarTextColor }}
               onClick={collapseNavbar}
             >
@@ -141,7 +143,7 @@ export default function Navbar() {
               <a
                 className="nav-link active"
                 aria-current="page"
-                href="/TimeTable"
+                href="/timeTable"
                 style={{ color: navbarTextColor }}
                 onClick={collapseNavbar}
               >
@@ -151,7 +153,7 @@ export default function Navbar() {
             <Link
               className="nav-link active"
               aria-current="page"
-              to="/Canteen"
+              to="/canteen"
               style={{ color: navbarTextColor }}
               onClick={collapseNavbar}
             >
@@ -178,7 +180,7 @@ export default function Navbar() {
                   <Link
                     className="nav-link active"
                     aria-current="page"
-                    to="/SignUp"
+                    to="/signUp"
                     style={{ color: navbarTextColor }}
                     onClick={collapseNavbar}
                   >
@@ -190,7 +192,7 @@ export default function Navbar() {
                     style={{ color: navbarTextColor }}
                     className="nav-link active"
                     aria-current="page"
-                    to="/Login"
+                    to="/login"
                     onClick={collapseNavbar}
                   >
                     SignIn
