@@ -3,8 +3,9 @@ import { NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./Sidebar.css";
 import usericon from "../../modules/canteen/Ascets/usericon.png";
+import { useState } from "react";
 
-const Sidebar = ({ children, routes }) => {
+const Sidebar = ({ routes }) => {
   const [toggle, setToggle] = useState(false);
   const location = useLocation();
   const btn = () => {
@@ -71,9 +72,6 @@ const Sidebar = ({ children, routes }) => {
           </section>
         </motion.div>
       </div>
-      <main className="main-box" id="sidebar">
-        {children}
-      </main>
     </>
   );
 };
