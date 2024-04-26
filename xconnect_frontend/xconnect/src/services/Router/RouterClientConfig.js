@@ -31,7 +31,6 @@ export default function RouterClientConfig() {
         <Route path="/helpLine" element={<HelpLine />} />
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/timeTable" element={<TimeTable />} />
-        <Route path="/library" element={<CombinedComponent />} />
         <Route path="/reserveBook" element={<ReserveBook />} />
         <Route path="/newpage" element={<Newpage />} />
         <Route path="/reset-form" element={<ResetPasswordEmail />} />
