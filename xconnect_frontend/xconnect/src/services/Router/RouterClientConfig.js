@@ -16,11 +16,12 @@ import ReserveBook from "../../modules/Library_Page/ReserveBook";
 import Newpage from "../../modules/Library_Page/Newpage";
 import ResetPassword from "../../pages/ResetPassword/resetPassword";
 import ResetPasswordEmail from "../../pages/ResetPassword/resetPassowordEmail";
+import Details from "../../modules/calendar/AnnoucementDetails";
 export default function RouterClientConfig() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Details />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/events" element={<Events />} />
