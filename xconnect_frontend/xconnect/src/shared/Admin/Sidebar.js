@@ -3,7 +3,6 @@ import { NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./Sidebar.css";
 import usericon from "../../modules/canteen/Ascets/usericon.png";
-import { useState } from "react";
 
 const Sidebar = ({ routes }) => {
   const [toggle, setToggle] = useState(false);

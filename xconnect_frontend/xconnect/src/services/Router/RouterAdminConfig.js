@@ -4,6 +4,7 @@ import EventsDash from "../../modules/events/Admin/eventsDashBoard";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import EventsDash from "../../modules/events/Admin/eventsDashBoard";
+import axiosInstance from "../axios";
 
 const AdminRoutes = () => {
   const navigate = useNavigate();
