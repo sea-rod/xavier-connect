@@ -31,7 +31,7 @@ SECRET_KEY = env.str("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG")
 
-ALLOWED_HOSTS = ["pythonanywhere.com", "onrender.com"]
+ALLOWED_HOSTS = ["pythonanywhere.com", "localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
+    "whitenoise.runserver_nostatic",
     "django.contrib.staticfiles",
     "rest_framework",
     "corsheaders",
@@ -59,6 +60,7 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "corsheaders.middleware.CorsMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -143,7 +145,8 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "static", BASE_DIR / "default"]
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = "/home/xconnect/xavier-connect/xconnect_backend/staticfiles/"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -203,11 +206,13 @@ RAZOR_KEY_ID = env.str("RAZOR_KEY_ID")
 RAZOR_KEY_SECRET = env.str("RAZOR_KEY_SECRET")
 
 CORS_ORIGIN_WHITELIST = (
-    "https://xconnect-dprp.onrender.com",
-    "http://localhost:8000",
+    "https://xavier-connect-rho.vercel.app",
+    "https://xconnect.pythonanywhere.com",
+    "http://localhost:3000",
+    "http://127.0.0.1:8000",
 )
 
 DOCS_ROOT = "docs/"
 
-# MEDIA_URL = "/media/"
-# MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = "/home/xconnect/xavier-connect/xconnect_backend/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
