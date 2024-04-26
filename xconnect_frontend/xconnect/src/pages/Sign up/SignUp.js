@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-// import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axiosInstance from "../../services/axios";
 import "./SignUp.css";
 
 export default function SignUp() {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
@@ -20,13 +21,13 @@ export default function SignUp() {
   });
   const [formData, updateForm] = useState(initialFormData);
   const handleChange = (e) => {
-    console.log(e.target.value, e.target.name);
     updateForm({
       ...formData,
       [e.target.name]: e.target.value.trim(),
     });
   };
-  const submit_form = () => {
+  const submit_form = (event) => {
+    event.preventDefault();
     console.log(formData);
     const data = {
       username: formData.username,
@@ -43,11 +44,16 @@ export default function SignUp() {
       .then((res) => {
         console.log(res.data);
         toast.success("Signup Successful");
+        navigate("/Login");
       })
       .catch((err) => {
         console.log("failed", err);
-        if (err.response.data?.class_stream) {
-          toast.error("All fields are required");
+        if (err.response.data) {
+          Object.keys(err.response.data).forEach((val) => {
+            toast.error(String(val) + ":" + String(err.response.data[val]), {
+              autoClose: false,
+            });
+          });
         } else {
           toast.error("Error" + String(err));
         }
@@ -58,7 +64,11 @@ export default function SignUp() {
       <div className="container">
         <div className="custom-container mb-1 mt-5">
           <div className="title">SignUp</div>
-          <form id="signup" className="form form-floating mt-3 col-10 mx-auto ">
+          <form
+            id="signup"
+            className="form form-floating mt-3 col-10 mx-auto "
+            onSubmit={submit_form}
+          >
             <div className="form-floating mx-auto col-12 mb-3">
               <input
                 type="text"
@@ -66,7 +76,7 @@ export default function SignUp() {
                 value={formData.username}
                 name="username"
                 onChange={handleChange}
-                placeholder=""
+                required
               />
               <label htmlFor="floatingInput" style={{ paddingLeft: "20px" }}>
                 Roll Number
@@ -79,7 +89,7 @@ export default function SignUp() {
                 onChange={handleChange}
                 name="email"
                 className="form-control"
-                placeholder=""
+                required
               />
               <label htmlFor="floatingInput" style={{ paddingLeft: "20px" }}>
                 Email address
@@ -93,6 +103,7 @@ export default function SignUp() {
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
+                required
               />
               <label htmlFor="floatingPassword" style={{ paddingLeft: "20px" }}>
                 Password
@@ -120,6 +131,7 @@ export default function SignUp() {
                 value={formData.password2}
                 name="password2"
                 onChange={handleChange}
+                required
               />
               <label
                 htmlFor="floatingConfirmPassword"
@@ -152,6 +164,7 @@ export default function SignUp() {
                   name="class"
                   onChange={handleChange}
                   id="classSelect"
+                  required
                 >
                   <option value="">Select class</option>
                   <option value="FY">FY</option>
@@ -167,9 +180,10 @@ export default function SignUp() {
                   id="streamSelect"
                   name="stream"
                   onChange={handleChange}
+                  required
                 >
                   <option value="">Select Stream</option>
-                  <option value="B.C.A">B.C.A</option>
+                  <option value="BCA">B.C.A</option>
                   <option value="BBA">BBA</option>
                   <option value="B.sc">B.Sc</option>
                   <option value="B.com">B.com</option>
@@ -179,9 +193,8 @@ export default function SignUp() {
             </div>
 
             <button
-              type="button"
+              type="submit"
               className="signupbtn col-10 d-flex justify-content-center mx-auto mt-5"
-              onClick={submit_form}
             >
               SignUp
             </button>
