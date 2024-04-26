@@ -13,6 +13,7 @@ const AdminRoutes = () => {
   return (
     <Routes>
       <Route path="canteen/*" element={<Cdash />} />
+    {/* <Route path="calendar/*" element={<Caldash />} /> */}
     </Routes>
   );
 };

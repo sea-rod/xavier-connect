@@ -37,7 +37,7 @@ const routes = [
     icon: <FaHome />,
   },
 ];
-function Cdash(props) {
+function cdash(props) {
   return (
     <div>
       <Topbar />
@@ -58,4 +58,4 @@ function Cdash(props) {
   );
 }
 
-export default Cdash;
+export default cdash;
