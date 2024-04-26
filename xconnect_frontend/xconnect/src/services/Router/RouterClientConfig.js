@@ -10,7 +10,7 @@ import SignUp from "../../pages/Sign up/SignUp";
 import Admin from "../../modules/canteen/Admin/admin";
 import Calendar from "../../modules/calendar/Calendar";
 import HelpLine from "../../modules/helpLine/helpline";
-import TimeTable from "../../modules/timetable/timetable";
+import TimeTable from "../../modules/timetable/TTGenerator";
 import CombinedComponent from "../../modules/Library_Page/Library";
 import ReserveBook from "../../modules/Library_Page/ReserveBook";
 import Newpage from "../../modules/Library_Page/Newpage";
