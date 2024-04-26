@@ -1,0 +1,56 @@
+/* Sidebar */
+.calsidebar {
+    height: 100%;
+    width: 415px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #313343;
+    overflow-x: hidden;
+    padding-top: 16px;
+  }
+
+  
+  .calsidebar a {
+    padding: 8px 15px 15px 35px;
+    text-decoration: none;
+    font-size: 24px;
+    color: #f1f1f1;
+    display: block;
+}
+
+  .calsidebar a:hover {
+    background-color:#A800C2 ;
+  }
+
+  .profile{
+ align-items: center;
+  }
+
+  .profile a:hover{
+    background-color:#313343 ;
+  }
+  
+
+  .main{
+    margin-right: 40px;
+    margin-left: 440px;
+    margin-top: 30px;
+    display: flex;
+    border-radius: 15px;
+    justify-content: space-around;
+    padding-right: 22px;
+    border: 3px solid #A800C2;
+    h2{
+        padding: 22px;
+    }
+  }
+
+  /* Media query for small screens */
+  @media screen and (max-height: 450px) {
+    .calsidebar { padding-top: 15px; }
+    .calsidebar a { font-size: 18px; }
+  }
+  
+

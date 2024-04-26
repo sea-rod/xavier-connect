@@ -39,6 +39,7 @@ const routes = [
     icon: <FaHome />,
   },
 ];
+
 function Cdash(props) {
   const navigate = useNavigate();
   useEffect(() => {
@@ -69,4 +70,4 @@ function Cdash(props) {
   );
 }
 
-export default Cdash;
+export default cdash;
