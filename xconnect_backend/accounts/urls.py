@@ -9,6 +9,7 @@ from .views import (
     ClassUpdateDeleteAPI,
     ClassStreamListAPI,
     ClassStreamDestroyAPI,
+    CheckUserGroupAPIView,
 )
 
 urlpatterns = [
@@ -21,4 +22,5 @@ urlpatterns = [
     path("<int:pk>/class", ClassUpdateDeleteAPI.as_view()),
     path("class-stream/", ClassStreamListAPI.as_view()),
     path("<int:pk>/class-stream/", ClassStreamDestroyAPI.as_view()),
+    path("user-group/", CheckUserGroupAPIView.as_view()),
 ]
