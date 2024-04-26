@@ -27,6 +27,7 @@ export default function Navbar() {
       case "/canteen":
       case "/order":
       case "/cart":
+      case "/order-list":
         setNavbarColor("#FEAC04");
         break;
       case "/studentHelp":

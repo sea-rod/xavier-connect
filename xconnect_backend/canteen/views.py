@@ -84,6 +84,15 @@ class ListCart(generics.ListAPIView):
 class OrderCreate(generics.ListCreateAPIView):
     serializer_class = OrderSerializer
     queryset = Order.objects.all()
+    permission_classes = (IsAuthenticated,)
+
+    def get_serializer(self, *args, **kwargs):
+        if self.request.user.is_superuser and self.request.POST.get("all"):
+            return Order.objects.filter(user_id=self.request.user)
+
+        if self.request.user.is_superuser:
+            return super().get_serializer(*args, **kwargs)
+        return Order.objects.filter(user_id=self.request.user)
 
     def post(self, request, *args, **kwargs):
         try:
