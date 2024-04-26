@@ -25,6 +25,7 @@ const ResetPasswordEmail = () => {
       })
       .catch((err) => {
         console.log(err.response.data);
+        toast.dismiss(toastId);
         if (err.response.data?.email) {
           toast.error(String(err.response.data.email));
         } else {
