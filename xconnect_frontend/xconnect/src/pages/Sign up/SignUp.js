@@ -199,7 +199,7 @@ export default function SignUp() {
               SignUp
             </button>
             <div className="signin mt-3">
-              Already have an account? <a href="/">Signin</a>{" "}
+              Already have an account? <Link to="/Login">Signin</Link>
             </div>
           </form>
         </div>
