@@ -25,3 +25,7 @@
   background-color: #a800c2;
   font-weight: 700;
 }
+
+.quill svg{
+  filter: white;
+}

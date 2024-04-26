@@ -46,7 +46,6 @@ const QuillEditor = () => {
   };
 
   return (
-    <div>
       <ReactQuill
         theme="snow"
         value={content}
@@ -55,8 +54,7 @@ const QuillEditor = () => {
         formats={formats}
         placeholder="Write something amazing..."
       />
-      <button onClick={handleGetText}>huelloooo</button>
-    </div>
+      
   );
 };
 
