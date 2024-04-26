@@ -33,7 +33,7 @@ function Pagehead({ names }) {
     ))}
     </div>
     </>
-  )
+  );
 }
 
 export default Pagehead;

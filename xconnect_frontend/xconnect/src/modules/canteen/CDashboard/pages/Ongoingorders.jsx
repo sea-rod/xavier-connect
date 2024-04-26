@@ -1,15 +1,7 @@
 import Pagehead from "../Components/pagehead/Pagehead";
 
-const names = [
-    {
-        name:"Ongoing orders"
-    }
-]
-
 const Ongoingorders = () => {
-    return (
-        <Pagehead names={names}/>
-    );
-}
+  return <Pagehead names="Ongoing orders" />;
+};
 
 export default Ongoingorders;

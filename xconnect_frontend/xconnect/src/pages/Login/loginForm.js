@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import axiosInstance from "../../services/axios";
 import { Link, useNavigate } from "react-router-dom";
-import { Bounce, toast } from "react-toastify";
+import {  toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./loginForm.css";
 

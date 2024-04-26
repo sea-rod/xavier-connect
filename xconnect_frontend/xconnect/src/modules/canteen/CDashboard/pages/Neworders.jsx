@@ -6,11 +6,6 @@ import axiosInstance from "../../../../services/axios";
 // import Neworder from "../components/cards/neworders";
 // import '../index.css';
 
-const names = [
-  {
-    name: "New orders",
-  },
-];
 
 const Neworders = () => {
   const [orderData, setOrderData] = useState([]);
@@ -22,7 +17,7 @@ const Neworders = () => {
   }, []);
   return (
     <>
-      <Pagehead names={names} />
+      <Pagehead names="New orders" />
       <div className="scroll-container-insideadmin">
         <div
           id="neworder-cards-neworders"

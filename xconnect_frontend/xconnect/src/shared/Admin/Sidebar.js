@@ -3,8 +3,9 @@ import { NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./Sidebar.css";
 import usericon from "../../modules/canteen/Ascets/usericon.png";
+import { useState } from "react";
 
-const Sidebar = ({ children, routes }) => {
+const Sidebar = ({ routes }) => {
   const [toggle, setToggle] = useState(false);
   const location = useLocation();
   const btn = () => {
@@ -50,19 +51,7 @@ const Sidebar = ({ children, routes }) => {
           </div>
           <section className="routes">
             {routes.map((route) => (
-              <NavLink
-                to={route.path}
-                key={route.name}
-                className="menu"
-                style={{
-                  backgroundColor:
-                    location.pathname === route.path  
-                      ? getColor(location.pathname.split('/').slice(0,3).join("/")) // Set background color dynamically for active link
-                      : "transparent", // Set background color to transparent for inactive links
-                  color: "#ffff",
-                  transition: "1s",
-                }}
-              >
+              <NavLink to={route.path} key={route.name} className="menu">
                 <div className="icon">{route.icon}</div>
                 <div className="link_text">{route.name}</div>
               </NavLink>
@@ -71,9 +60,6 @@ const Sidebar = ({ children, routes }) => {
           </section>
         </motion.div>
       </div>
-      <main className="main-box" id="sidebar">
-        {children}
-      </main>
     </>
   );
 };
