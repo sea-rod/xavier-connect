@@ -28,9 +28,9 @@ function Pagehead({ names }) {
   return (
     <>
     <div id="pagehead" >
-    {names.map((item, index) => (
-      <h1 id="pageheadpage-name" style={{border:`solid 2px ${getColor(currentPage)}`}} key={index}>{item.name}</h1>
-    ))}
+
+      <h1 id="pageheadpage-name" style={{border:`solid 2px ${getColor(currentPage)}`}} >{names}</h1>
+
     </div>
     </>
   )
